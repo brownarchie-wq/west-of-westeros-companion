@@ -36,6 +36,8 @@ h2,h3{font-family:Georgia,"Times New Roman",serif}
 .nav-btn{width:min(20%,152px);min-height:66px;background:none;border:0;color:var(--muted);display:flex;flex-direction:column;gap:3px;align-items:center;justify-content:center;font-size:18px}
 .nav-btn b{font-size:11px;font-weight:700}
 .nav-btn.active{color:var(--accent2)}
+.nav-icon{width:23px;height:23px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nav-btn b{letter-spacing:.015em}
 .card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin:10px 0;box-shadow:var(--shadow)}
 .card.flat{box-shadow:none}
 .hero{padding:18px}
@@ -194,7 +196,7 @@ body{padding-bottom:calc(118px + env(safe-area-inset-bottom))!important}
 .quest-steps{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
 .quest-steps button{min-height:48px}
 
-.modal{position:fixed;inset:0;z-index:100;display:flex;align-items:flex-end;justify-content:center;padding:12px;color:var(--text)}
+.modal{position:fixed;inset:0;z-index:100;display:flex;align-items:flex-start;justify-content:center;padding:clamp(54px,9dvh,92px) 12px 18px;color:var(--text)}
 .modal.hidden{display:none!important}
 .modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.74)}
 .modal-card{position:relative;width:min(620px,100%);max-height:min(86dvh,760px);overflow-y:auto;background:#171512;border:1px solid #4b4238;border-radius:18px;padding:16px;box-shadow:var(--shadow);z-index:1;-webkit-overflow-scrolling:touch}
@@ -232,8 +234,8 @@ body.modal-open{overflow:hidden!important}
   .quest-steps{grid-template-columns:1fr}
   .item-card .badge{position:static;margin:8px 0 4px}
   .item-head h3{margin-right:0}
-  .modal{align-items:flex-end;padding:8px}
-  .modal-card{max-height:88dvh;border-radius:18px 18px 10px 10px}
+  .modal{align-items:flex-start;padding:clamp(46px,7dvh,68px) 8px 14px}
+  .modal-card{max-height:82dvh;border-radius:18px}
 }
 .section-title{flex-wrap:wrap;align-items:center}
 .section-title>p{margin-left:auto;max-width:62%;text-align:right;line-height:1.3}
@@ -397,7 +399,7 @@ button.choice-locked{opacity:.45}
   .market-amount-line button{font-size:11px;padding:5px 2px}
 }
 
-/* v0.9 grouped assistants and raid workflow */
+/* v0.10 character portraits only; non-character visual assets removed */
 .tool-category{margin-top:18px}
 .tool-category-title{display:flex;align-items:center;gap:9px;margin:0 0 8px;padding:0 2px}
 .tool-category-title h2{font-size:17px;margin:0}
@@ -417,7 +419,7 @@ button.choice-locked{opacity:.45}
 </style>
 <title>West of Westeros Companion</title>
 </head>
-<body data-app-version="0.9">
+<body data-app-version="0.11">
 <div class="app-shell">
 <header class="topbar">
 <div>
@@ -428,11 +430,11 @@ button.choice-locked{opacity:.45}
 </header>
 <main aria-live="polite" class="view" id="view"><section class="card"><p class="muted small">Starting companion… If this stays on screen, this file viewer is blocking JavaScript. The hosted HTTPS version is required on phones.</p></section></main>
 <nav aria-label="Primary" class="bottom-nav">
-<button class="nav-btn active" data-view="game" type="button"><span>♜</span><b>Game</b></button>
-<button class="nav-btn" data-view="items" type="button"><span>◆</span><b>Items</b></button>
-<button class="nav-btn" data-view="faces" type="button"><span>♟</span><b>Bounties</b></button>
-<button class="nav-btn" data-view="tools" type="button"><span>⚒</span><b>Tools</b></button>
-<button class="nav-btn" data-view="rules" type="button"><span>☰</span><b>Rules</b></button>
+<button class="nav-btn active" data-view="game" type="button"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10h16v10"/><path d="M7 10V6h3v4M14 10V6h3v4M3 20h18M9 20v-5h6v5"/></svg><b>Game</b></button>
+<button class="nav-btn" data-view="items" type="button"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 10 12 21 4 10Z"/><path d="m4 10 8 3 8-3M8 6.5 12 13l4-6.5"/></svg><b>Items</b></button>
+<button class="nav-btn" data-view="faces" type="button"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg><b>Bounties</b></button>
+<button class="nav-btn" data-view="tools" type="button"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6 4-4 4 4-4 4"/><path d="M16 8 7 17M5.5 15.5l3 3M4 17l3 3-2 2-3-3Z"/></svg><b>Tools</b></button>
+<button class="nav-btn" data-view="rules" type="button"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5A3.5 3.5 0 0 1 8.5 8H12v12H8.5A3.5 3.5 0 0 0 5 23Z" transform="translate(0 -3)"/><path d="M19 4.5A3.5 3.5 0 0 0 15.5 8H12v12h3.5A3.5 3.5 0 0 1 19 23Z" transform="translate(0 -3)"/></svg><b>Rules</b></button>
 </nav>
 </div>
 <div aria-labelledby="modalTitle" aria-modal="true" class="modal hidden" id="modal" role="dialog">
@@ -2315,8 +2317,8 @@ window.WOW_DATA = {
   var ATTR_LABEL = {magic:'Magic', intelligence:'Intelligence', combat:'Combat', stealth:'Stealth', cunning:'Cunning'};
   var RESOURCES = ['gold','wood','stone','food'];
   var RES_LABEL = {gold:'Gold',wood:'Wood',stone:'Stone',food:'Food'};
-  var SAVE_KEY = 'wow-companion-state-v09';
-  var LEGACY_SAVE_KEYS = ['wow-companion-state-v08','wow-companion-state-v07','wow-companion-state-v06','wow-companion-state-v05','wow-companion-state-v04','wow-companion-state-v03','wow-companion-state-v02','wow-companion-state-v01'];
+  var SAVE_KEY = 'wow-companion-state-v11';
+  var LEGACY_SAVE_KEYS = ['wow-companion-state-v10','wow-companion-state-v09','wow-companion-state-v08','wow-companion-state-v07','wow-companion-state-v06','wow-companion-state-v05','wow-companion-state-v04','wow-companion-state-v03','wow-companion-state-v02','wow-companion-state-v01'];
   var IMAGE_PACK_KEY = 'wow-private-image-pack-v1';
   var imagePack = null;
   var currentView = 'game';
@@ -2333,7 +2335,7 @@ window.WOW_DATA = {
   var HELP = {
     attributes:{title:'Attributes',query:'1 Setting Up',text:'You begin with 15 points divided between Magic, Intelligence, Combat, Stealth and Cunning. Faces, Gemstones and other effects can then modify the totals.'},
     resources:{title:'Resources',query:'3.3 Resources',text:'Gold, Wood, Stone and Food are tracked here. Use the quick buttons for routine changes; the app also deducts costs when you use supported pay actions.'},
-    board:{title:'Board state',query:'4.2 Forming your Settlement',text:'Track settlement/villages, conditions and confrontation cooldown. A successful initiating confrontation sets a 5-turn cooldown; being successfully confronted or an unsuccessful confrontation sets 1 turn.'},
+    board:{title:'Territory',query:'4.2 Forming your Settlement',text:'Track your settlement and the number of villages you currently control. Conditions and confrontation restrictions are shown separately on the Game page.'},
     bounty:{title:'Bounties',query:'3.1 Little Birds',text:'Choose the target and one of the eight purple-banner locations. The optional take-down assistant handles same-turn days, intel and defence arithmetic, then records assassination or blackmail outcomes.'},
     benefits:{title:'Active benefits',query:'7 Items',text:'This panel gathers benefits currently affecting you: completed item powers and special abilities unlocked from Faces. It is a quick reference rather than a new rules system.'},
     weirwood:{title:'Weirwood cards',query:'3.8 Weirwood Tree',text:'Most Weirwood cards resolve immediately using the physical card. Only cards whose effect is kept for later are tracked here, so they can appear in the relevant helpers when needed.'},
@@ -2361,8 +2363,8 @@ window.WOW_DATA = {
 
   function defaultState(){
     return {
-      version:9,
-      playerName:'Player',
+      version:11,
+      playerName:'',
       setupComplete:false,
       baseAttributes:{magic:0,intelligence:0,combat:0,stealth:0,cunning:0},
       manualModifiers:{magic:0,intelligence:0,combat:0,stealth:0,cunning:0},
@@ -2425,7 +2427,7 @@ window.WOW_DATA = {
       }
       return x;
     }).filter(function(x,i,a){return typeof x==='string'&&weirwoodDef(x)&&a.indexOf(x)===i;});
-    s.version=9;
+    s.version=11;
     if(!s.items.gemstone.obtained){s.items.gemstone.completed=false;s.items.gemstone.checkpointed=false;s.items.gemstone.type='';}
     if(s.items.gemstone.completed) s.items.gemstone.obtained=true;
     if(!s.items.direwolf.obtained){s.items.direwolf.completed=false;s.items.direwolf.checkpointed=false;s.items.direwolf.bonds=[];}
@@ -2493,15 +2495,17 @@ window.WOW_DATA = {
   function loadImagePack(){
     try{
       var raw=localStorage.getItem(IMAGE_PACK_KEY),p=raw?JSON.parse(raw):null;
-      if(p&&p.version===1&&p.portraits&&p.attributeIcons&&p.resourceIcons&&p.locations)return p;
+      if(p&&p.portraits)return p;
     }catch(e){}
     return null;
   }
   imagePack=loadImagePack();
   function packPortrait(id){return imagePack&&imagePack.portraits&&imagePack.portraits[id]?imagePack.portraits[id]:'';}
-  function packAttrIcon(a){return imagePack&&imagePack.attributeIcons&&imagePack.attributeIcons[a]?imagePack.attributeIcons[a]:'';}
-  function packResourceIcon(r){return imagePack&&imagePack.resourceIcons&&imagePack.resourceIcons[r]?imagePack.resourceIcons[r]:'';}
-  function packLocation(name){return imagePack&&imagePack.locations&&imagePack.locations[name]?imagePack.locations[name]:'';}
+  /* Character portraits are the only optional visual assets retained. Older full packs still load,
+     but attribute, resource and location imagery is deliberately ignored from v0.10 onward. */
+  function packAttrIcon(){return '';}
+  function packResourceIcon(){return '';}
+  function packLocation(){return '';}
   function portraitHtml(id,large){
     var src=packPortrait(id);return src?'<img class="visual-thumb'+(large?' large':'')+'" src="'+src+'" alt="" aria-hidden="true">':'';
   }
@@ -2511,9 +2515,9 @@ window.WOW_DATA = {
     reader.onload=function(){
       try{
         var p=JSON.parse(String(reader.result||''));
-        if(!p||p.version!==1||!p.portraits||!p.attributeIcons||!p.resourceIcons||!p.locations)throw new Error('Unsupported image pack');
-        localStorage.setItem(IMAGE_PACK_KEY,JSON.stringify(p));imagePack=p;dismissArtworkPrompt();if(closeAfter)closeModal();render();toast('Private visual pack imported on this device.','good');
-      }catch(err){toast('Could not import this image pack.','bad');}
+        if(!p||!p.portraits)throw new Error('Unsupported portrait pack');
+        localStorage.setItem(IMAGE_PACK_KEY,JSON.stringify(p));imagePack=p;dismissArtworkPrompt();if(closeAfter)closeModal();render();toast('Character portraits imported on this device.','good');
+      }catch(err){toast('Could not import this character portrait pack.','bad');}
     };
     reader.readAsText(file);
   }
@@ -2568,12 +2572,12 @@ window.WOW_DATA = {
   function historyTime(iso){try{return new Date(iso).toLocaleString('en-GB',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});}catch(e){return iso||'';}}
   function artworkPromptDismissed(){try{return localStorage.getItem('wow-private-image-pack-prompt-v1')==='dismissed';}catch(e){return false;}}
   function dismissArtworkPrompt(){try{localStorage.setItem('wow-private-image-pack-prompt-v1','dismissed');}catch(e){}}
-  function openArtworkManager(firstRun){openModal(firstRun?'Add the private artwork?':'Private artwork','<p class="small muted">The artwork pack stays on this device only. Import it from the browser/home-screen app you actually use for play.</p><div class="visual-pack-box"><strong>'+(imagePack?'Visual pack loaded':'No visual pack loaded')+'</strong><span class="tiny muted">'+(imagePack?'Character portraits, attribute/resource icons and bounty-location tiles are active.':'Choose the private image-pack JSON file. You normally only need to do this once per browser/app storage context.')+'</span></div><label class="field"><span>Private visual pack</span><input id="imagePackFileModal" type="file" accept=".json,application/json"></label><div class="item-actions"><button class="primary" data-modal-action="image-pack-import-modal">'+(imagePack?'Replace visual pack':'Import visual pack')+'</button>'+(imagePack?'<button class="ghost" data-modal-action="image-pack-remove-modal">Remove visual pack</button>':'')+(firstRun?'<button class="ghost" data-modal-action="image-pack-skip">Skip for now</button>':'')+'</div>');}
-  function openHistory(){var rows=state.history||[];openModal('History','<p class="small muted">State-changing actions are recorded automatically on this device. Calculator selections and temporary helper values are not logged.</p>'+(rows.length?'<div class="history-list">'+rows.map(function(h){return '<div class="history-row"><time>'+esc(historyTime(h.at))+'</time><div>'+esc(h.text)+'</div></div>';}).join('')+'</div>':'<div class="empty">No recorded actions yet.</div>')+'<div class="modal-actions"><button class="ghost" type="button" data-modal-action="manage-artwork">Manage private artwork</button></div>');}
+  function openArtworkManager(firstRun){openModal(firstRun?'Add character portraits?':'Character portraits','<p class="small muted">Portraits are optional and stay on this device only. Import them from the browser/home-screen app you actually use for play.</p><div class="visual-pack-box"><strong>'+(imagePack?'Portraits loaded':'No portraits loaded')+'</strong><span class="tiny muted">'+(imagePack?'Character portraits are active. All other board/resource/attribute/location artwork is ignored.':'Choose the character-portrait JSON file. You normally only need to do this once per browser/app storage context.')+'</span></div><label class="field"><span>Character portrait pack</span><input id="imagePackFileModal" type="file" accept=".json,application/json"></label><div class="item-actions"><button class="primary" data-modal-action="image-pack-import-modal">'+(imagePack?'Replace portraits':'Import portraits')+'</button>'+(imagePack?'<button class="ghost" data-modal-action="image-pack-remove-modal">Remove portraits</button>':'')+(firstRun?'<button class="ghost" data-modal-action="image-pack-skip">Skip for now</button>':'')+'</div>');}
+  function openHistory(){var rows=state.history||[];openModal('History','<p class="small muted">State-changing actions are recorded automatically on this device. Calculator selections and temporary helper values are not logged.</p>'+(rows.length?'<div class="history-list">'+rows.map(function(h){return '<div class="history-row"><time>'+esc(historyTime(h.at))+'</time><div>'+esc(h.text)+'</div></div>';}).join('')+'</div>':'<div class="empty">No recorded actions yet.</div>')+'<div class="modal-actions"><button class="ghost" type="button" data-modal-action="manage-artwork">Manage character portraits</button></div>');}
   function startAttrTotal(){var n=0;ATTRS.forEach(function(a){n+=num(startingAttrDraft&&startingAttrDraft[a]);});return n;}
   function startAttrRows(){return ATTRS.map(function(a){return '<div class="start-attr-row"><span>'+ATTR_LABEL[a]+'</span><button type="button" data-modal-action="start-attr-dec" data-attr="'+a+'">−</button><strong id="start-'+a+'">'+num(startingAttrDraft[a])+'</strong><button type="button" data-modal-action="start-attr-inc" data-attr="'+a+'">+</button></div>';}).join('');}
-  function updateStartAttrModal(){if(!startingAttrDraft)return;ATTRS.forEach(function(a){var el=document.getElementById('start-'+a);if(el)el.textContent=num(startingAttrDraft[a]);});var total=startAttrTotal(),used=document.getElementById('startAttrUsed'),left=document.getElementById('startAttrLeft'),confirm=document.getElementById('startAttrConfirm');if(used)used.textContent=total;if(left)left.textContent=15-total;if(confirm)confirm.disabled=total!==15;}
-  function openStartingAttributes(){startingAttrDraft={};ATTRS.forEach(function(a){startingAttrDraft[a]=state.setupComplete?num(state.baseAttributes[a]):0;});openModal('Select starting attributes','<p class="small muted">Distribute exactly 15 points across the five attributes. Starting values cannot be negative.</p>'+startAttrRows()+'<div class="start-total"><span><strong><span id="startAttrUsed">'+startAttrTotal()+'</span>/15</strong> points used</span><span class="small muted"><span id="startAttrLeft">'+(15-startAttrTotal())+'</span> remaining</span></div><button id="startAttrConfirm" class="primary wide-action" type="button" data-modal-action="start-attr-confirm" '+(startAttrTotal()===15?'':'disabled')+'>Confirm starting attributes</button>');}
+  function updateStartAttrModal(){if(!startingAttrDraft)return;ATTRS.forEach(function(a){var el=document.getElementById('start-'+a);if(el)el.textContent=num(startingAttrDraft[a]);});var total=startAttrTotal(),used=document.getElementById('startAttrUsed'),left=document.getElementById('startAttrLeft'),confirm=document.getElementById('startAttrConfirm'),nameField=document.getElementById('startPlayerName'),hasName=!!(nameField&&nameField.value.trim());if(used)used.textContent=total;if(left)left.textContent=15-total;if(confirm)confirm.disabled=total!==15||!hasName;}
+  function openStartingAttributes(){startingAttrDraft={};ATTRS.forEach(function(a){startingAttrDraft[a]=state.setupComplete?num(state.baseAttributes[a]):0;});var initialName=state.playerName||'';openModal(state.setupComplete?'Edit starting attributes':'Set up your character','<label class="field"><span>Player name</span><input id="startPlayerName" type="text" maxlength="40" placeholder="Enter your name" value="'+esc(initialName)+'"></label><p class="small muted">Distribute exactly 15 points across the five attributes. Starting values cannot be negative.</p>'+startAttrRows()+'<div class="start-total"><span><strong><span id="startAttrUsed">'+startAttrTotal()+'</span>/15</strong> points used</span><span class="small muted"><span id="startAttrLeft">'+(15-startAttrTotal())+'</span> remaining</span></div><button id="startAttrConfirm" class="primary wide-action" type="button" data-modal-action="start-attr-confirm" '+(startAttrTotal()===15&&initialName.trim()?'':'disabled')+'>Confirm character setup</button>');}
   function updateSecretTimerDisplay(){var el=document.getElementById('secretTimerDisplay');if(el){var m=Math.floor(secretTimerRemaining/60),s=secretTimerRemaining%60;el.textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');}}
   function startSecretTimer(){if(secretTimerId||secretTimerRemaining<=0)return;secretTimerId=setInterval(function(){secretTimerRemaining=Math.max(0,secretTimerRemaining-1);updateSecretTimerDisplay();if(secretTimerRemaining<=0){clearInterval(secretTimerId);secretTimerId=null;toast('One minute is up.','warn');}},1000);}
   function pauseSecretTimer(){if(secretTimerId){clearInterval(secretTimerId);secretTimerId=null;}}
@@ -2719,9 +2723,9 @@ function renderGame(){
   if(state.statuses.poison)statusPills.push(conditionPill('poison','Poisoned','bad'));
   if(state.statuses.shipDamaged)statusPills.push(conditionPill('shipDamaged','Ship damaged','warn'));
   if(state.statuses.confrontationCooldown>0)statusPills.push(conditionPill('confrontationCooldown','Confrontation '+state.statuses.confrontationCooldown+' turn'+(state.statuses.confrontationCooldown===1?'':'s'),'warn'));
-  var setupPrompt=state.setupComplete?'':'<section class="card setup-card"><h2>Set up your character</h2><p class="small muted">Before starting a new game, distribute your 15 starting attribute points.</p><button class="primary wide-action" data-action="select-starting-attributes">Select starting attributes</button></section>';
+  var setupPrompt=state.setupComplete?'':'<section class="card setup-card"><h2>Set up your character</h2><p class="small muted">Enter your name and distribute your 15 starting attribute points.</p><button class="primary wide-action" data-action="select-starting-attributes">Select starting attributes</button></section>';
   view.innerHTML=
-    '<section class="card hero"><div class="hero-row"><div><div class="muted small">Current player</div><h2 style="margin:2px 0 0">'+esc(state.playerName)+'</h2></div><button class="ghost small" data-action="edit-player">Edit</button></div><div class="row" style="margin-top:14px"><span class="small muted">Prerequisite items</span><strong>'+prog+'/7</strong></div><div class="progress"><span style="width:'+(prog/7*100)+'%"></span></div><div class="status-row" style="margin-top:12px">'+(statusPills.join('')||'<span class="muted small">No active conditions</span>')+'</div></section>'+setupPrompt+
+    '<section class="card hero"><div class="hero-row"><div><div class="muted small">Current player</div><h2 style="margin:2px 0 0">'+esc(state.playerName||'Player')+'</h2></div><button class="ghost small" data-action="edit-player">Edit</button></div><div class="row" style="margin-top:14px"><span class="small muted">Prerequisite items</span><strong>'+prog+'/7</strong></div><div class="progress"><span style="width:'+(prog/7*100)+'%"></span></div><div class="status-row" style="margin-top:12px">'+(statusPills.join('')||'<span class="muted small">No active conditions</span>')+'</div></section>'+setupPrompt+
     sectionTitle('Attributes','attributes','')+
     '<section class="grid grid-5">'+ATTRS.map(function(a){var ai=packAttrIcon(a);return '<div class="stat">'+(ai?'<img class="attr-icon" src="'+ai+'" alt="" aria-hidden="true">':'')+'<label>'+ATTR_LABEL[a]+'</label><strong>'+t[a]+'</strong></div>';}).join('')+'</section>'+ 
     '<div class="row inline-edit"><button class="ghost small" data-action="edit-attributes">'+(state.setupComplete?'Attribute adjustments':'Select starting attributes')+'</button></div>'+ 
@@ -2729,8 +2733,12 @@ function renderGame(){
     '<section class="resources-list">'+RESOURCES.map(resourceControl).join('')+'</section>'+ 
     sectionTitle('Active benefits','benefits','')+
     '<section class="card flat">'+activeBenefitsHtml()+'</section>'+ 
-    sectionTitle('Board state','board','')+
-    '<section class="card flat"><div class="row wrap"><button class="status-toggle '+(state.settlementFormed?'active':'')+'" data-action="toggle-settlement">Settlement '+(state.settlementFormed?'✓':'')+'</button><div class="counter-line"><span class="small muted">Villages controlled</span><div class="stepper"><button data-action="village-dec">−</button><strong>'+state.villages+'</strong><button data-action="village-inc">+</button></div></div></div><hr><div class="row wrap"><span class="small muted">Conditions</span><div class="status-row"><button class="small status-toggle '+(state.statuses.greyscale?'active':'')+'" data-status="greyscale">Greyscale</button><button class="small status-toggle '+(state.statuses.poison?'active':'')+'" data-status="poison">Poison</button><button class="small status-toggle '+(state.statuses.shipDamaged?'active':'')+'" data-status="shipDamaged">Ship damaged</button></div></div>'+(state.statuses.greyscale&&hasWeirwood('greyscale-serum')?'<button class="primary small" data-action="use-weirwood" data-weirwood="greyscale-serum">Use Greyscale Serum</button>':'')+(state.statuses.shipDamaged?'<button class="small" data-action="repair-ship">Repair ship ('+fmt(hasAbility('Shipwright')?1000:2000)+' Gold'+(hasAbility('Shipwright')?' · Shipwright':'')+')</button>':'')+'<hr><div class="cooldown-box"><div><strong>Confrontation cooldown</strong><span class="tiny muted">'+(state.statuses.confrontationCooldown?state.statuses.confrontationCooldown+' of your turns remaining':'Ready to confront')+' · '+confrontationAttempts()+' attempt'+(confrontationAttempts()===1?'':'s')+' per confrontation</span></div><div class="choice-grid cooldown-actions"><button data-action="cooldown-set" data-value="5">I succeeded (set 5)</button><button data-action="cooldown-set" data-value="1">They succeeded (set 1)</button><button data-action="cooldown-set" data-value="1">Attempt failed (set 1)</button>'+(state.statuses.confrontationCooldown?'<button class="primary" data-action="cooldown-pass">One of my turns passed (−1)</button>':'')+'</div>'+(hasAbility('Rivalry')?'<div class="notice compact-notice">Rivalry active: arm wrestling may be used instead of the normal matching-d6 confrontation result.</div>':'')+'</div></section>'+ 
+    sectionTitle('Territory','board','Settlement and villages you currently control.')+
+    '<section class="card flat"><div class="row wrap"><button class="status-toggle '+(state.settlementFormed?'active':'')+'" data-action="toggle-settlement">Settlement '+(state.settlementFormed?'✓':'')+'</button><div class="counter-line"><span class="small muted">Villages controlled</span><div class="stepper"><button data-action="village-dec">−</button><strong>'+state.villages+'</strong><button data-action="village-inc">+</button></div></div></div></section>'+
+    sectionTitle('Current conditions','','Effects that change how your character moves or travels.')+
+    '<section class="card flat"><div class="status-row"><button class="small status-toggle '+(state.statuses.greyscale?'active':'')+'" data-status="greyscale">Greyscale</button><button class="small status-toggle '+(state.statuses.poison?'active':'')+'" data-status="poison">Poison</button><button class="small status-toggle '+(state.statuses.shipDamaged?'active':'')+'" data-status="shipDamaged">Ship damaged</button></div>'+(state.statuses.greyscale&&hasWeirwood('greyscale-serum')?'<button class="primary small" style="margin-top:10px" data-action="use-weirwood" data-weirwood="greyscale-serum">Use Greyscale Serum</button>':'')+(state.statuses.shipDamaged?'<button class="small" style="margin-top:10px" data-action="repair-ship">Repair ship ('+fmt(hasAbility('Shipwright')?1000:2000)+' Gold'+(hasAbility('Shipwright')?' · Shipwright':'')+')</button>':'')+'<p class="tiny muted" style="margin:10px 0 0">Active conditions also appear at the top of this page with a ? button explaining their effect.</p></section>'+
+    sectionTitle('Confrontation status','','Your temporary restriction after a confrontation.')+
+    '<section class="card flat"><div class="cooldown-box"><div><strong>'+(state.statuses.confrontationCooldown?state.statuses.confrontationCooldown+' turn'+(state.statuses.confrontationCooldown===1?'':'s')+' remaining':'Ready to confront')+'</strong><span class="tiny muted">'+confrontationAttempts()+' attempt'+(confrontationAttempts()===1?'':'s')+' per confrontation</span></div><div class="choice-grid cooldown-actions"><button data-action="cooldown-set" data-value="5">I succeeded (set 5)</button><button data-action="cooldown-set" data-value="1">They succeeded (set 1)</button><button data-action="cooldown-set" data-value="1">Attempt failed (set 1)</button>'+(state.statuses.confrontationCooldown?'<button class="primary" data-action="cooldown-pass">One of my turns passed (−1)</button>':'')+'</div>'+(hasAbility('Rivalry')?'<div class="notice compact-notice">Rivalry active: arm wrestling may be used instead of the normal matching-d6 confrontation result.</div>':'')+'</div></section>'+ 
     sectionTitle('Held Weirwood cards','weirwood','')+
     '<section class="card flat">'+weirwoodTrackerHtml()+'</section>'+ 
     '<div class="section-title"><h2>Save & backup</h2></div><section class="card flat"><div class="row wrap"><button data-action="export-save">Export save</button><button data-action="import-save">Import save</button><button class="danger" data-action="reset-save">Reset game</button></div><input type="file" id="importFile" accept="application/json" class="hidden"><p class="tiny muted">Progress is saved automatically on this device.</p></section>';
@@ -3033,6 +3041,10 @@ function updateToolResults(){
     if(e.target.id==='imagePackFileModal'&&e.target.files&&e.target.files[0]){e.target.setAttribute('data-file-ready','1');}
   });
 
+  modalBody.addEventListener('input',function(e){
+    if(e.target&&e.target.id==='startPlayerName')updateStartAttrModal();
+  });
+
   modalBody.addEventListener('click',function(e){
     var btn=e.target.closest?e.target.closest('button'):null;if(!btn)return;var a=btn.getAttribute('data-modal-action');
 
@@ -3043,15 +3055,15 @@ function updateToolResults(){
     if(a==='manage-artwork'){openArtworkManager(false);return;}
     if(a==='image-pack-skip'){dismissArtworkPrompt();closeModal();return;}
     if(a==='image-pack-import-modal'){var aip=document.getElementById('imagePackFileModal');if(aip&&aip.files&&aip.files[0])importImagePack(aip.files[0],true);else toast('Choose the private image-pack JSON file first.','warn');return;}
-    if(a==='image-pack-remove-modal'){try{localStorage.removeItem(IMAGE_PACK_KEY);}catch(e){}imagePack=null;dismissArtworkPrompt();closeModal();render();toast('Private visual pack removed from this device.','neutral');return;}
+    if(a==='image-pack-remove-modal'){try{localStorage.removeItem(IMAGE_PACK_KEY);}catch(e){}imagePack=null;dismissArtworkPrompt();closeModal();render();toast('Character portraits removed from this device.','neutral');return;}
     if(a==='save-player'){state.playerName=document.getElementById('playerNameEdit').value.trim()||'Player';closeModal();commit();return;}
     if(a==='mod-inc'||a==='mod-dec'){var ma=btn.getAttribute('data-attr'),md=a==='mod-inc'?1:-1;if(!manualModifierDraft){manualModifierDraft={};ATTRS.forEach(function(x){manualModifierDraft[x]=num(state.manualModifiers[x]);});}manualModifierDraft[ma]+=md;var mel=document.getElementById('mod-'+ma);if(mel)mel.textContent=manualModifierDraft[ma];return;}
     if(a==='mod-apply'){if(!manualModifierDraft)return;ATTRS.forEach(function(x){state.manualModifiers[x]=num(manualModifierDraft[x]);});manualModifierDraft=null;closeModal();commit(true,'Attribute adjustments applied: '+ATTRS.map(function(x){return ATTR_LABEL[x]+' '+state.manualModifiers[x];}).join(', '));toast('Attribute adjustments applied.','good');return;}
     if(a==='change-starting-allocation'){manualModifierDraft=null;openStartingAttributes();return;}
     if(a==='start-attr-inc'||a==='start-attr-dec'){var sa=btn.getAttribute('data-attr'),sd=a==='start-attr-inc'?1:-1;if(sd>0&&startAttrTotal()<15)startingAttrDraft[sa]++;if(sd<0&&startingAttrDraft[sa]>0)startingAttrDraft[sa]--;updateStartAttrModal();return;}
-    if(a==='start-attr-confirm'){if(startAttrTotal()!==15){toast('Use exactly 15 starting attribute points.','bad');return;}ATTRS.forEach(function(x){state.baseAttributes[x]=num(startingAttrDraft[x]);});state.setupComplete=true;startingAttrDraft=null;closeModal();commit(true,'Starting attributes confirmed: '+ATTRS.map(function(x){return ATTR_LABEL[x]+' '+state.baseAttributes[x];}).join(', '));toast('Starting attributes saved.','good');return;}
+    if(a==='start-attr-confirm'){var setupName=(document.getElementById('startPlayerName')||{}).value||'';setupName=setupName.trim();if(!setupName){toast('Enter your player name.','bad');return;}if(startAttrTotal()!==15){toast('Use exactly 15 starting attribute points.','bad');return;}state.playerName=setupName;ATTRS.forEach(function(x){state.baseAttributes[x]=num(startingAttrDraft[x]);});state.setupComplete=true;startingAttrDraft=null;closeModal();commit(true,'Character setup confirmed for '+state.playerName+': '+ATTRS.map(function(x){return ATTR_LABEL[x]+' '+state.baseAttributes[x];}).join(', '));toast('Character setup saved.','good');return;}
     if(a==='save-face'){saveFaceFromModal();return;}
-    if(a==='reset-save-confirm'){try{localStorage.removeItem(SAVE_KEY);LEGACY_SAVE_KEYS.forEach(function(k){localStorage.removeItem(k);});}catch(e){}state=defaultState();lastHistorySnapshot=historySnapshot(state);closeModal();saveState();render();toast('Game reset. Select your 15 starting attribute points to begin.','neutral');return;}
+    if(a==='reset-save-confirm'){try{localStorage.removeItem(SAVE_KEY);LEGACY_SAVE_KEYS.forEach(function(k){localStorage.removeItem(k);});}catch(e){}state=defaultState();lastHistorySnapshot=historySnapshot(state);closeModal();saveState();render();toast('Game reset. Enter your name and select your 15 starting attribute points to begin.','neutral');return;}
     if(a==='delete-face-confirm'){var did=modal.getAttribute('data-face-delete');state.faces=state.faces.filter(function(x){return x.id!==did;});modal.removeAttribute('data-face-delete');closeModal();commit();toast('Face removed. Attribute totals updated.','neutral');return;}
     if(a==='open-rule'){var q=btn.getAttribute('data-query')||'';closeModal();currentView='rules';rulesMode='rules';rulesDisplay='contents';setView('rules');var search=document.getElementById('ruleSearch');if(search){search.value=q;updateRulesContent(q);}return;}
   });
