@@ -517,17 +517,42 @@ button.choice-locked{opacity:.45}
 .reward-choice .choice-btn strong{display:block}.reward-choice .choice-btn small{display:block;color:var(--muted);font-size:9px;margin-top:3px}.loot-item-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}.loot-item-grid button{text-align:left}.loot-item-grid button small{display:block;color:var(--muted);font-size:9px;margin-top:2px}.raid-stage-summary{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:9px 0}.raid-stage-summary>div{padding:9px;border:1px solid #302b26;border-radius:10px;background:#141210}.raid-stage-summary span{display:block;color:var(--muted);font-size:9px}.raid-stage-summary strong{display:block;font-size:16px;margin-top:2px}.knights-move-grid{display:grid;gap:10px}.compact-toolbar{display:flex;gap:7px;align-items:center;justify-content:space-between;flex-wrap:wrap}.compact-toolbar .small{margin:0}
 @media(max-width:430px){.save-actions{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.save-actions button{padding:9px 5px;font-size:10px}.loot-item-grid{grid-template-columns:1fr}.raid-stage-summary{grid-template-columns:1fr 1fr}}
 
+/* v0.24: clear payment allocation, persistent dice choices and dashboard navigation. */
+.roll-buttons button.active{background:#806337;border-color:#e0bd77;color:#fff4d8;box-shadow:inset 0 0 0 1px #e0bd77}
+.roll-buttons button small{display:block;font-size:10px;line-height:1.3;margin-top:4px}
+.space-launch-primary{margin:14px 0;padding:20px 18px;min-height:88px;border:1px solid #d6bb87;border-radius:16px;background:linear-gradient(135deg,#d1b782,#ac884d);color:#17130d;box-shadow:0 5px 18px #0005;gap:14px}
+.space-launch-primary>span{margin:0;color:inherit}
+.space-launch-primary strong{display:block;font-family:Georgia,serif;font-size:24px;line-height:1.2;color:#17130d}
+.space-launch-primary span span{font-size:12px;color:#332719;margin-top:6px}
+.space-launch-primary b{font-size:28px;color:#17130d}
+.app-menu{display:grid;gap:10px}.app-menu button{text-align:left;padding:14px}
+.crew-payment-resource{padding:12px;margin:12px 0;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.crew-balance{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}.crew-balance>strong{font-size:16px}.crew-balance span{font-size:12px;color:var(--muted)}.crew-balance b{font-size:18px;color:var(--text);margin-left:4px}
+.crew-pay-label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}
+.crew-payment-controls{display:grid;grid-template-columns:auto minmax(65px,1fr) auto auto;gap:6px;margin-bottom:8px}.crew-payment-controls button{padding:10px 7px;font-size:12px}.crew-payment-controls input{width:100%;min-width:0;background:#11100f;border:1px solid #615038;border-radius:8px;color:var(--text);font-size:18px;text-align:center;padding:8px 4px}
+@media(max-width:370px){.space-launch-primary strong{font-size:22px}.crew-payment-controls{gap:4px}.crew-payment-controls button{padding:10px 5px}}
+/* v0.25: one active assistant, explicit checkpoints and durable Bond feedback. */
+.activity-launcher{display:flex;align-items:center;justify-content:space-between;gap:14px;text-align:left;width:100%;padding:15px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,var(--panel2),var(--panel));color:var(--text)}
+.activity-launcher strong{display:block;font-family:Georgia,serif;font-size:18px;line-height:1.25}.activity-launcher small{display:block;font-size:12px;color:var(--muted);margin-top:5px;line-height:1.4}.activity-launcher b{color:var(--accent2);font-size:22px}.activity-launcher.completed{border-color:#537154}.activity-launcher:hover{border-color:var(--accent)}
+.item-group-grid{display:grid;grid-template-columns:1fr;gap:9px}.tool-grid{display:grid;grid-template-columns:1fr;gap:9px}
+.activity-modal{position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;padding:14px 10px}.activity-modal.hidden{display:none!important}.activity-backdrop{position:absolute;inset:0;background:#000b}
+.activity-card{position:relative;width:min(720px,100%);max-height:calc(100dvh - 28px);overflow-y:auto;background:#171512;border:1px solid #665740;border-radius:18px;box-shadow:var(--shadow);overscroll-behavior:contain}
+.activity-head{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;background:#1b1814;border-bottom:1px solid var(--line)}.activity-head h2{margin:0;font-size:23px}.activity-body{padding:14px 16px 20px}.activity-body .tool-head{margin-top:0}.activity-body .workflow-stage{margin-bottom:0}
+.checkpoint-box{border:1px solid #625139;border-radius:12px;padding:12px;margin:12px 0;background:#221d15}.checkpoint-box p{margin:7px 0 10px}
+.bond-feedback{display:flex;align-items:center;gap:12px;justify-content:space-between;border:1px solid #78a473;border-radius:12px;background:#223320;padding:13px;margin:10px 0}.bond-feedback strong{color:#d7efcf;font-size:16px}.bond-feedback p{font-size:13px;line-height:1.5;margin:5px 0 0}.bond-feedback button{flex-shrink:0}
+.crew-payment-controls{grid-template-columns:auto auto minmax(55px,1fr) auto auto}.prisoner-result strong{font-size:23px;line-height:1.3}.toast{z-index:120}
+@media(max-width:430px){.activity-modal{padding:8px}.activity-card{max-height:calc(100dvh - 16px);border-radius:14px}.activity-head{padding:12px}.activity-head h2{font-size:21px}.activity-body{padding:12px}.crew-payment-controls button{padding:10px 5px;font-size:11px}.bond-feedback{align-items:flex-start;flex-wrap:wrap}}
 </style>
-<title>West of Westeros Companion v0.23</title>
+<title>West of Westeros Companion v0.25</title>
 </head>
-<body data-app-version="0.23">
-<div class="app-shell">
+<body data-app-version="0.25">
+<div class="app-shell" id="appShell">
 <header class="topbar">
 <div>
 <div class="eyebrow">WEST OF WESTEROS</div>
 <h1 id="screenTitle">Game</h1>
 </div>
-<div class="top-actions"><button class="ghost small" data-global-action="guide" type="button">Guide</button><button class="ghost small" data-global-action="history" type="button">History</button><button class="ghost small hidden" id="installBtn" type="button">Install</button></div>
+<div class="top-actions"><button class="ghost small" data-global-action="guide" type="button">Guide</button><button class="ghost small" data-global-action="menu" type="button">Menu</button><button class="ghost small hidden" id="installBtn" type="button">Install</button></div>
 </header>
 <main aria-live="polite" class="view" id="view"><section class="card"><p class="muted small">Starting companion… If this stays on screen, this file viewer is blocking JavaScript. The hosted HTTPS version is required on phones.</p></section></main>
 <nav aria-label="Primary" class="bottom-nav">
@@ -537,6 +562,13 @@ button.choice-locked{opacity:.45}
 <button class="nav-btn" data-view="tools" type="button"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18v11H3Z"/><path d="M8 9V6h8v3M3 13h18M10 13v2h4v-2"/></svg><b>Tools</b></button>
 <button class="nav-btn" data-view="rules" type="button"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.5c2.7-.7 5.4-.2 8.5 1.5v12c-3.1-1.7-5.8-2.2-8.5-1.5Z"/><path d="M20.5 5.5c-2.7-.7-5.4-.2-8.5 1.5v12c3.1-1.7 5.8-2.2 8.5-1.5Z"/></svg><b>Rules</b></button>
 </nav>
+</div>
+<div class="activity-modal hidden" id="activityModal" role="dialog" aria-modal="true" aria-labelledby="activityTitle">
+<div class="activity-backdrop" data-activity-close="1"></div>
+<section class="activity-card" id="activityCard">
+<header class="activity-head"><h2 id="activityTitle"></h2><button id="activityClose" class="icon-btn" type="button" data-activity-close="1" aria-label="Close assistant">×</button></header>
+<div class="activity-body" id="activityBody"></div>
+</section>
 </div>
 <div aria-labelledby="modalTitle" aria-modal="true" class="modal hidden" id="modal" role="dialog">
 <div class="modal-backdrop" data-modal-close="1"></div>
@@ -1161,7 +1193,7 @@ window.WOW_DATA = {
       "requiresActivation": false
     }
   ],
-  "sourceVersion": "Rules v6 + Tables v4 + Character/Weirwood card imports · app v0.23",
+  "sourceVersion": "Rules v6 + Tables v4 + Character/Weirwood card imports · app v0.25",
   "ruleSections": [
     {
       "num": "1",
@@ -2428,6 +2460,8 @@ window.WOW_DATA = {
   var selectedRuleSection = '';
   var deferredInstallPrompt = null;
   var toastTimer = null;
+  var pendingBondToast='';
+  var lastActivityBondNotice='';
   var startingAttrDraft = null;
   var manualModifierDraft = null;
   var secretTimerRemaining = 60;
@@ -2455,7 +2489,7 @@ window.WOW_DATA = {
     raid:{title:'Raid',query:'3.2 Raid',text:'Choose an area/attribute. Required roll is 30 minus that attribute, with a minimum of 10. Roll d10 + d20 and meet or beat the requirement.'},
     shipwreck:{title:'Shipwreck',query:'4.4 Shipwrecks',text:'Draw from the physical shipwreck deck. Gold cards award the amount printed on the card; assassination weapon cards are kept until used to unlock a Face’s special ability during an assassination.'},
     assassinationWeapons:{title:'Assassination weapons',query:'4.4 Shipwrecks',text:'Assassination weapons are found in the shipwreck deck. Each one can be used for a single successful assassination to unlock that target’s printed special ability, then the weapon is returned to the pile.'},
-    prison:{title:'Prison',query:'3.6 Captured',text:'Escape by paying 2,000 Gold or by rolling a double on 2d6. You get one double attempt per turn and automatically escape on the third failed attempt. Your turn then continues normally.'},
+    prison:{title:'Prison',query:'3.6 Captured',text:'Escape by paying 2,000 Gold or by rolling a double on 2d6. You get one double attempt per turn. After three failed attempts, you remain imprisoned for the rest of that turn and automatically escape at the start of your following turn. Your turn then continues normally.'},
     wolfTool:{title:'Direwolf quest',query:'8.3 Direwolf',text:'Approach the Direwolf at The Land of Always Winter. Base requirement is 16+ below Cunning 20 or 8+ at Cunning 20+. Each 1,000 Food offered adds +2 for that attempt. After approaching, gain two different Bond Points.'},
     crew:{title:'Gemstone quest',query:'8.4 Gemstone',text:'Experienced crews cost 300 resources per billed turn/roll and need 13+; inexperienced crews cost 100 and need 18+. Travel turns and individual search rolls both count towards the bill, including the return to a port. Pay the final bill using resources of your choosing; if you cannot cover it, the unpaid amount remains as crew debt and future resource gains repay it automatically.'},
     war:{title:'Stronghold Attack',query:'5 Attacking Another Player’s Stronghold',text:'Your first group of Hired Blades costs 10,000 Food and each later group costs 5,000 more. Once adjacent to the defending Stronghold, track up to 15 of your turns while taking resources and waiting for the defender.'},
@@ -2472,7 +2506,7 @@ window.WOW_DATA = {
 
   function defaultState(){
     return {
-      version:23,
+      version:25,
       guideSeen:false,
       walkthroughSeen:false,
       tutorialsSeen:{},
@@ -2484,6 +2518,7 @@ window.WOW_DATA = {
       inventory:{assassinationWeapons:0},
       faces:[],
       suspicion:0,
+      direwolfNotice:null,
       items:{
         secrets:{obtained:false,checkpointed:false,completed:false,memoryWords:[]},
         city:{completed:false},
@@ -2491,7 +2526,7 @@ window.WOW_DATA = {
         gemstone:{obtained:false,checkpointed:false,completed:false,type:''},
         knights:{completed:false,used:false},
         ironship:{completed:false},
-        sword:{dragonGlass:false,completed:false},
+        sword:{dragonGlass:false,checkpointed:false,completed:false},
         egg:{obtained:false,hatched:false}
       },
       statuses:{greyscale:false,poison:false,shipDamaged:false,confrontationCooldown:0,prisonAttempts:0,inPrison:false,foeMissTurn:false},
@@ -2500,7 +2535,7 @@ window.WOW_DATA = {
       warCount:0,
       siegeTurns:0,
       bounty:{tier:'Low',target:'',location:'',stage:'select',days:0,stayRollSet:false,intel:0,attemptsUsed:0,defenceRoll:0,defenceAttr:'',defenceReady:false,targetD20:1,targetRollSet:false,playerD20:1,playerRollSet:false,lastResult:'',assassinationWeapon:false,blackmailResource:'gold',blackmailRoll:1,blackmailRollSet:false},
-      tools:{wolfFood:0,wolfRoll:1,wolfRollSet:false,crewType:'experienced',crewTurns:0,crewRolls:0,crewStage:'choose',crewSearchRoll:1,crewSearchRollSet:false,crewBillAcknowledged:false,crewDebt:0,crewPayment:{gold:0,wood:0,stone:0,food:0},marketName:'Northern',marketFrom:'Gold',marketTo:'Wood',marketAmount:1000,raidAttr:'magic',raidCurrent:'',raidVisited:[],raidStage:'choose',raidD10:0,raidD10Set:false,raidD20:1,raidD20Set:false,warMode:'normal',warNotice:'',warStage:'declare',warLootItem:'',warLootGemType:'',villageMode:'neutral',villageStage:'choose',villageCostPaid:false,villageReward:'',villagePlayerRoll:0,villagePlayerRollSet:false,villageTargetRoll:1,villageTargetRollSet:false,prisonStage:'choose',shipwreckStage:'draw',shipwreckChoice:'',shipwreckGold:0,foeStage:'choose',foeType:'',foePlayerRoll:0,foePlayerRollSet:false,foeTargetRoll:1,foeTargetRollSet:false,confrontStage:'choose',confrontRole:'initiator',confrontAttempt:0,confrontPlayerRoll:1,confrontPlayerRollSet:false,confrontOtherRoll:1,confrontOtherRollSet:false,confrontOutcome:'',confrontResource:'gold',confrontResourceRoll:1,confrontResourceRollSet:false,secretsTestIntelligence:0,knightsStage:'search',knightsTurn:0,knightsDirection:1,knightsDirectionSet:false,knightsDistance:0,knightsDistanceSet:false,dragonStage:'lair',dragonInitialRoll:1,dragonInitialRollSet:false,dragonExtraAttr:'',dragonExtraUsed:[],dragonExtraRoll:1,dragonExtraRollSet:false,dragonReviveUsed:false,resourceDropResource:'gold',resourceDropRoll:0,resourceDropRollSet:false},
+      tools:{wolfFood:0,wolfRoll:1,wolfRollSet:false,crewType:'experienced',crewTurns:0,crewRolls:0,crewStage:'choose',crewSearchRoll:1,crewSearchRollSet:false,crewBillAcknowledged:false,crewDebt:0,crewBillDue:null,crewPayment:{gold:0,wood:0,stone:0,food:0},marketName:'Northern',marketFrom:'Gold',marketTo:'Wood',marketAmount:1000,raidAttr:'magic',raidCurrent:'',raidVisited:[],raidStage:'choose',raidD10:0,raidD10Set:false,raidD20:1,raidD20Set:false,warMode:'normal',warNotice:'',warStage:'declare',warLootItem:'',warLootGemType:'',villageMode:'neutral',villageStage:'choose',villageCostPaid:false,villageReward:'',villagePlayerRoll:0,villagePlayerRollSet:false,villageTargetRoll:1,villageTargetRollSet:false,prisonStage:'choose',shipwreckStage:'draw',shipwreckChoice:'',shipwreckGold:0,foeStage:'choose',foeType:'',foePlayerRoll:0,foePlayerRollSet:false,foeTargetRoll:1,foeTargetRollSet:false,confrontStage:'choose',confrontRole:'initiator',confrontAttempt:0,confrontPlayerRoll:1,confrontPlayerRollSet:false,confrontOtherRoll:1,confrontOtherRollSet:false,confrontOutcome:'',confrontResource:'gold',confrontResourceRoll:1,confrontResourceRollSet:false,secretsTestIntelligence:0,knightsStage:'search',knightsTurn:0,knightsMovementMode:'manual',knightsGenerated:null,knightsDirection:1,knightsDirectionSet:false,knightsDistance:0,knightsDistanceSet:false,dragonStage:'lair',dragonInitialRoll:1,dragonInitialRollSet:false,dragonExtraAttr:'',dragonExtraUsed:[],dragonExtraRoll:1,dragonExtraRollSet:false,dragonReviveUsed:false,resourceDropResource:'gold',resourceDropRoll:0,resourceDropRollSet:false},
       weirwoodHeld:[],
       history:[]
     };
@@ -2519,8 +2554,11 @@ window.WOW_DATA = {
   }
 
   function normaliseState(s){
-    if(!s.items.sword) s.items.sword={dragonGlass:false,completed:false};
+    if(!s.items.sword) s.items.sword={dragonGlass:false,checkpointed:false,completed:false};
     if(typeof s.items.sword.dragonGlass!=='boolean') s.items.sword.dragonGlass=false;
+    if(typeof s.items.sword.checkpointed!=='boolean')s.items.sword.checkpointed=false;
+    if(!s.items.sword.dragonGlass)s.items.sword.checkpointed=false;
+    if(s.items.city&&s.items.city.completed&&s.items.sword.dragonGlass&&!s.items.sword.completed)s.items.sword.checkpointed=true;
     if(!s.items.knights) s.items.knights={completed:false,used:false};
     if(typeof s.items.knights.used!=='boolean') s.items.knights.used=false;
     if(!s.items.secrets) s.items.secrets={obtained:false,checkpointed:false,completed:false,memoryWords:[]};
@@ -2549,6 +2587,12 @@ window.WOW_DATA = {
     if(typeof s.tools.crewSearchRollSet!=='boolean')s.tools.crewSearchRollSet=false;
     if(typeof s.tools.crewBillAcknowledged!=='boolean')s.tools.crewBillAcknowledged=false;
     s.tools.crewDebt=Math.max(0,num(s.tools.crewDebt));
+    if(s.tools.crewBillDue===undefined)s.tools.crewBillDue=null;
+    if(num(s.version)<24&&s.tools.crewStage==='bill'&&!s.tools.crewBillAcknowledged){
+      // Earlier versions used debt for an unconfirmed bill. Preserve the remaining balance.
+      s.tools.crewBillDue=s.tools.crewDebt;s.tools.crewDebt=0;
+    }
+    if(s.tools.crewBillDue!==null)s.tools.crewBillDue=Math.max(0,num(s.tools.crewBillDue));
     if(!s.tools.crewPayment||typeof s.tools.crewPayment!=='object')s.tools.crewPayment={gold:0,wood:0,stone:0,food:0};
     RESOURCES.forEach(function(r){s.tools.crewPayment[r]=Math.max(0,num(s.tools.crewPayment[r]));});
     if(['choose','roll','result'].indexOf(s.tools.foeStage)<0)s.tools.foeStage='choose';
@@ -2567,6 +2611,9 @@ window.WOW_DATA = {
     if(['search','first','chase','return','complete'].indexOf(s.tools.knightsStage)<0)s.tools.knightsStage='search';
     s.tools.knightsTurn=Math.max(0,num(s.tools.knightsTurn));
     if(typeof s.tools.knightsDirectionSet!=='boolean')s.tools.knightsDirectionSet=false;
+    if(['manual','automatic'].indexOf(s.tools.knightsMovementMode)<0)s.tools.knightsMovementMode='manual';
+    if(!s.tools.knightsGenerated||typeof s.tools.knightsGenerated!=='object')s.tools.knightsGenerated=null;
+    if(!s.direwolfNotice||typeof s.direwolfNotice!=='object')s.direwolfNotice=null;
     if(typeof s.tools.knightsDistanceSet!=='boolean')s.tools.knightsDistanceSet=false;
     if(['lair','initial','extra','obtained','complete'].indexOf(s.tools.dragonStage)<0)s.tools.dragonStage='lair';
     if(!Array.isArray(s.tools.dragonExtraUsed))s.tools.dragonExtraUsed=[];
@@ -2618,13 +2665,13 @@ window.WOW_DATA = {
     if(typeof s.bounty.blackmailRollSet!=='boolean')s.bounty.blackmailRollSet=false;
     if(s.inventory.assassinationWeapons<=0)s.bounty.assassinationWeapon=false;
     if(num(s.version)<15)s.tutorialsSeen={};
-    if(s.items.gemstone&&s.items.gemstone.completed)s.tools.crewStage='complete';
+    if(s.items.gemstone&&s.items.gemstone.completed&&['travel','search','found','return','bill'].indexOf(s.tools.crewStage)<0&&s.tools.crewBillDue===null)s.tools.crewStage='complete';
     if(s.items.knights&&s.items.knights.completed)s.tools.knightsStage='complete';
     if(s.items.egg&&s.items.egg.hatched)s.tools.dragonStage='complete';
     else if(s.items.egg&&s.items.egg.obtained)s.tools.dragonStage='obtained';
     if(num(s.version)<18&&s.tutorialsSeen)delete s.tutorialsSeen.strongholdAttack;
     if(num(s.version)<20)s.tutorialsSeen={};
-    s.version=23;
+    s.version=25;
     if(!s.items.gemstone.obtained){s.items.gemstone.completed=false;s.items.gemstone.checkpointed=false;s.items.gemstone.type='';}
     if(s.items.gemstone.completed) s.items.gemstone.obtained=true;
     if(!s.items.direwolf.obtained){s.items.direwolf.completed=false;s.items.direwolf.checkpointed=false;s.items.direwolf.bonds=[];}
@@ -2655,6 +2702,8 @@ window.WOW_DATA = {
   var modalTitle=document.getElementById('modalTitle');
   var modalBody=document.getElementById('modalBody');
   var installBtn=document.getElementById('installBtn');
+  var activityModal=document.getElementById('activityModal'),activityBody=document.getElementById('activityBody'),activityTitle=document.getElementById('activityTitle'),activityCard=document.getElementById('activityCard');
+  var activeActivity='',activityRegistry={},activityReturnFocus=null;
   var uiOpen={};
   function panelIsOpen(id,defaultOpen){return Object.prototype.hasOwnProperty.call(uiOpen,id)?uiOpen[id]:!!defaultOpen;}
   function rememberPanelState(el){var id=el&&el.getAttribute&&el.getAttribute('data-ui-key');if(id)uiOpen[id]=!!el.open;}
@@ -2742,7 +2791,8 @@ window.WOW_DATA = {
   function toast(message,tone){
     var el=document.getElementById('toast');tone=tone||'good';
     if(!el){el=document.createElement('div');el.id='toast';el.className='toast';document.body.appendChild(el);}
-    el.textContent=message;el.className='toast show '+tone;clearTimeout(toastTimer);toastTimer=setTimeout(function(){el.className='toast';},2400);
+    var hasBondMessage=!!pendingBondToast;if(hasBondMessage){message+=' '+pendingBondToast;pendingBondToast='';}
+    el.textContent=message;el.className='toast show '+tone;clearTimeout(toastTimer);toastTimer=setTimeout(function(){el.className='toast';},hasBondMessage?6500:2400);
   }
 
   function gemstoneMods(){
@@ -2766,12 +2816,36 @@ window.WOW_DATA = {
   function applyCityCheckpoint(){
     if(!state.items.city.completed)return;
     ['secrets','direwolf','gemstone'].forEach(function(k){if(state.items[k].obtained&&!state.items[k].completed)state.items[k].checkpointed=true;});
+    if(state.items.sword.dragonGlass&&!state.items.sword.completed)state.items.sword.checkpointed=true;
   }
   function helpButton(key){return '<button type="button" class="help-btn" data-help="'+esc(key)+'" aria-label="Rule help">?</button>';}
   function sectionTitle(label,key,note){return '<div class="section-title"><div class="title-with-help"><h2>'+esc(label)+'</h2></div>'+(note?'<p>'+esc(note)+'</p>':'')+'</div>';}
 
-  function openModal(t,html){modalTitle.textContent=t;modalBody.innerHTML=html;modal.classList.remove('hidden');document.body.classList.add('modal-open');}
-  function closeModal(){modal.classList.add('hidden');document.body.classList.remove('modal-open');modalBody.innerHTML='';}
+  function syncOverlayState(){
+    var helpOpen=!modal.classList.contains('hidden'),activityOpen=!!activeActivity,shell=document.getElementById('appShell');
+    if(helpOpen||activityOpen){document.body.classList.add('modal-open');if(shell)shell.setAttribute('inert','');}else{document.body.classList.remove('modal-open');if(shell)shell.removeAttribute('inert');}
+    if(helpOpen&&activityOpen){activityModal.setAttribute('inert','');activityModal.setAttribute('aria-hidden','true');}else{activityModal.removeAttribute('inert');activityModal.removeAttribute('aria-hidden');}
+  }
+  function openModal(t,html){modalTitle.textContent=t;modalBody.innerHTML=html;modal.classList.remove('hidden');syncOverlayState();}
+  function closeModal(){modal.classList.add('hidden');modalBody.innerHTML='';syncOverlayState();if(activeActivity){var c=document.getElementById('activityClose');if(c&&c.focus)c.focus();}}
+  function renderActivity(){
+    if(!activeActivity)return;
+    var entry=activityRegistry[activeActivity];if(!entry){closeActivity(false);return;}
+    var noticeKey=state.direwolfNotice?state.direwolfNotice.feat+':'+state.direwolfNotice.count:'',scroll=noticeKey&&noticeKey!==lastActivityBondNotice?0:activityCard.scrollTop||0;lastActivityBondNotice=noticeKey;
+    activityTitle.textContent=entry.title;activityBody.innerHTML=bondNoticeHtml()+entry.body;
+    activityModal.classList.remove('hidden');activityCard.scrollTop=scroll;syncOverlayState();updateToolResults();
+  }
+  function openActivity(id){
+    if(!activityRegistry[id])setView(id.indexOf('item-')===0?'items':'tools');
+    if(!activityRegistry[id])return;
+    activityReturnFocus=document.activeElement;activeActivity=id;activityCard.scrollTop=0;renderActivity();
+    var c=document.getElementById('activityClose');if(c&&c.focus)c.focus();
+  }
+  function closeActivity(restoreFocus){
+    activeActivity='';if(!activityModal)return;activityModal.classList.add('hidden');activityBody.innerHTML='';syncOverlayState();
+    if(restoreFocus!==false&&activityReturnFocus&&activityReturnFocus.isConnected&&activityReturnFocus.focus)activityReturnFocus.focus();
+    activityReturnFocus=null;
+  }
   function openConfirm(t,text,action,label){
     openModal(t,'<p class="help-copy">'+esc(text)+'</p><div class="modal-actions"><button type="button" class="ghost" data-modal-close="1">Cancel</button><button type="button" class="danger" data-modal-action="'+esc(action)+'">'+esc(label||'Confirm')+'</button></div>');
   }
@@ -2836,8 +2910,8 @@ window.WOW_DATA = {
     ]},
     'item-knights':{title:'Knights of the Vale',query:'8.5 Knights of the Vale',pages:[
       {title:'Reveal an escaped prisoner',html:'<p>An <strong>escaped prisoner</strong> red reward card from Settlement influence starts the quest. Put the turquoise prisoner cube on that Settlement.</p>'},
-      {title:'First prisoner movement',html:'<p>Roll a d6 for direction and a d20 for distance, then move the prisoner that many tiles in the indicated direction.</p>'},
-      {title:'Continue the chase',html:'<p>On every later prisoner movement, roll a <strong>fresh d6 direction and fresh 2d6 distance</strong>. You chase normally and capture them by becoming adjacent while in the same terrain.</p>'},
+      {title:'First prisoner movement',html:'<p>Roll a d6 for direction and a d20 for distance, or use Automatic movement in the assistant. Move the prisoner that many tiles in the indicated direction.</p>'},
+      {title:'Continue the chase',html:'<p>On every later prisoner movement, use a <strong>fresh d6 direction and fresh 2d6 distance</strong>, either with physical dice or Automatic movement. You chase normally and capture them by becoming adjacent while in the same terrain.</p>'},
       {title:'Safe and unsafe locations',html:'<p>If the prisoner enters your network or Stronghold, you capture them. If they enter a neutral Settlement, another player’s network or another player’s Stronghold, they escape and you must find another prisoner.</p>'},
       {title:'Return to the Sky Cell',html:'<p>Take a captured prisoner to the <strong>Sky Cell</strong>. House Arryn grants the Knights of the Vale, giving you one Stronghold Attack without Hired Blades or Food.</p>'}
     ]},
@@ -2920,6 +2994,8 @@ window.WOW_DATA = {
     state.walkthroughSeen=true;state.guideSeen=true;saveState();closeModal();
     if(!imagePack&&!artworkPromptDismissed())setTimeout(function(){if(modal.classList.contains('hidden'))openArtworkManager(true);},150);
   }
+  function openAppMenu(){openModal('Menu','<div class="app-menu"><button data-modal-action="menu-history">History</button><button data-modal-action="menu-backup">Save & backup</button><button data-modal-action="manage-artwork">Character portraits</button></div><p class="tiny muted">West of Westeros · v0.25</p>');}
+  function openSaveBackup(){openModal('Save & backup','<p class="small muted">Progress is saved automatically on this device. Export a copy to keep a backup or transfer your game.</p><div class="save-actions"><button data-modal-action="backup-export">Export save</button><button data-modal-action="backup-import">Import save</button><button class="danger" data-modal-action="backup-reset">Reset game</button></div><input type="file" id="backupImportFile" accept=".json,application/json" class="hidden"><div class="modal-actions"><button class="ghost" data-modal-action="menu-back">Back to menu</button></div>');}
   function openGuideHub(){
     var keys=['bounty','items','stronghold','settlement','foe','prison','shipwreck','confrontation','strongholdAttack','direwolf','gemstone','knights','dragonEgg'];
     openModal('Guide','<p class="small muted">Use the walkthrough for the overall shape of the game. The summaries below explain individual gameplay systems; the assistants then guide only the current step.</p><div class="guide-hub-actions"><button class="primary" type="button" data-modal-action="walkthrough-start"><strong>How to play walkthrough</strong><small>Six short screens covering the objective, movement, bounties, your network, Items and winning.</small></button></div><div class="section-title" style="margin-top:16px"><div><h2 style="margin:0">How each system works</h2></div></div><div class="context-tip-grid">'+keys.map(function(k){var tip=CONTEXT_TUTORIALS[k];return '<button type="button" data-modal-action="tutorial-open" data-tutorial-key="'+k+'"><strong>'+esc(tip.title)+'</strong><small>Open gameplay explanation</small></button>';}).join('')+'</div><div class="modal-actions"><button class="primary" type="button" data-modal-close="1">Close</button></div>');
@@ -3015,6 +3091,7 @@ window.WOW_DATA = {
   }
 
   function setView(name){
+    closeActivity(false);
     currentView=name;
     Array.prototype.forEach.call(document.querySelectorAll('.nav-btn'),function(b){if(b.getAttribute('data-view')===name)b.classList.add('active');else b.classList.remove('active');});
     render();
@@ -3029,6 +3106,8 @@ window.WOW_DATA = {
     else if(currentView==='faces')renderFaces();
     else if(currentView==='tools')renderTools();
     else renderRules();
+    if(state.direwolfNotice)view.innerHTML=bondNoticeHtml()+view.innerHTML;
+    renderActivity();
   }
 
 
@@ -3077,7 +3156,8 @@ window.WOW_DATA = {
   function markAbilityUsed(faceId,used){var f=findFace(faceId);if(f)f.abilityUsed=used;}
   function repairShip(){var cost=hasAbility('Shipwright')?1000:2000;if(state.items.ironship.completed){state.statuses.shipDamaged=false;commit();toast('Iron Ship is unaffected by storms; damage cleared.','good');return;}if(state.resources.gold<cost){toast('You need '+fmt(cost)+' Gold for repairs.','bad');return;}state.resources.gold-=cost;state.statuses.shipDamaged=false;commit();toast('Ship repaired for '+fmt(cost)+' Gold'+(hasAbility('Shipwright')?' (Shipwright applied)':'')+'.','good');}
 
-function crewDebtAmount(){return Math.max(0,num(state.tools&&state.tools.crewDebt));}
+function crewBillAmount(){return Math.max(0,num(state.tools&&state.tools.crewBillDue));}
+  function crewDebtAmount(){return Math.max(0,num(state.tools&&state.tools.crewDebt));}
   function applyResourceGain(r,amount){
     amount=Math.max(0,num(amount));
     var debt=crewDebtAmount(),paid=Math.min(debt,amount),net=amount-paid;
@@ -3092,7 +3172,9 @@ function crewDebtAmount(){return Math.max(0,num(state.tools&&state.tools.crewDeb
     return msg;
   }
   function totalResources(){return RESOURCES.reduce(function(n,r){return n+Math.max(0,num(state.resources[r]));},0);}
-  function crewPaymentTotal(){return RESOURCES.reduce(function(n,r){return n+Math.max(0,num(state.tools.crewPayment&&state.tools.crewPayment[r]));},0);}
+  function crewPaymentFor(r){return Math.min(Math.max(0,num(state.resources[r])),Math.max(0,num(state.tools.crewPayment&&state.tools.crewPayment[r])));}
+  function crewPaymentTotal(){return RESOURCES.reduce(function(n,r){return n+crewPaymentFor(r);},0);}
+  function selectAllCrewResources(){RESOURCES.forEach(function(r){state.tools.crewPayment[r]=Math.max(0,num(state.resources[r]));});}
   function resetCrewPayment(){state.tools.crewPayment={gold:0,wood:0,stone:0,food:0};}
   function resourceControl(r){
   var ri=packResourceIcon(r);
@@ -3223,6 +3305,7 @@ function guidanceAction(kicker,titleText,detail,viewName,anchor,tone){
 
     if(actions.length<3&&state.tools.confrontStage&&state.tools.confrontStage!=='choose'&&state.tools.confrontStage!=='complete')add('Confrontation','Continue the confrontation','The confrontation assistant is waiting at the current dice/outcome stage.','tools','confrontTool',actions.length===0?'recommended':'');
     if(actions.length<3&&state.tools.knightsStage&&state.tools.knightsStage!=='search'&&state.tools.knightsStage!=='complete'&&!state.items.knights.completed)add('Item quest','Continue the escaped-prisoner chase','Open the Knights assistant to continue the chase or return the prisoner to the Sky Cell.','tools','knightsTool',actions.length===0?'recommended':'');
+    if(actions.length<3&&state.tools.crewBillDue!==null)add('Crew payment','Settle the crew bill','Choose resources to pay the remaining '+fmt(crewBillAmount())+'-resource bill.','tools','crewTool',actions.length===0?'recommended':'');
     if(actions.length<3&&crewDebtAmount()>0)add('Outstanding debt','Pay the salvage crew','You still owe '+fmt(crewDebtAmount())+' resources. Any resources you gain are automatically paid towards this debt.','tools','crewTool',actions.length===0?'alert':'');
     if(actions.length<3&&state.tools.crewStage&&state.tools.crewStage!=='choose'&&state.tools.crewStage!=='complete'&&!state.items.gemstone.completed)add('Item quest','Continue the Gemstone expedition','The salvage crew assistant is tracking your current stage and bill.','tools','crewTool',actions.length===0?'recommended':'');
     if(actions.length<3&&state.tools.warStage&&state.tools.warStage!=='declare'){var ws=state.tools.warStage,wd=ws==='travel'?'Travel to the defending Stronghold':ws==='infiltrate'?'Continue the Stronghold Attack':ws==='duel'?'Resolve the Stronghold duel':(ws==='loot'||ws==='auto')?'Choose the secured Item':'Finish the Stronghold Attack';var wx=ws==='travel'?'The attack has been declared. Continue on the physical board until you reach the defender or they return.':ws==='infiltrate'?'Turns at the Stronghold: '+state.siegeTurns+'/15. Open the attack workflow to record the next event.':ws==='duel'?'The defender has returned. Resolve the physical d6 duel.':(ws==='loot'||ws==='auto')?'The attack has reached the Item-theft stage.':'Clear the completed attack tracker when ready.';add('Stronghold Attack',wd,wx,'tools','warTool',actions.length===0?'recommended':'');}
@@ -3258,7 +3341,8 @@ function renderGame(){
   if(state.statuses.confrontationCooldown>0)statusPills.push(conditionPill('confrontationCooldown','Confrontation '+state.statuses.confrontationCooldown+' turn'+(state.statuses.confrontationCooldown===1?'':'s'),'warn'));
   if(state.statuses.inPrison)statusPills.push(conditionPill('inPrison','In prison','bad'));
   var setupPrompt=state.setupComplete?'':'<section class="card setup-card"><h2>Set up your character</h2><p class="small muted">Enter your name and distribute your 15 starting attribute points.</p><button class="primary wide-action" data-action="select-starting-attributes">Set up character</button></section>';
-  var goal='<section class="card approach-card"><div class="row"><div><div class="muted small">Guided play</div><h2>What matters now?</h2></div><button class="ghost small" data-action="open-walkthrough">How to play</button></div><p class="goal-line">These suggestions reflect your current game state; they are not a required turn order.</p><div class="next-actions">'+whatMattersHtml(t,prog)+'</div><button class="space-launch" data-action="space-chooser"><span><strong>I landed on a space…</strong><span>Choose the physical board space and go straight to the relevant assistant.</span></span><b>→</b></button></section>';
+  var goal='<section class="card approach-card"><div class="row"><div><div class="muted small">Guided play</div><h2>What matters now?</h2></div><button class="ghost small" data-action="open-walkthrough">How to play</button></div><p class="goal-line">These suggestions reflect your current game state; they are not a required turn order.</p><div class="next-actions">'+whatMattersHtml(t,prog)+'</div></section>';
+  var spaceLauncher='<button class="space-launch space-launch-primary" data-action="space-chooser" type="button"><span><strong>I landed on a space…</strong><span>Choose your space to resolve what happens.</span></span><b aria-hidden="true">→</b></button>';
   var statusNames=[];
   if(state.statuses.greyscale)statusNames.push('Greyscale');
   if(state.statuses.poison)statusNames.push('Poisoned');
@@ -3267,27 +3351,27 @@ function renderGame(){
   if(state.statuses.confrontationCooldown>0)statusNames.push('Confrontation cooldown · '+state.statuses.confrontationCooldown+' turn'+(state.statuses.confrontationCooldown===1?'':'s'));
   if(state.statuses.inPrison)statusNames.push('In prison');
   var statusSummary='<section class="card flat"><div class="compact-toolbar"><div>'+(statusNames.length?statusNames.map(function(x){return '<span class="pill warn" style="margin:2px 4px 2px 0">'+esc(x)+'</span>';}).join(''):'<span class="muted small">No active status effects</span>')+'</div><div class="row wrap">'+(state.statuses.foeMissTurn?'<button class="primary small" data-action="foe-missed-turn-clear">I have missed my turn · clear</button>':'')+'<button class="ghost small" data-action="manual-status">Manual change</button></div></div></section>';
-  var characterContent=sectionTitle('Attributes','attributes','')+'<section class="grid grid-5">'+ATTRS.map(function(a){return '<div class="stat"><label>'+ATTR_LABEL[a]+'</label><strong>'+t[a]+'</strong></div>';}).join('')+'</section><div class="row inline-edit"><button class="ghost small" data-action="edit-attributes">'+(state.setupComplete?'Attribute adjustments':'Select starting attributes')+'</button></div>'+sectionTitle('Current status','conditions','')+statusSummary+sectionTitle('Active benefits','benefits','')+'<section class="card flat">'+activeBenefitsHtml()+'</section>';
+  var characterContent=sectionTitle('Attributes','attributes','')+'<section class="grid grid-5">'+ATTRS.map(function(a){return '<div class="stat"><label>'+ATTR_LABEL[a]+'</label><strong>'+t[a]+'</strong></div>';}).join('')+'</section><div class="row inline-edit"><button class="ghost small" data-action="edit-attributes">'+(state.setupComplete?'Attribute adjustments':'Select starting attributes')+'</button></div>';
   var weaponSummary=state.inventory.assassinationWeapons>0?'Yes':'No';
   var weirSummary=state.weirwoodHeld.length?'Yes':'No';
   var inventoryContent=sectionTitle('Resources','resources','')+'<section class="resources-list">'+RESOURCES.map(resourceControl).join('')+'</section>'+(crewDebtAmount()>0?'<div class="notice warn"><strong>Salvage crew debt: '+fmt(crewDebtAmount())+' resources.</strong><br><span class="tiny">Any resources you gain are automatically paid to the crew until this debt is cleared.</span></div>':'')+sectionTitle('Inventory','','')+'<section class="card flat inventory-summary"><div class="summary-line"><div><strong>Assassination weapon</strong><br><span>'+weaponSummary+'</span></div><button class="ghost small" data-action="manual-weapons">Manual change</button></div><div class="summary-line"><div><strong>Weirwood cards</strong><br><span>'+weirSummary+'</span></div><button class="ghost small" data-action="manual-weirwood">Manual change</button></div></section>';
-  var saveContent='<section class="card flat"><div class="save-actions"><button data-action="export-save">Export save</button><button data-action="import-save">Import save</button><button class="danger" data-action="reset-save">Reset game</button></div><input type="file" id="importFile" accept="application/json" class="hidden"><p class="tiny muted">Progress is saved automatically on this device.</p></section>';
-  view.innerHTML='<section class="card hero"><div class="hero-row"><div><div class="muted small">Current player</div><h2 style="margin:2px 0 0">'+esc(state.playerName||'Player')+'</h2></div><button class="ghost small" data-action="edit-player">Edit</button></div><div class="row" style="margin-top:14px"><span class="small muted">Prerequisite Items</span><strong>'+prog+'/7</strong></div><div class="progress"><span style="width:'+(prog/7*100)+'%"></span></div><div class="status-row" style="margin-top:12px">'+(statusPills.join('')||'<span class="muted small">No active conditions</span>')+'</div></section>'+setupPrompt+goal+'<div class="dashboard-heading"><h2>Your game state</h2><p>Open a section only when you need to check or change something.</p></div>'+homePanel('Character',ATTRS.map(function(a){return ATTR_LABEL[a].slice(0,3)+' '+t[a];}).join(' · ')+(statusPills.length?' · '+statusPills.length+' active status':'') ,characterContent,!state.setupComplete||statusPills.length>0,'characterPanel','')+homePanel('Resources & inventory',RESOURCES.map(function(r){return RES_LABEL[r]+' '+fmt(state.resources[r]);}).join(' · '),inventoryContent,false,'inventoryPanel','')+homePanel('Save & backup','Automatic local save',saveContent,false,'savePanel','');
+  characterContent+=inventoryContent+sectionTitle('Current status','conditions','')+statusSummary+sectionTitle('Active benefits','benefits','')+'<section class="card flat">'+activeBenefitsHtml()+'</section>';
+  view.innerHTML='<section class="card hero"><div class="hero-row"><div><div class="muted small">Current player</div><h2 style="margin:2px 0 0">'+esc(state.playerName||'Player')+'</h2></div><button class="ghost small" data-action="edit-player">Edit</button></div><div class="row" style="margin-top:14px"><span class="small muted">Prerequisite Items</span><strong>'+prog+'/7</strong></div><div class="progress"><span style="width:'+(prog/7*100)+'%"></span></div><div class="status-row" style="margin-top:12px">'+(statusPills.join('')||'<span class="muted small">No active conditions</span>')+'</div></section>'+setupPrompt+spaceLauncher+goal+homePanel('Character & resources',ATTRS.map(function(a){return ATTR_LABEL[a].slice(0,3)+' '+t[a];}).join(' · ')+(statusPills.length?' · '+statusPills.length+' active status':'') ,characterContent,true,'characterPanel','');
 }
 
   function itemStatus(k){
     var i=state.items[k];
     if(k==='egg')return i.hatched?'Hatched':i.obtained?'Carried':'Not obtained';
     if(k==='city'||k==='ironship')return i.completed?'Completed':'Not completed';
-    if(k==='sword')return i.completed?'Secured':i.dragonGlass?'Dragon glass obtained':'Not started';
+    if(k==='sword')return i.completed?'Secured':i.dragonGlass?(i.checkpointed?'Dragon glass · checkpointed':'Dragon glass · carried'):'Not started';
     if(i.completed)return 'Secured';
     if(i.obtained)return i.checkpointed?'Carried · checkpointed':'Carried · unsecured';
     return 'Not obtained';
   }
   function itemCard(it){
-    var k=it.id,s=state.items[k],complete=(k==='egg'?s.hatched:s.completed),status=itemStatus(k),panelKey='item-panel-'+k;
-    var isOpen=panelIsOpen(panelKey,location.hash==='#item-'+k);
-    return '<details class="card item-card item-disclosure '+(complete?'completed':'')+'" id="item-'+esc(k)+'" data-ui-key="'+esc(panelKey)+'" '+(isOpen?'open':'')+'><summary><span><strong>'+esc(it.name)+'</strong><small>'+esc(status)+'</small></span><span class="pill '+(complete?'good':'')+'">'+esc(status)+'</span></summary><div class="item-disclosure-body"><div class="item-head"><div><p>'+esc(it.ability)+'</p></div><button class="ghost small" type="button" data-action="open-paged-guide" data-guide-key="item-'+esc(k)+'">How it works</button></div>'+itemInlineControls(k,s)+'</div></details>';
+    var k=it.id,i=state.items[k],complete=k==='egg'?i.hatched:i.completed,status=itemStatus(k),id='item-'+k;
+    activityRegistry[id]={title:it.name,body:'<div class="item-head"><div><span class="pill '+(complete?'good':'')+'">'+esc(status)+'</span><p>'+esc(it.ability)+'</p></div><button class="ghost small" type="button" data-action="open-paged-guide" data-guide-key="item-'+esc(k)+'">How it works</button></div>'+itemInlineControls(k,i)};
+    return '<button class="activity-launcher '+(complete?'completed':'')+'" id="'+id+'" type="button" data-action="open-activity" data-activity="'+id+'"><span><strong>'+esc(it.name)+'</strong><small>'+esc(status)+'</small></span><b aria-hidden="true">→</b></button>';
   }
 
 function renderItems(){
@@ -3296,6 +3380,13 @@ function renderItems(){
   view.innerHTML='<section class="card hero"><div class="row"><div><div class="muted small">Dragon Lair requirement</div><h2 style="margin:2px 0">'+prog+'/7 complete</h2></div><button class="ghost small" type="button" data-action="show-context-guide" data-tutorial-key="items">How Items work</button></div><div class="progress"><span style="width:'+(prog/7*100)+'%"></span></div><p class="small muted" style="margin:10px 0 0">The seven prerequisite Item quests can be pursued in any order. Tap an Item to open its current quest status and actions.</p></section><p class="notice">Checkpointing before completion is optional. Once completed, an Item automatically becomes secured; no return journey is required.</p>'+cards(['secrets','city','direwolf','gemstone','knights','ironship','sword'])+'<div class="item-group"><h2>Final objective</h2>'+cards(['egg'])+'</div>';
 }
 
+function checkpointControls(k){
+  var i=state.items[k],held=k==='sword'?i.dragonGlass:i.obtained,name=k==='sword'?'Dragon glass':'Gemstone',home=state.items.city.completed?'Fortress':'Stronghold';
+  if(!held||i.completed)return '';
+  if(i.checkpointed)return '<div class="checkpoint-box"><strong>'+name+' checkpointed ✓</strong><p class="tiny muted">Continue carrying it. If dropped before completion, it returns to your '+home+'.</p></div>';
+  var remote=hasRemoteCheckpointAbility(),base=state.settlementFormed||state.items.city.completed;
+  return '<div class="checkpoint-box"><strong>Carrying '+name.toLowerCase()+' · no checkpoint</strong><p class="tiny muted">'+(remote?'Smuggler/Squire lets you checkpoint it remotely.':'You may checkpoint it when you visit your Stronghold, then continue carrying it.')+'</p><button class="ghost wide-action" data-action="item-checkpoint" data-item="'+k+'" '+(!base?'disabled':'')+'>'+(remote?'Checkpoint remotely':'I am at my Stronghold · checkpoint')+'</button>'+(!base?'<button class="ghost small wide-action" data-jump-view="tools" data-jump-anchor="strongholdNetworkTool">Establish your Stronghold first</button>':'')+'</div>';
+}
 function itemInlineControls(k,s){
   var remote=hasRemoteCheckpointAbility();
   if(k==='city'){
@@ -3310,7 +3401,7 @@ function itemInlineControls(k,s){
   if(k==='sword'){
     var forgedFree=hasAbility('Forger');
     if(s.completed)return '<div class="item-actions"><button class="status-toggle active" disabled>Sword forged & secured ✓</button><button class="ghost small" data-action="sword-reset">Reset</button></div>';
-    return '<div class="quest-steps"><button class="'+(s.dragonGlass?'status-toggle active':'primary')+'" data-action="sword-glass">'+(s.dragonGlass?'Dragon glass obtained ✓':'Obtain dragon glass')+'</button><button class="primary" data-action="sword-forge" '+(!s.dragonGlass?'disabled':'')+'>'+(forgedFree?'Forge now (Forger)':'Forge at Gendry’s Foundry')+'</button></div><p class="tiny muted">Visit every Ancient Ruins tile to obtain dragon glass.'+(forgedFree?' Forger removes the need to visit Gendry’s Foundry.':' Then take it to Gendry’s Foundry.')+'</p>';
+    return '<div class="quest-steps"><button class="'+(s.dragonGlass?'status-toggle active':'primary')+'" data-action="sword-glass">'+(s.dragonGlass?'Dragon glass obtained ✓':'Obtain dragon glass')+'</button><button class="primary" data-action="sword-forge" '+(!s.dragonGlass?'disabled':'')+'>'+(forgedFree?'Forge now (Forger)':'Forge at Gendry’s Foundry')+'</button></div><p class="tiny muted">Visit every Ancient Ruins tile to obtain dragon glass.'+(forgedFree?' Forger removes the need to visit Gendry’s Foundry.':' Then take it to Gendry’s Foundry.')+'</p>'+checkpointControls('sword');
   }
   if(k==='secrets'){
     var requiredWords=Math.max(5,30-totals().intelligence);
@@ -3325,7 +3416,7 @@ function itemInlineControls(k,s){
     return '<div class="item-actions"><button class="primary" data-jump-view="tools" data-jump-anchor="wolfTool">'+(s.completed?'Open Direwolf assistant':s.obtained?'Continue taming':'Open quest assistant')+'</button>'+(s.obtained&&!s.completed?'<button class="'+(s.checkpointed?'status-toggle active':'')+'" data-action="wolf-checkpoint">'+(s.checkpointed?'Checkpointed ✓':(remote?'Instant checkpoint (Smuggler/Squire)':'Checkpoint at Stronghold'))+'</button>':'')+(s.obtained?'<button class="ghost small" data-action="wolf-reset">Reset</button>':'')+'</div>'+(s.obtained&&!s.completed?'<p class="tiny muted">Bond Points: '+bonds.length+'/2.</p>':'');
   }
   if(k==='gemstone'){
-    return '<div class="item-actions"><button class="primary" data-jump-view="tools" data-jump-anchor="crewTool">'+(s.completed?'Open Gemstone assistant':s.obtained?'Continue Gemstone quest':'Open quest assistant')+'</button>'+(s.obtained&&!s.completed?'<button class="'+(s.checkpointed?'status-toggle active':'')+'" data-action="gem-checkpoint">'+(s.checkpointed?'Checkpointed ✓':(remote?'Instant checkpoint (Smuggler/Squire)':'Checkpoint at Stronghold (optional)'))+'</button>':'')+(s.obtained?'<button class="ghost small" data-action="gem-reset">Reset</button>':'')+'</div>'+(s.completed?'<div class="locked-choice"><span>Gemstone type</span><strong>'+esc(s.type||'Unknown')+'</strong></div>':'');
+    return '<div class="item-actions"><button class="primary" data-jump-view="tools" data-jump-anchor="crewTool">'+(s.completed?'Open Gemstone assistant':s.obtained?'Continue Gemstone quest':'Open quest assistant')+'</button>'+(s.obtained?'<button class="ghost small" data-action="gem-reset">Reset</button>':'')+'</div>'+(s.completed?'<div class="locked-choice"><span>Gemstone type</span><strong>'+esc(s.type||'Unknown')+'</strong></div>':'')+checkpointControls('gemstone');
   }
   if(k==='egg')return '<div class="item-actions"><button class="primary" data-jump-view="tools" data-jump-anchor="dragonTool">'+(s.hatched?'Open Dragon Egg assistant':s.obtained?'Continue to Dragon Pit':'Open final quest assistant')+'</button>'+(s.obtained?'<button class="ghost small" data-action="egg-reset">Reset</button>':'')+'</div>';
   return '';
@@ -3354,7 +3445,10 @@ function faceCard(f){
 }
 
   function toolHead(titleText,helpKey,desc,tutorialKey){var help='';if(tutorialKey&&PAGED_GUIDES[tutorialKey])help='<button class="ghost activity-guide" type="button" data-action="open-paged-guide" data-guide-key="'+esc(tutorialKey)+'">How it works</button>';else if(tutorialKey&&CONTEXT_TUTORIALS[tutorialKey])help='<button class="ghost activity-guide" type="button" data-action="show-context-guide" data-tutorial-key="'+esc(tutorialKey)+'">How it works</button>';else if(helpKey&&HELP[helpKey])help='<button class="ghost activity-guide" type="button" data-help="'+esc(helpKey)+'">How it works</button>';return '<div class="tool-head"><div><p>'+esc(desc)+'</p></div><div class="tool-head-actions">'+help+'</div></div>';}
-  function toolPanel(titleText,helpKey,desc,tutorialKey,body,id,note){var key='assistant-'+id,isOpen=panelIsOpen(key,location.hash==='#'+id);return '<details class="tool-panel" id="'+esc(id)+'" data-ui-key="'+esc(key)+'" '+(isOpen?'open':'')+'><summary><span><strong>'+esc(titleText)+'</strong><small>'+esc(note||desc)+'</small></span></summary><div class="tool-panel-body">'+toolHead(titleText,helpKey,desc,tutorialKey)+body+'</div></details>';}
+  function toolPanel(titleText,helpKey,desc,tutorialKey,body,id,note){
+    activityRegistry[id]={title:titleText,body:toolHead(titleText,helpKey,desc,tutorialKey)+(id==='crewTool'?checkpointControls('gemstone'):'')+body};
+    return '<button class="activity-launcher" type="button" id="'+esc(id)+'" data-action="open-activity" data-activity="'+esc(id)+'"><span><strong>'+esc(titleText)+'</strong><small>'+esc(note||desc)+'</small></span><b aria-hidden="true">→</b></button>';
+  }
 
 function raidPayout(n){return [0,500,1500,3000,5000,7500][Math.max(0,Math.min(5,num(n)))]||0;}
 function cityRaidWorkflowHtml(){
@@ -3380,7 +3474,7 @@ function settlementWorkflowHtml(){
     if(mode==='neutral')resultBody+='<p class="small muted">Place one of your clear coloured cubes over the Settlement to show that it has joined your network. Then draw one red reward card and record what it says.</p>';
     else resultBody+='<p class="small muted">Replace the other player’s coloured cube with one of your own. Then choose either 2,000 of each resource, or a red reward card if you are still looking for an escaped prisoner.</p><div class="choice-grid two-choice"><button class="choice-btn '+(state.tools.villageReward==='resources2000'?'active':'')+'" data-action="settlement-reward-choice" data-value="resources2000"><strong>2,000 of each resource</strong><small>The other player records the corresponding loss.</small></button><button class="choice-btn '+(state.tools.villageReward&&state.tools.villageReward.indexOf('card')===0||state.tools.villageReward==='prisoner'?'active':'')+'" data-action="settlement-reward-choice" data-value="card"><strong>Red reward card</strong><small>Record the physical card below.</small></button></div>';
     var showCards=mode==='neutral'||state.tools.villageReward==='card'||state.tools.villageReward==='card500'||state.tools.villageReward==='card1000'||state.tools.villageReward==='prisoner';
-    if(showCards)resultBody+='<div class="tiny muted" style="margin:10px 0 5px">Red reward card</div><div class="choice-grid reward-choice"><button class="choice-btn '+(state.tools.villageReward==='card1000'?'active':'')+'" data-action="settlement-reward-choice" data-value="card1000"><strong>Resources +1,000</strong><small>+1,000 to each resource</small></button><button class="choice-btn '+(state.tools.villageReward==='card500'?'active':'')+'" data-action="settlement-reward-choice" data-value="card500"><strong>Resources +500</strong><small>+500 to each resource</small></button><button class="choice-btn '+(state.tools.villageReward==='prisoner'?'active':'')+'" data-action="settlement-reward-choice" data-value="prisoner"><strong>Escaped prisoner</strong><small>Begins the Knights of the Vale chase</small></button></div>';
+    if(showCards)resultBody+='<div class="tiny muted" style="margin:10px 0 5px">Red reward card</div><div class="choice-grid reward-choice"><button class="choice-btn '+(state.tools.villageReward==='card1000'?'active':'')+'" data-action="settlement-reward-choice" data-value="card1000"><strong>Resources +1,000</strong><small>+1,000 Wood, Stone and Food</small></button><button class="choice-btn '+(state.tools.villageReward==='card500'?'active':'')+'" data-action="settlement-reward-choice" data-value="card500"><strong>Resources +500</strong><small>+500 Wood, Stone and Food</small></button><button class="choice-btn '+(state.tools.villageReward==='prisoner'?'active':'')+'" data-action="settlement-reward-choice" data-value="prisoner"><strong>Escaped prisoner</strong><small>Begins the Knights of the Vale chase</small></button></div>';
     var rewardReady=mode==='enemy'?['resources2000','card1000','card500','prisoner'].indexOf(state.tools.villageReward)>=0:['card1000','card500','prisoner'].indexOf(state.tools.villageReward)>=0;
     resultBody+='<button class="primary wide-action" style="margin-top:10px" data-action="village-resolve" data-result="success" '+(!rewardReady?'disabled':'')+'>Confirm influence & reward</button>';
   }
@@ -3462,6 +3556,18 @@ function confrontationWorkflowHtml(){
   }
   return workflowDots(3,3,'Confrontation progress')+bountyStageShell('Complete','Confrontation recorded','Your cooldown has been applied.','<button class="primary wide-action" data-action="confront-reset">Start another when eligible</button>');
 }
+function awardDirewolfBond(feat){
+  var wolf=state.items.direwolf;if(!wolf.obtained||wolf.completed||wolf.bonds.indexOf(feat)>=0||wolf.bonds.length>=2)return false;
+  wolf.bonds.push(feat);wolf.completed=wolf.bonds.length>=2;if(wolf.completed)wolf.checkpointed=true;
+  state.direwolfNotice={feat:feat,count:wolf.bonds.length,tamed:wolf.completed};
+  pendingBondToast=wolf.completed?'Direwolf tamed · 2/2 Bond Points!':'Direwolf Bond gained · '+wolf.bonds.length+'/2 ('+feat+').';
+  addHistory('Direwolf Bond gained: '+feat+' · '+wolf.bonds.length+'/2'+(wolf.completed?' · Direwolf tamed.':'.'));
+  return true;
+}
+function bondNoticeHtml(){
+  var n=state.direwolfNotice;if(!n)return '';
+  return '<section class="bond-feedback" role="status"><div><strong>'+(n.tamed?'Direwolf tamed · 2/2 Bond Points':'Direwolf Bond gained · '+n.count+'/2')+'</strong><p>'+esc(n.feat)+(n.tamed?' completed your bond. Your Direwolf now automatically defeats outer-board Foes.':' brought you closer. Complete a different feat to fully tame your Direwolf.')+'</p></div><button class="ghost small" data-action="wolf-notice-dismiss">Got it</button></section>';
+}
 function direwolfWorkflowHtml(){
   var i=state.items.direwolf,bonds=i.bonds||[],c=totals().cunning,base=c>=20?8:16;
   var maxFood=Math.floor(Math.max(0,num(state.resources.food))/1000)*1000;
@@ -3475,7 +3581,7 @@ function direwolfWorkflowHtml(){
   return workflowIntro('direwolf')+workflowDots(1,2,'Direwolf quest progress')+bountyStageShell('Stage 2 of 2','Gain two different Bond Points','Complete any two different feats while the untamed Direwolf travels with you. Bounty takedowns, Settlement influence, Foes and confrontations are recorded automatically by their assistants.','<div class="big-target"><span>Bond Points</span><strong>'+bonds.length+' / 2</strong></div><div class="bond-grid">'+['Foe','Bounty takedown','Settlement influence','Confrontation'].map(function(b){return '<button class="bond-btn '+(bonds.indexOf(b)>=0?'active':'')+'" data-action="wolf-bond" data-bond="'+b+'">'+(bonds.indexOf(b)>=0?'✓ ':'')+b+'</button>';}).join('')+'</div><p class="tiny muted">The two Bond Points must come from different feats. Manual buttons remain available for corrections or events resolved without the assistant.</p>');
 }
 function gemstoneWorkflowHtml(){
-  var g=state.items.gemstone,st=state.tools.crewStage||'choose',exp=state.tools.crewType==='experienced',rate=exp?300:100,target=exp?13:18,units=num(state.tools.crewTurns)+num(state.tools.crewRolls),bill=units*rate,types=['Magic','Intelligence','Combat','Stealth','Cunning','Protean'],debt=crewDebtAmount();
+  var g=state.items.gemstone,st=state.tools.crewBillDue!==null?'bill':state.tools.crewStage||'choose',exp=state.tools.crewType==='experienced',rate=exp?300:100,target=exp?13:18,units=num(state.tools.crewTurns)+num(state.tools.crewRolls),bill=units*rate,types=['Magic','Intelligence','Combat','Stealth','Cunning','Protean'],debt=crewDebtAmount();
   if(g.completed&&st==='complete')return bountyStageShell('Quest complete',(g.type||'Gemstone')+' Gemstone activated','The Gemstone is secured and its attribute bonus is included in your totals.',(debt>0?'<div class="notice warn"><strong>Salvage crew debt: '+fmt(debt)+' resources.</strong><br><span class="tiny">Future resources gained are paid to the crew automatically until this reaches zero.</span></div>':'')+'<div class="stage-result good result"><strong>'+esc(g.type||'Gemstone')+' secured</strong></div><button class="ghost wide-action" data-action="crew-reset">Reset Gemstone assistant</button>');
   if(st==='choose'&&!g.obtained)return workflowDots(0,7,'Gemstone quest progress')+bountyStageShell('Stage 1 of 7','Hire a salvage crew','Hire the crew at any outer-board port. Their fee is based on every travel turn and search roll while they are with you.','<div class="tiny muted" style="margin-bottom:5px">Crew</div>'+choiceButtons(['experienced','inexperienced'],state.tools.crewType,'crew-type',function(v){return v==='experienced'?'Experienced · 300 per unit · 13+':'Inexperienced · 100 per unit · 18+';},'two-choice')+'<button class="primary wide-action" data-action="crew-hire">Hire crew</button>');
   if(st==='travel')return workflowDots(1,7,'Gemstone quest progress')+bountyStageShell('Stage 2 of 7','Travel to Dragon Island','Count every turn the crew remains aboard, including land movement and shipwrecked turns.','<div class="counter-line"><span>Travel turns with crew</span><div class="stepper"><button data-action="crew-turn-dec">−</button><strong>'+state.tools.crewTurns+'</strong><button data-action="crew-turn-inc">+</button></div></div><div class="result"><span class="muted small">Current bill</span><br><strong>'+fmt(bill)+' resources</strong></div><button class="primary wide-action" data-action="crew-at-whirlpool">We are positioned over a Dragon Island whirlpool</button>');
@@ -3486,25 +3592,34 @@ function gemstoneWorkflowHtml(){
   if(st==='found')return workflowDots(3,7,'Gemstone quest progress')+bountyStageShell('Stage 4 of 7','Record the Gemstone','Select the physical Gemstone you recovered. If you reject it, return it to the whirlpool and continue searching on your next turn.','<div class="tiny muted" style="margin-bottom:5px">Gemstone type'+(hasAbility('Maegi')?' · Maegi lets you choose from those remaining':'')+'</div>'+choiceButtons(types,g.type,'gem-type-workflow',null,'gemstone-types')+'<div class="stage-actions"><button class="ghost" data-action="crew-reject-gem">Return it & search next turn</button><button class="primary" data-action="crew-keep-gem" '+(!g.type?'disabled':'')+'>Keep this Gemstone</button></div>');
   if(st==='return')return workflowDots(4,7,'Gemstone quest progress')+bountyStageShell('Stage 5 of 7','Return the crew to a port','Continue counting travel turns until the salvage crew is back at any outer-board port.','<div class="counter-line"><span>Travel turns with crew</span><div class="stepper"><button data-action="crew-turn-dec">−</button><strong>'+state.tools.crewTurns+'</strong><button data-action="crew-turn-inc">+</button></div></div><div class="result"><span class="muted small">Crew bill</span><br><strong>'+fmt(bill)+' resources</strong></div><button class="primary wide-action" data-action="crew-returned">Crew has returned to port</button>');
   if(st==='bill'){
-    var pay=state.tools.crewPayment||{},selected=crewPaymentTotal(),balances={gold:Math.max(0,num(state.resources.gold)),wood:Math.max(0,num(state.resources.wood)),stone:Math.max(0,num(state.resources.stone)),food:Math.max(0,num(state.resources.food))},available=RESOURCES.reduce(function(n,r){return n+balances[r];},0);
-    var rows=RESOURCES.map(function(r){var sel=Math.max(0,num(pay[r])),av=balances[r],room=Math.max(0,debt-selected),can100=sel+100<=av&&room>=100,can1000=sel+1000<=av&&room>=1000;return '<div class="resource"><div class="name"><span><strong>'+RES_LABEL[r]+'</strong></span><span class="pill">Held '+fmt(av)+'</span></div><div class="resource-one-line"><button data-action="crew-pay-dec" data-resource="'+r+'" data-step="1000" '+(sel<1000?'disabled':'')+'>−1k</button><button data-action="crew-pay-dec" data-resource="'+r+'" data-step="100" '+(sel<100?'disabled':'')+'>−100</button><strong style="min-width:66px;text-align:center">Pay '+fmt(sel)+'</strong><button data-action="crew-pay-inc" data-resource="'+r+'" data-step="100" '+(!can100?'disabled':'')+'>+100</button><button data-action="crew-pay-inc" data-resource="'+r+'" data-step="1000" '+(!can1000?'disabled':'')+'>+1k</button></div><button class="ghost small wide-action" style="margin-top:6px" data-action="crew-pay-max" data-resource="'+r+'" '+(sel>=av||selected>=debt?'disabled':'')+'>Use maximum held '+RES_LABEL[r]+'</button></div>';}).join('');
-    var enough=available>=debt,ready=enough?selected===debt:selected===available;
-    return workflowDots(5,7,'Gemstone quest progress')+bountyStageShell('Stage 6 of 7','Settle the salvage crew bill','Pay the bill using any combination of your resources. If you cannot afford the full amount, you must pay everything you currently have; the remainder becomes a debt that future resource gains repay automatically.','<div class="workflow-summary"><div><span>Bill due</span><strong>'+fmt(debt)+'</strong></div><div><span>Selected</span><strong>'+fmt(selected)+'</strong></div><div><span>Resources held</span><strong>'+fmt(available)+'</strong></div></div><div class="resources-list">'+rows+'</div>'+(enough?'':'<div class="notice warn"><strong>You cannot cover the full bill.</strong> Pay all '+fmt(available)+' resources you currently hold. The remaining '+fmt(Math.max(0,debt-available))+' becomes salvage crew debt.</div>')+'<button class="primary wide-action" data-action="crew-pay-confirm" '+(!ready?'disabled':'')+'>'+(enough?'Pay crew · '+fmt(debt)+' resources':'Pay everything held · record '+fmt(Math.max(0,debt-available))+' debt')+'</button>');
+    var due=crewBillAmount(),selected=crewPaymentTotal(),available=totalResources(),required=Math.min(due,available),shortfall=Math.max(0,due-available),ready=selected===required;
+    var rows=RESOURCES.map(function(r){var sel=crewPaymentFor(r),held=Math.max(0,num(state.resources[r])),room=Math.max(0,due-selected);return '<section class="crew-payment-resource"><div class="crew-balance"><strong>'+RES_LABEL[r]+'</strong><span>Available <b>'+fmt(held)+'</b></span></div><label class="crew-pay-label" for="crewPay-'+r+'">Pay with '+RES_LABEL[r]+'</label><div class="crew-payment-controls"><button data-action="crew-pay-dec" data-resource="'+r+'" data-step="1000" '+(sel<=0?'disabled':'')+' aria-label="Reduce '+RES_LABEL[r]+' payment by 1000">−1k</button><button data-action="crew-pay-dec" data-resource="'+r+'" data-step="100" '+(sel<=0?'disabled':'')+' aria-label="Reduce '+RES_LABEL[r]+' payment by 100">−100</button><input id="crewPay-'+r+'" type="text" inputmode="decimal" data-crew-payment="'+r+'" value="'+sel+'"><button data-action="crew-pay-inc" data-resource="'+r+'" data-step="100" '+(sel>=held||room<=0?'disabled':'')+' aria-label="Increase '+RES_LABEL[r]+' payment by up to 100">+100</button><button data-action="crew-pay-inc" data-resource="'+r+'" data-step="1000" '+(sel>=held||room<=0?'disabled':'')+' aria-label="Increase '+RES_LABEL[r]+' payment by up to 1000">+1k</button></div><button class="ghost small wide-action" data-action="crew-pay-max" data-resource="'+r+'" '+(sel>=held||room<=0?'disabled':'')+'>Use as much '+RES_LABEL[r]+' as needed</button></section>';}).join('');
+    return workflowDots(5,7,'Gemstone quest progress')+bountyStageShell('Stage 6 of 7','Pay the salvage crew','Choose which resources to pay. Nothing is spent until you confirm. Only an amount you cannot afford becomes debt after payment.','<div class="workflow-summary"><div><span>Bill due</span><strong>'+fmt(due)+'</strong></div><div><span>Selected to pay</span><strong>'+fmt(selected)+'</strong></div><div><span>Still to select</span><strong>'+fmt(Math.max(0,required-selected))+'</strong></div></div>'+rows+(shortfall>0?'<div class="notice warn">Pay all '+fmt(available)+' resources you hold. The remaining '+fmt(shortfall)+' becomes crew debt after you confirm.</div><button class="ghost wide-action" data-action="crew-pay-all">Select all resources held</button>':'')+'<button class="primary wide-action" style="margin-top:12px" data-action="crew-pay-confirm" '+(!ready?'disabled':'')+'>'+(shortfall>0?'Pay '+fmt(required)+' · carry forward '+fmt(shortfall)+' debt':'Pay crew · '+fmt(due)+' resources')+'</button>');
   }
   if(st==='activate')return workflowDots(6,7,'Gemstone quest progress')+bountyStageShell('Stage 7 of 7',hasAbility('R’hllor')?'Gemstone activated':'Activate the Gemstone',hasAbility('R’hllor')?'R’hllor activates the Gemstone immediately when obtained.':'Travel to the Priestess from Asshai to activate the Gemstone.',(debt>0?'<div class="notice warn"><strong>Salvage crew debt: '+fmt(debt)+' resources.</strong><br><span class="tiny">This does not stop the Gemstone quest. Any resources you gain are automatically paid towards the debt.</span></div>':'')+'<div class="workflow-summary"><div><span>Gemstone</span><strong>'+esc(g.type||'Unknown')+'</strong></div></div>'+(hasAbility('R’hllor')?'<button class="primary wide-action" data-action="crew-complete">Finish Gemstone quest</button>':'<button class="primary wide-action" data-action="gem-complete-workflow">Activate at Priestess & secure</button>'));
   return bountyStageShell('Gemstone assistant','Continue the quest','Use the controls below to continue.',(debt>0?'<div class="notice warn">Outstanding salvage crew debt: '+fmt(debt)+' resources.</div>':'')+'<button class="ghost wide-action" data-action="crew-reset">Reset assistant</button>');
 }
+function randomDie(sides){
+  if(window.crypto&&window.crypto.getRandomValues){var values=new Uint32Array(1),limit=Math.floor(4294967296/sides)*sides;do{window.crypto.getRandomValues(values);}while(values[0]>=limit);return values[0]%sides+1;}
+  return Math.floor(Math.random()*sides)+1;
+}
 function knightsWorkflowHtml(){
-  var st=state.tools.knightsStage||'search',dir=state.tools.knightsDirection,dist=state.tools.knightsDistance;
-  function directionButtons(){return '<div class="tiny muted" style="margin-bottom:4px">Direction d6</div><div class="roll-buttons" style="grid-template-columns:repeat(3,minmax(0,1fr))">'+Array.from({length:6},function(_,i){var v=i+1;return '<button class="'+(state.tools.knightsDirectionSet&&dir===v?'active':'')+'" data-action="knights-direction" data-value="'+v+'">'+v+'</button>';}).join('')+'</div><p class="tiny muted" style="margin:5px 0 10px">1 North · 2 North-East · 3 South-East · 4 South · 5 South-West · 6 North-West</p>';}
-  if(state.items.knights.completed||st==='complete')return workflowIntro('knights')+bountyStageShell('Quest complete','Knights of the Vale obtained','The Knights can carry out one Stronghold Attack without Hired Blades or Food.','<div class="stage-result good result"><strong>'+(state.items.knights.used?'Free Stronghold Attack used':'Free Stronghold Attack available')+'</strong></div>');
-  if(st==='search')return workflowIntro('knights')+workflowDots(0,4,'Knights quest progress')+bountyStageShell('Stage 1 of 4','Find an escaped prisoner','An escaped-prisoner red reward card obtained when establishing Settlement influence starts the chase.','<button class="primary wide-action" data-action="knights-prisoner-found">I drew an escaped prisoner card</button>');
-  if(st==='first')return workflowIntro('knights')+workflowDots(1,4,'Knights quest progress')+bountyStageShell('Stage 2 of 4','Move the prisoner for the first time','Place the turquoise cube on the Settlement where the prisoner was revealed. Roll d6 for direction and d20 for distance.','<div class="knights-move-grid">'+directionButtons()+d20PickerButton('knights-d20-picker','Distance d20',dist,state.tools.knightsDistanceSet)+(state.tools.knightsDirectionSet&&state.tools.knightsDistanceSet?'<div class="result"><strong>Move '+dist+' tiles in direction '+dir+'</strong></div>':'')+'</div><button class="primary wide-action" style="margin-top:10px" data-action="knights-first-moved" '+(!(state.tools.knightsDirectionSet&&state.tools.knightsDistanceSet)?'disabled':'')+'>Record first prisoner movement</button>');
-  if(st==='chase'){
-    var ready=state.tools.knightsDirectionSet&&state.tools.knightsDistanceSet;
-    return workflowIntro('knights')+workflowDots(2,4,'Knights quest progress')+bountyStageShell('Stage 3 of 4','Chase the prisoner','For every later prisoner movement, make a fresh d6 direction roll and fresh 2d6 distance roll, record both below, then move the turquoise cube.','<div class="workflow-summary"><div><span>Movements recorded</span><strong>'+state.tools.knightsTurn+'</strong></div></div><div class="knights-move-grid">'+directionButtons()+'<div class="tiny muted" style="margin-bottom:4px">Distance · total of 2d6</div><div class="die-choice-grid">'+Array.from({length:11},function(_,i){var v=i+2;return '<button class="'+(state.tools.knightsDistanceSet&&dist===v?'active':'')+'" data-action="knights-chase-distance" data-value="'+v+'">'+v+'</button>';}).join('')+'</div>'+(ready?'<div class="result"><strong>Move '+dist+' tiles in direction '+dir+'</strong></div>':'')+'</div><button class="primary wide-action" style="margin-top:10px" data-action="knights-chase-turn" '+(!ready?'disabled':'')+'>Record this prisoner movement</button><hr class="workflow-divider"><div class="stage-actions"><button class="primary" data-action="knights-caught">I became adjacent · prisoner caught</button><button data-action="knights-home-capture">They entered my network / Stronghold</button></div><button class="danger wide-action" style="margin-top:8px" data-action="knights-lost">They entered a neutral/enemy location · prisoner lost</button>');
+  var st=state.tools.knightsStage||'search',dir=num(state.tools.knightsDirection),dist=state.tools.knightsDistance,directions=['','North','North-East','South-East','South','South-West','North-West'];
+  if(state.items.knights.completed||st==='complete')return bountyStageShell('Quest complete','Knights of the Vale obtained','The Knights can carry out one Stronghold Attack without Hired Blades or Food.','<div class="stage-result good result"><strong>'+(state.items.knights.used?'Free Stronghold Attack used':'Free Stronghold Attack available')+'</strong></div>');
+  if(st==='search')return workflowDots(0,4)+bountyStageShell('Stage 1 of 4','Find an escaped prisoner','An escaped-prisoner red reward card starts the chase.','<button class="primary wide-action" data-action="knights-prisoner-found">I drew an escaped prisoner card</button>');
+  if(st==='first'||st==='chase'){
+    var first=st==='first',auto=state.tools.knightsMovementMode==='automatic',generated=state.tools.knightsGenerated,ready=state.tools.knightsDirectionSet&&state.tools.knightsDistanceSet;
+    var controls='<div class="segmented"><button data-action="knights-movement-mode" data-value="manual" class="'+(!auto?'active':'')+'" '+(generated?'disabled':'')+'>Physical dice</button><button data-action="knights-movement-mode" data-value="automatic" class="'+(auto?'active':'')+'" '+(generated?'disabled':'')+'>Automatic movement</button></div>';
+    if(auto){controls+='<button class="primary wide-action" data-action="knights-generate" '+(generated?'disabled':'')+'>Generate prisoner movement</button>'+(generated?'<p class="tiny muted">Direction d6: '+generated.direction+' · Distance '+(first?'d20: ':'2d6: ')+generated.dice.join(' + ')+'. This result stays fixed until recorded.</p>':'<p class="tiny muted">Uses a d6 direction and '+(first?'a d20 distance':'the sum of two d6 for distance')+'.</p>');}
+    else{
+      controls+='<p class="tiny muted">Direction d6</p><div class="roll-buttons">'+Array.from({length:6},function(_,i){var v=i+1;return '<button class="'+(state.tools.knightsDirectionSet&&dir===v?'active':'')+'" data-action="knights-direction" data-value="'+v+'" aria-pressed="'+(state.tools.knightsDirectionSet&&dir===v?'true':'false')+'">'+v+'<small>'+directions[v]+'</small></button>';}).join('')+'</div>';
+      controls+=first?d20PickerButton('knights-d20-picker','Distance d20',dist,state.tools.knightsDistanceSet):'<p class="tiny muted">Distance · total of 2d6</p><div class="die-choice-grid">'+Array.from({length:11},function(_,i){var v=i+2;return '<button class="'+(state.tools.knightsDistanceSet&&dist===v?'active':'')+'" data-action="knights-chase-distance" data-value="'+v+'">'+v+'</button>';}).join('')+'</div>';
+    }
+    controls+=(ready?'<div class="result prisoner-result"><strong>Move '+dist+' tiles '+directions[dir]+'</strong></div>':'')+'<button class="primary wide-action" style="margin-top:12px" data-action="'+(first?'knights-first-moved':'knights-chase-turn')+'" '+(!ready?'disabled':'')+'>'+(first?'Record first prisoner movement':'Record this prisoner movement')+'</button>';
+    if(!first)controls+='<hr class="workflow-divider"><p class="small muted">Capture the prisoner by becoming adjacent in the same terrain.</p><div class="stage-actions"><button class="primary" data-action="knights-caught">I became adjacent · prisoner caught</button><button data-action="knights-home-capture">They entered my network / Stronghold</button></div><button class="danger wide-action" style="margin-top:8px" data-action="knights-lost">They entered a neutral/enemy location · prisoner lost</button>';
+    return workflowDots(first?1:2,4)+bountyStageShell(first?'Stage 2 of 4':'Stage 3 of 4',first?'First prisoner movement':'Chase the prisoner',first?'Place the turquoise cube on the Settlement where the prisoner was revealed. Generate a movement or enter your physical dice results.':'Move the prisoner, then chase normally. Generate a fresh movement or enter fresh physical dice on each later turn.','<div class="workflow-summary"><div><span>Movements recorded</span><strong>'+state.tools.knightsTurn+'</strong></div></div><div class="knights-move-grid">'+controls+'</div>');
   }
-  return workflowIntro('knights')+workflowDots(3,4,'Knights quest progress')+bountyStageShell('Stage 4 of 4','Return the prisoner to House Arryn','Travel to the Sky Cell on the outer board with the captured prisoner.','<button class="primary wide-action" data-action="knights-skycell">I reached the Sky Cell</button>');
+  return workflowDots(3,4)+bountyStageShell('Stage 4 of 4','Return the prisoner to House Arryn','Travel to the Sky Cell with the captured prisoner.','<button class="primary wide-action" data-action="knights-skycell">I reached the Sky Cell</button>');
 }
 function dragonWorkflowHtml(){
   var prog=completedPrereqs(),st=state.tools.dragonStage||'lair',qual=ATTRS.filter(function(a){return totals()[a]>=30;}),initialTarget=hasAbility('Mother of Dragons')?16:20;
@@ -3638,22 +3753,31 @@ function updateToolResults(){
   function setInlineFeedback(id,msg,tone){var el=document.getElementById(id);if(!el)return;el.textContent=msg;el.className='action-feedback '+(tone||'neutral');}
   function jumpToAnchor(id){
     if(!id)return;
+    if(activityRegistry[id]){openActivity(id);return;}
     setTimeout(function(){var el=document.getElementById(id);if(!el)return;var node=el;while(node){var d=node.closest?node.closest('details'):null;if(!d)break;d.open=true;rememberPanelState(d);node=d.parentElement;}if(el.scrollIntoView)el.scrollIntoView({behavior:'smooth',block:'start'});},40);
   }
   function canPay(costs){for(var k in costs)if(Object.prototype.hasOwnProperty.call(costs,k)&&state.resources[k]<costs[k])return false;return true;}
   function pay(costs){for(var k in costs)if(Object.prototype.hasOwnProperty.call(costs,k))state.resources[k]-=costs[k];}
 
   document.addEventListener('click',function(e){
-    var globalAction=e.target.closest?e.target.closest('[data-global-action]'):null;if(globalAction){var ga=globalAction.getAttribute('data-global-action');if(ga==='history'){openHistory();return;}if(ga==='guide'){openGuideHub();return;}}
+    if(e.target.closest&&e.target.closest('[data-activity-close]')){closeActivity();return;}
+    var globalAction=e.target.closest?e.target.closest('[data-global-action]'):null;if(globalAction){var ga=globalAction.getAttribute('data-global-action');if(ga==='menu'){openAppMenu();return;}if(ga==='history'){openHistory();return;}if(ga==='guide'){openGuideHub();return;}}
     var nav=e.target.closest?e.target.closest('.nav-btn'):null;if(nav){setView(nav.getAttribute('data-view'));return;}
     var help=e.target.closest?e.target.closest('[data-help]'):null;if(help){openHelp(help.getAttribute('data-help'));return;}
     var close=e.target.closest?e.target.closest('[data-modal-close]'):null;if(close){closeModal();return;}
   });
 
-  view.addEventListener('click',function(e){
+  document.addEventListener('keydown',function(e){
+    var overlay=!modal.classList.contains('hidden')?modal:activeActivity?activityModal:null;if(!overlay)return;
+    if(e.key==='Escape'){e.preventDefault();if(overlay===modal)closeModal();else closeActivity();return;}
+    if(e.key==='Tab'&&overlay.querySelectorAll){var focusable=Array.prototype.filter.call(overlay.querySelectorAll('button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex="0"]'),function(el){return el.getClientRects().length>0;});if(!focusable.length)return;var first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&(document.activeElement===first||!overlay.contains(document.activeElement))){e.preventDefault();last.focus();}else if(!e.shiftKey&&(document.activeElement===last||!overlay.contains(document.activeElement))){e.preventDefault();first.focus();}}
+  });
+  function handleActivityClick(e){
     var btn=e.target.closest?e.target.closest('button'):null;if(!btn)return;var a=btn.getAttribute('data-action'),r,delta,i,b,f,cost,from,to,amount,rate,received,ruleNum;var jump=btn.getAttribute('data-jump-view');if(jump){var jumpAnchor=btn.getAttribute('data-jump-anchor')||'';setView(jump);jumpToAnchor(jumpAnchor);return;}if(a==='open-guide'){openGuideHub();return;}if(a==='open-walkthrough'){openWalkthrough(0,false);return;}
     if(btn.getAttribute('data-rule-section')){selectedRuleSection=btn.getAttribute('data-rule-section');rulesDisplay='section';updateRulesContent('');return;}
     if(btn.getAttribute('data-rules-mode')){rulesMode=btn.getAttribute('data-rules-mode');rulesDisplay='contents';selectedRuleSection='';renderRules();return;}
+    if(a==='open-activity'){openActivity(btn.getAttribute('data-activity'));return;}
+    if(a==='wolf-notice-dismiss'){state.direwolfNotice=null;commit(false);render();return;}
     if(a==='rules-full'){rulesDisplay='full';updateRulesContent('');return;}
     if(a==='rules-contents'){rulesDisplay='contents';selectedRuleSection='';updateRulesContent('');return;}
     if(a==='ability-characters'){openAbilityCharacters(btn.getAttribute('data-ability'));return;}
@@ -3663,7 +3787,7 @@ function updateToolResults(){
     if(a==='condition-help'){var ci=conditionInfo(btn.getAttribute('data-condition'));if(ci)openModal(ci.title,'<p class="help-copy">'+esc(ci.text)+'</p>');return;}
     if(a==='weapon-inc'){state.inventory.assassinationWeapons++;commit(true,'Assassination weapon added. Weapons held: '+state.inventory.assassinationWeapons+'.');return;}
     if(a==='weapon-dec'){if(state.inventory.assassinationWeapons>0){state.inventory.assassinationWeapons--;if(state.inventory.assassinationWeapons<=0)state.bounty.assassinationWeapon=false;commit(true,'Assassination weapon count adjusted to '+state.inventory.assassinationWeapons+'.');}return;}
-    r=btn.getAttribute('data-resource');if(r){delta=num(btn.getAttribute('data-delta'));if(delta>0){var gr=applyResourceGain(r,delta);commit();toast(resourceGainMessage(gr,RES_LABEL[r])+'.','neutral');}else{state.resources[r]=Math.max(0,state.resources[r]+delta);commit();toast(RES_LABEL[r]+' '+fmt(delta)+'.','neutral');}return;}
+    r=btn.getAttribute('data-resource');if(r&&btn.getAttribute('data-delta')!==null){delta=num(btn.getAttribute('data-delta'));if(delta>0){var gr=applyResourceGain(r,delta);commit();toast(resourceGainMessage(gr,RES_LABEL[r])+'.','neutral');}else{state.resources[r]=Math.max(0,state.resources[r]+delta);commit();toast(RES_LABEL[r]+' '+fmt(delta)+'.','neutral');}return;}
     if(a==='toggle-settlement'){state.settlementFormed=!state.settlementFormed;commit();return;}
     if(a==='village-inc'){state.villages++;commit();return;}if(a==='village-dec'){state.villages=Math.max(0,state.villages-1);commit();return;}
     if(btn.getAttribute('data-status')){var st=btn.getAttribute('data-status');if(st==='greyscale'&&hasAbility('Immunity')&&!state.statuses.greyscale){toast('Immunity prevents greyscale.','good');return;}state.statuses[st]=!state.statuses[st];commit();return;}if(a==='repair-ship'){repairShip();return;}
@@ -3696,7 +3820,7 @@ function updateToolResults(){
     if(a==='bounty-resolve-roll'){
       if(!state.bounty.targetRollSet||!state.bounty.playerRollSet){toast('Select both d20 results first.','warn');return;}
       var bcRoll=currentBountyCharacter(),baAttr=chosenBountyDefenceAttr(bcRoll),btot=num(state.bounty.targetD20)+num(bcRoll.attrs[baAttr]),ptot=num(state.bounty.playerD20)+num(totals()[baAttr])+num(state.bounty.intel),ok=ptot>btot;
-      if(ok){state.bounty.lastResult='success';state.bounty.stage='outcome';commit(false);render();toast('Takedown successful. Choose what to do with the target.','good');}
+      if(ok){awardDirewolfBond('Bounty takedown');state.bounty.lastResult='success';state.bounty.stage='outcome';commit(false);render();toast('Takedown successful. Choose what to do with the target.','good');}
       else{state.bounty.lastResult='failure';state.bounty.attemptsUsed=num(state.bounty.attemptsUsed)+1;if(bountyDaysRemaining()<=0){state.bounty.stage='expired';commit(false);render();toast('Takedown failed and the target’s stay has ended.','bad');}else{commit(false);var rem=bountyDaysRemaining();openModal('Takedown failed','<p class="small muted">The target escaped this attempt. You have <strong>'+rem+' day'+(rem===1?'':'s')+'</strong> remaining and your current Intel bonus is <strong>+'+state.bounty.intel+'</strong>. Their defending attribute stays the same; for another attempt you only need to roll the two d20s again.</p><div class="modal-actions">'+(rem>1?'<button class="ghost" data-modal-action="bounty-gather-after-fail">Gather 1 more day of intel</button>':'')+'<button class="primary" data-modal-action="bounty-attempt-again">Attempt again</button></div>');}
       }
       return;
@@ -3708,8 +3832,8 @@ function updateToolResults(){
     if(a==='blackmail-d20-picker'){var bm=Math.max(1,Math.min(20,num(state.bounty.blackmailRoll)||1));openModal('Blackmail d20 result','<p class="small muted">Tap the number shown on the physical d20.</p><div class="die-picker-grid">'+Array.from({length:20},function(_,i){var v=i+1;return '<button type="button" class="'+(bm===v?'active':'')+'" data-modal-action="blackmail-d20-select" data-value="'+v+'">'+v+'</button>';}).join('')+'</div>');return;}
     if(a==='blackmail-roll-inc'){state.bounty.blackmailRoll=Math.min(state.bounty.tier==='High'?20:9,num(state.bounty.blackmailRoll)+1);commit();return;}
     if(a==='blackmail-roll-dec'){state.bounty.blackmailRoll=Math.max(state.bounty.tier==='High'?1:0,num(state.bounty.blackmailRoll)-1);commit();return;}
-    if(a==='bounty-assassinate-final'){var bc=currentBountyCharacter(),useWeapon=!!state.bounty.assassinationWeapon;if(useWeapon&&state.inventory.assassinationWeapons<=0){state.bounty.assassinationWeapon=false;commit(false);render();toast('You no longer have an assassination weapon available.','warn');return;}var ar=addFaceFromCharacter(bc,useWeapon);if(!ar.ok){toast(ar.msg,'bad');return;}if(useWeapon)state.inventory.assassinationWeapons=Math.max(0,state.inventory.assassinationWeapons-1);state.suspicion+=bc&&bc.tier==='High'?2:1;if(state.items.direwolf.obtained&&!state.items.direwolf.completed&&state.items.direwolf.bonds.indexOf('Bounty takedown')<0&&state.items.direwolf.bonds.length<2){state.items.direwolf.bonds.push('Bounty takedown');if(state.items.direwolf.bonds.length>=2)state.items.direwolf.completed=true;}clearBounty();commit(true,'Assassinated '+bc.name+(useWeapon?' using an assassination weapon':'')+' · Suspicion +'+(bc.tier==='High'?2:1)+' → '+state.suspicion);toast(ar.msg+' Suspicion is now '+state.suspicion+'.'+(state.items.direwolf.completed?' Direwolf Bond completed.':''),'good');return;}
-    if(a==='bounty-blackmail'){if(!state.bounty.blackmailRollSet){toast('Roll the blackmail die and select the result first.','warn');return;}var br=state.bounty.blackmailResource,ba=num(state.bounty.blackmailRoll)*500,bgain=applyResourceGain(br,ba);if(state.items.direwolf.obtained&&!state.items.direwolf.completed&&state.items.direwolf.bonds.indexOf('Bounty takedown')<0&&state.items.direwolf.bonds.length<2){state.items.direwolf.bonds.push('Bounty takedown');if(state.items.direwolf.bonds.length>=2)state.items.direwolf.completed=true;}clearBounty();commit();toast('Blackmail recorded: '+resourceGainMessage(bgain,RES_LABEL[br])+(state.items.direwolf.completed?'. Direwolf Bond completed.':'.'),'good');return;}
+    if(a==='bounty-assassinate-final'){var bc=currentBountyCharacter(),useWeapon=!!state.bounty.assassinationWeapon;if(useWeapon&&state.inventory.assassinationWeapons<=0){state.bounty.assassinationWeapon=false;commit(false);render();toast('You no longer have an assassination weapon available.','warn');return;}var ar=addFaceFromCharacter(bc,useWeapon);if(!ar.ok){toast(ar.msg,'bad');return;}if(useWeapon)state.inventory.assassinationWeapons=Math.max(0,state.inventory.assassinationWeapons-1);state.suspicion+=bc&&bc.tier==='High'?2:1;awardDirewolfBond('Bounty takedown');clearBounty();commit(true,'Assassinated '+bc.name+(useWeapon?' using an assassination weapon':'')+' · Suspicion +'+(bc.tier==='High'?2:1)+' → '+state.suspicion);toast(ar.msg+' Suspicion is now '+state.suspicion+'.','good');return;}
+    if(a==='bounty-blackmail'){if(!state.bounty.blackmailRollSet){toast('Roll the blackmail die and select the result first.','warn');return;}var br=state.bounty.blackmailResource,ba=num(state.bounty.blackmailRoll)*500,bgain=applyResourceGain(br,ba);awardDirewolfBond('Bounty takedown');clearBounty();commit();toast('Blackmail recorded: '+resourceGainMessage(bgain,RES_LABEL[br])+'.','good');return;}
 
     if(a==='secrets-build-list'){var ta=document.getElementById('secretsWordsInput'),rawWords=ta?ta.value:'';state.items.secrets.memoryWords=rawWords.split(/[\n,]+/).map(function(w){return w.trim();}).filter(Boolean).map(function(w){return {text:w,checked:false};});commit(false,'Secrets word checklist updated');render();updateSecretTimerDisplay();return;}
     if(a==='secret-word-toggle'){var swi=num(btn.getAttribute('data-secret-word-index'));if(state.items.secrets.memoryWords[swi]){state.items.secrets.memoryWords[swi].checked=!state.items.secrets.memoryWords[swi].checked;saveState();btn.classList.toggle('checked',state.items.secrets.memoryWords[swi].checked);}return;}
@@ -3725,15 +3849,15 @@ function updateToolResults(){
     if(a==='simple-complete'){i=state.items[btn.getAttribute('data-item')];i.completed=true;if(i.obtained!==undefined)i.obtained=true;if(i.checkpointed!==undefined)i.checkpointed=true;commit();toast('Item quest completed and secured.','good');return;}
     if(a==='simple-reset'){var sk=btn.getAttribute('data-item');if(sk==='secrets'){var remembered=(state.items.secrets.memoryWords||[]).slice();state.items.secrets={obtained:false,checkpointed:false,completed:false,memoryWords:remembered};resetSecretTimer();}if(sk==='knights'){state.items.knights={completed:false,used:false};state.tools.knightsStage='search';state.tools.knightsTurn=0;if((state.tools.warNotice||'').indexOf('Knights of the Vale')===0){state.tools.warNotice='';state.tools.warStage='declare';state.siegeTurns=0;}}commit();toast('Item progress reset.','neutral');return;}
     if(a==='knights-use'){if(!state.items.knights.completed||state.items.knights.used)return;state.items.knights.used=true;state.warCount++;state.siegeTurns=0;state.tools.warNotice='Knights of the Vale Stronghold Attack · 0 Food spent.';state.tools.warStage='travel';commit(true,'Stronghold Attack declared using the Knights of the Vale.');setView('tools');setTimeout(function(){var wt=document.getElementById('warTool');if(wt){var wd=wt.closest?wt.closest('details'):null;if(wd)wd.open=true;if(wt.scrollIntoView)wt.scrollIntoView({behavior:'smooth',block:'start'});}},0);toast('Free Knights Stronghold Attack declared. No Food spent.','good');return;}
-    if(a==='sword-glass'){state.items.sword.dragonGlass=!state.items.sword.dragonGlass;if(!state.items.sword.dragonGlass)state.items.sword.completed=false;commit();toast(state.items.sword.dragonGlass?'Dragon glass obtained.':'Dragon glass progress reset.','neutral');return;}
+    if(a==='sword-glass'){state.items.sword.dragonGlass=!state.items.sword.dragonGlass;if(!state.items.sword.dragonGlass){state.items.sword.completed=false;state.items.sword.checkpointed=false;}else state.items.sword.checkpointed=state.items.city.completed;commit();toast(state.items.sword.dragonGlass?'Dragon glass obtained.':'Dragon glass progress reset.','neutral');return;}
     if(a==='sword-forge'){if(state.items.sword.dragonGlass){state.items.sword.completed=true;commit();toast('Valyrian Steel Sword forged and secured.','good');}return;}
-    if(a==='sword-reset'){state.items.sword={dragonGlass:false,completed:false};commit();toast('Sword quest reset.','neutral');return;}
+    if(a==='sword-reset'){state.items.sword={dragonGlass:false,checkpointed:false,completed:false};commit();toast('Sword quest reset.','neutral');return;}
     if(a==='wolf-obtain'){i=state.items.direwolf;i.obtained=true;i.completed=false;i.bonds=[];i.checkpointed=state.items.city.completed;commit();toast(hasAbility('Direwolf Tamer')?'Direwolf approached automatically. Gain two Bond Points.':'Direwolf approached. Gain two Bond Points.','good');return;}
     if(a==='wolf-checkpoint'){i=state.items.direwolf;if(i.obtained&&!i.completed){i.checkpointed=!i.checkpointed;commit();toast(i.checkpointed?'Direwolf checkpoint established.':'Direwolf checkpoint removed.','neutral');}return;}
     if(a==='wolf-bond'){i=state.items.direwolf;b=btn.getAttribute('data-bond');if(i.bonds.indexOf(b)>=0)i.bonds=i.bonds.filter(function(x){return x!==b;});else if(i.bonds.length<2)i.bonds.push(b);if(i.bonds.length>=2){i.completed=true;}commit();toast(i.completed?'Second Bond Point gained — Direwolf tamed and secured.':'Bond Points: '+i.bonds.length+'/2',i.completed?'good':'neutral');return;}
-    if(a==='wolf-reset'){state.items.direwolf={obtained:false,checkpointed:false,completed:false,bonds:[]};state.tools.wolfFood=0;state.tools.wolfRoll=1;state.tools.wolfRollSet=false;commit();toast('Direwolf progress reset.','neutral');return;}
+    if(a==='wolf-reset'){state.direwolfNotice=null;state.items.direwolf={obtained:false,checkpointed:false,completed:false,bonds:[]};state.tools.wolfFood=0;state.tools.wolfRoll=1;state.tools.wolfRollSet=false;commit();toast('Direwolf progress reset.','neutral');return;}
     if(a==='gem-obtain'){state.items.gemstone={obtained:true,checkpointed:state.items.city.completed,completed:false,type:''};commit();toast(state.items.city.completed?'Gemstone obtained and automatically checkpointed by your Fortress.':'Gemstone obtained. Checkpointing is optional.','neutral');return;}
-    if(a==='gem-checkpoint'){i=state.items.gemstone;if(i.obtained&&!i.completed){i.checkpointed=!i.checkpointed;commit();toast(i.checkpointed?'Gemstone checkpointed.':'Gemstone checkpoint removed.','neutral');}return;}
+    if(a==='gem-checkpoint'||a==='item-checkpoint'){var ck=a==='gem-checkpoint'?'gemstone':btn.getAttribute('data-item');if(['gemstone','sword'].indexOf(ck)<0)return;var ci=state.items[ck],held=ck==='sword'?ci.dragonGlass:ci.obtained;if(!held||ci.completed||ci.checkpointed)return;if(!state.settlementFormed&&!state.items.city.completed){toast('Establish your Stronghold first.','warn');return;}ci.checkpointed=true;commit(true,(ck==='sword'?'Dragon glass':'Gemstone')+' checkpoint established.');toast((ck==='sword'?'Dragon glass':'Gemstone')+' checkpointed. You may continue carrying it.','good');return;}
     if(a==='gem-type'){i=state.items.gemstone;if(i.obtained&&!i.completed){i.type=btn.getAttribute('data-value');if(hasAbility('R’hllor')){i.completed=true;toast(i.type+' Gemstone activated immediately by R’hllor and secured.','good');}commit();}else if(i.completed)toast('Gemstone type is locked after activation.','warn');return;}if(a==='gem-complete'){i=state.items.gemstone;if(i.obtained&&i.type){i.completed=true;commit();toast(i.type+' Gemstone activated and automatically secured.','good');}else toast('Select a Gemstone type first.','bad');return;}
     if(a==='gem-reset'){state.items.gemstone={obtained:false,checkpointed:false,completed:false,type:''};state.tools.crewStage='choose';state.tools.crewTurns=0;state.tools.crewRolls=0;state.tools.crewSearchRollSet=false;commit();toast('Gemstone progress reset.','neutral');return;}
     if(a==='egg-obtain'){state.items.egg={obtained:true,hatched:false};state.tools.dragonStage='obtained';commit();toast('Dragon Egg obtained — it cannot be secured.','warn');return;}
@@ -3749,7 +3873,7 @@ function updateToolResults(){
     if(a==='ability-heal'){var cond=btn.getAttribute('data-condition');if(cond==='greyscale'||cond==='poison'){state.statuses[cond]=false;commit();toast('Healer used: '+cond+' cured. Remember to miss 3 turns.','good');}return;}
     if(a==='ability-terrain'){f=findFace(btn.getAttribute('data-id'));if(!f||f.abilityUsed)return;var an=f.abilityName,res=an==='Desert-dweller'?'stone':an==='Fertile Land'?'food':'wood',each=an==='Winter is Coming'?3000:5000;openModal(an,'<p class="help-copy">Enter the number of qualifying Settlements in your network, including your Stronghold if it is in the required terrain.</p><label class="field"><span>Qualifying Settlements / Stronghold</span><input type="number" min="0" inputmode="numeric" id="terrainCount" value="1"></label><div class="result"><span class="muted small">Reward per qualifying location</span><br><strong>'+fmt(each)+' '+RES_LABEL[res]+'</strong></div><button class="primary wide-action" data-modal-action="ability-terrain-confirm" data-id="'+esc(f.id)+'" data-resource="'+res+'" data-each="'+each+'">Apply reward</button>');return;}
 
-    if(a==='village-resolve'){var vm=state.tools.villageMode||'neutral',vreward=state.tools.villageReward||'',vsuccess=num(state.tools.villagePlayerRoll)+totals().combat>num(state.tools.villageTargetRoll)+state.suspicion;if(!vsuccess){toast('The displayed result is no longer a success. Check the rolls again.','warn');return;}var allowed=vm==='enemy'?['resources2000','card1000','card500','prisoner']:['card1000','card500','prisoner'];if(allowed.indexOf(vreward)<0){toast('Select the reward you received first.','warn');return;}state.villages+=1;if(vreward==='resources2000')RESOURCES.forEach(function(r){applyResourceGain(r,2000);});if(vreward==='card1000')RESOURCES.forEach(function(r){applyResourceGain(r,1000);});if(vreward==='card500')RESOURCES.forEach(function(r){applyResourceGain(r,500);});if(vreward==='prisoner'){state.tools.knightsStage='first';state.tools.knightsTurn=0;state.tools.knightsDirectionSet=false;state.tools.knightsDistanceSet=false;}if(state.items.direwolf.obtained&&!state.items.direwolf.completed&&state.items.direwolf.bonds.indexOf('Settlement influence')<0&&state.items.direwolf.bonds.length<2){state.items.direwolf.bonds.push('Settlement influence');if(state.items.direwolf.bonds.length>=2)state.items.direwolf.completed=true;}state.tools.villageStage='choose';state.tools.villageCostPaid=false;state.tools.villageReward='';state.tools.villagePlayerRollSet=false;state.tools.villageTargetRollSet=false;commit(true,'Settlement influence succeeded: '+(vm==='neutral'?'neutral Settlement joined your network':'another player’s Settlement joined your network')+(vreward==='resources2000'?' and +2,000 of each resource':vreward==='card1000'?' and red card gave +1,000 of each resource':vreward==='card500'?' and red card gave +500 of each resource':'; escaped prisoner revealed')+'.');toast(vreward==='prisoner'?'Influence established. Place your cube over the Settlement; the escaped-prisoner chase has begun.':'Influence established. Place your cube over the Settlement; reward applied.','good');return;}
+    if(a==='village-resolve'){var vm=state.tools.villageMode||'neutral',vreward=state.tools.villageReward||'',vsuccess=num(state.tools.villagePlayerRoll)+totals().combat>num(state.tools.villageTargetRoll)+state.suspicion;if(!vsuccess){toast('The displayed result is no longer a success. Check the rolls again.','warn');return;}var allowed=vm==='enemy'?['resources2000','card1000','card500','prisoner']:['card1000','card500','prisoner'];if(allowed.indexOf(vreward)<0){toast('Select the reward you received first.','warn');return;}state.villages+=1;if(vreward==='resources2000')RESOURCES.forEach(function(r){applyResourceGain(r,2000);});if(vreward==='card1000')['wood','stone','food'].forEach(function(r){applyResourceGain(r,1000);});if(vreward==='card500')['wood','stone','food'].forEach(function(r){applyResourceGain(r,500);});if(vreward==='prisoner'){state.tools.knightsStage='first';state.tools.knightsTurn=0;state.tools.knightsGenerated=null;state.tools.knightsDirectionSet=false;state.tools.knightsDistanceSet=false;}awardDirewolfBond('Settlement influence');state.tools.villageStage='choose';state.tools.villageCostPaid=false;state.tools.villageReward='';state.tools.villagePlayerRollSet=false;state.tools.villageTargetRollSet=false;commit(true,'Settlement influence succeeded: '+(vm==='neutral'?'neutral Settlement joined your network':'another player’s Settlement joined your network')+(vreward==='resources2000'?' and +2,000 of each resource':vreward==='card1000'?' and red card gave +1,000 Wood, Stone and Food':vreward==='card500'?' and red card gave +500 Wood, Stone and Food':'; escaped prisoner revealed')+'.');toast(vreward==='prisoner'?'Influence established. Place your cube over the Settlement; the escaped-prisoner chase has begun.':'Influence established. Place your cube over the Settlement; reward applied.','good');return;}
     if(a==='resource-space-add'){var rs=btn.getAttribute('data-resource-type'),controlledNow=state.villages+(state.settlementFormed?1:0),payoutNow=1000*Math.max(1,controlledNow);if(hasAbility(RES_LABEL[rs]+' Scholar'))payoutNow*=2;var rsg=applyResourceGain(rs,payoutNow);commit(true,'Resource space: '+resourceGainMessage(rsg,RES_LABEL[rs]));toast(resourceGainMessage(rsg,RES_LABEL[rs])+'.','good');return;}
 
     if(a==='prison-stage-back'){state.tools.prisonStage='choose';commit(false);render();return;}
@@ -3776,43 +3900,46 @@ function updateToolResults(){
     if(a==='village-mode'){state.tools.villageMode=btn.getAttribute('data-value');commit();return;}if(a==='village-player-inc'){state.tools.villagePlayerRoll=Math.min(9,num(state.tools.villagePlayerRoll)+1);commit();return;}if(a==='village-player-dec'){state.tools.villagePlayerRoll=Math.max(0,num(state.tools.villagePlayerRoll)-1);commit();return;}if(a==='village-target-inc'){state.tools.villageTargetRoll=Math.min(20,num(state.tools.villageTargetRoll)+1);commit();return;}if(a==='village-target-dec'){state.tools.villageTargetRoll=Math.max(1,num(state.tools.villageTargetRoll)-1);commit();return;}    if(a==='foe-select'){state.tools.foeType=btn.getAttribute('data-value');state.tools.foeStage='roll';state.tools.foePlayerRollSet=false;state.tools.foeTargetRollSet=false;commit(false);render();return;}
     if(a==='foe-player-roll'){state.tools.foePlayerRoll=Math.max(0,Math.min(9,num(btn.getAttribute('data-value'))));state.tools.foePlayerRollSet=true;commit(false);render();return;}
     if(a==='foe-d20-picker'){var fv=Math.max(1,Math.min(20,num(state.tools.foeTargetRoll)||1));openModal('Foe d20 result','<p class="small muted">Tap the number shown on the physical d20.</p><div class="die-picker-grid">'+Array.from({length:20},function(_,i){var v=i+1;return '<button data-modal-action="foe-d20-select" data-value="'+v+'">'+v+'</button>';}).join('')+'</div>');return;}
-    if(a==='foe-resolve'){var fmap={walkers:'stealth',thieves:'cunning',witch:'magic',bear:'combat'},fa=fmap[state.tools.foeType],fok=state.tools.foePlayerRollSet&&state.tools.foeTargetRollSet&&(num(state.tools.foePlayerRoll)+totals()[fa]>num(state.tools.foeTargetRoll));if(fok){if(state.items.direwolf.obtained&&!state.items.direwolf.completed&&state.items.direwolf.bonds.indexOf('Foe')<0&&state.items.direwolf.bonds.length<2){state.items.direwolf.bonds.push('Foe');if(state.items.direwolf.bonds.length>=2)state.items.direwolf.completed=true;}toast('Foe defeated.'+(state.items.direwolf.completed?' Direwolf Bond completed.':''),'good');}else{state.statuses.foeMissTurn=true;toast('Foe encounter failed. Miss your next turn while you heal.','bad');}state.tools.foeStage='choose';state.tools.foeType='';state.tools.foePlayerRollSet=false;state.tools.foeTargetRollSet=false;commit(true,fok?'Foe defeated.':'Foe encounter failed; next turn missed.');return;}
-    if(a==='foe-auto-complete'){if(state.items.direwolf.obtained&&!state.items.direwolf.completed&&state.items.direwolf.bonds.indexOf('Foe')<0&&state.items.direwolf.bonds.length<2){state.items.direwolf.bonds.push('Foe');if(state.items.direwolf.bonds.length>=2)state.items.direwolf.completed=true;}state.tools.foeStage='choose';state.tools.foeType='';commit(true,'Foe automatically defeated.');return;}
+    if(a==='foe-resolve'){var fmap={walkers:'stealth',thieves:'cunning',witch:'magic',bear:'combat'},fa=fmap[state.tools.foeType],fok=state.tools.foePlayerRollSet&&state.tools.foeTargetRollSet&&(num(state.tools.foePlayerRoll)+totals()[fa]>num(state.tools.foeTargetRoll));if(fok){awardDirewolfBond('Foe');toast('Foe defeated.','good');}else{state.statuses.foeMissTurn=true;toast('Foe encounter failed. Miss your next turn while you heal.','bad');}state.tools.foeStage='choose';state.tools.foeType='';state.tools.foePlayerRollSet=false;state.tools.foeTargetRollSet=false;commit(true,fok?'Foe defeated.':'Foe encounter failed; next turn missed.');return;}
+    if(a==='foe-auto-complete'){awardDirewolfBond('Foe');state.tools.foeStage='choose';state.tools.foeType='';commit(true,'Foe automatically defeated.');toast('Foe automatically defeated.','good');return;}
     if(a==='foe-reset'){state.tools.foeStage='choose';state.tools.foeType='';state.tools.foePlayerRollSet=false;state.tools.foeTargetRollSet=false;commit(false);render();return;}
 
     if(a==='confront-role'){state.tools.confrontRole=btn.getAttribute('data-value')==='defender'?'defender':'initiator';state.tools.confrontStage='roll';state.tools.confrontAttempt=0;state.tools.confrontPlayerRollSet=false;state.tools.confrontOtherRollSet=false;commit(false);render();return;}
     if(a==='confront-roll'){var cw=btn.getAttribute('data-who'),cv=Math.max(1,Math.min(6,num(btn.getAttribute('data-value'))));if(cw==='other'){state.tools.confrontOtherRoll=cv;state.tools.confrontOtherRollSet=true;}else{state.tools.confrontPlayerRoll=cv;state.tools.confrontPlayerRollSet=true;}commit(false);render();return;}
-    if(a==='confront-resolve-roll'){if(!state.tools.confrontPlayerRollSet||!state.tools.confrontOtherRollSet)return;var cmatch=num(state.tools.confrontPlayerRoll)===num(state.tools.confrontOtherRoll),cmax=state.tools.confrontRole==='initiator'?confrontationAttempts():1;if(cmatch){state.tools.confrontStage='outcome';commit(false);render();}else if(state.tools.confrontRole==='initiator'&&state.tools.confrontAttempt+1<cmax){state.tools.confrontAttempt++;state.tools.confrontPlayerRollSet=false;state.tools.confrontOtherRollSet=false;commit(false);render();toast('No match. Use your additional confrontation attempt.','neutral');}else{state.statuses.confrontationCooldown=1;state.tools.confrontStage='complete';commit(true,'Confrontation failed; 1-turn cooldown applied.');toast('Confrontation failed. 1-turn cooldown applied.','warn');}return;}
-    if(a==='confront-outcome'){var co=btn.getAttribute('data-value');if(co==='resource'){state.tools.confrontStage='resource';state.tools.confrontResourceRollSet=false;commit(false);render();return;}state.statuses.confrontationCooldown=5;if(state.items.direwolf.obtained&&!state.items.direwolf.completed&&state.items.direwolf.bonds.indexOf('Confrontation')<0&&state.items.direwolf.bonds.length<2){state.items.direwolf.bonds.push('Confrontation');if(state.items.direwolf.bonds.length>=2)state.items.direwolf.completed=true;}state.tools.confrontStage='complete';commit(true,'Successful confrontation: '+(co==='face'?'Face stolen':'carried incomplete Item forced to drop')+'. 5-turn cooldown applied.');toast(co==='face'?'Take the chosen physical Face and record it in Bounties if needed.':'The other player drops one carried incomplete Item.','good');return;}
+    if(a==='confront-resolve-roll'){if(!state.tools.confrontPlayerRollSet||!state.tools.confrontOtherRollSet)return;var cmatch=num(state.tools.confrontPlayerRoll)===num(state.tools.confrontOtherRoll),cmax=state.tools.confrontRole==='initiator'?confrontationAttempts():1;if(cmatch){if(state.tools.confrontRole==='initiator')awardDirewolfBond('Confrontation');state.tools.confrontStage='outcome';commit(false);render();}else if(state.tools.confrontRole==='initiator'&&state.tools.confrontAttempt+1<cmax){state.tools.confrontAttempt++;state.tools.confrontPlayerRollSet=false;state.tools.confrontOtherRollSet=false;commit(false);render();toast('No match. Use your additional confrontation attempt.','neutral');}else{state.statuses.confrontationCooldown=1;state.tools.confrontStage='complete';commit(true,'Confrontation failed; 1-turn cooldown applied.');toast('Confrontation failed. 1-turn cooldown applied.','warn');}return;}
+    if(a==='confront-outcome'){var co=btn.getAttribute('data-value');if(co==='resource'){state.tools.confrontStage='resource';state.tools.confrontResourceRollSet=false;commit(false);render();return;}state.statuses.confrontationCooldown=5;awardDirewolfBond('Confrontation');state.tools.confrontStage='complete';commit(true,'Successful confrontation: '+(co==='face'?'Face stolen':'carried incomplete Item forced to drop')+'. 5-turn cooldown applied.');toast(co==='face'?'Take the chosen physical Face and record it in Bounties if needed.':'The other player drops one carried incomplete Item.','good');return;}
     if(a==='confront-defender-complete'){state.statuses.confrontationCooldown=1;state.tools.confrontStage='complete';commit(true,'Successfully confronted by another player; 1-turn cooldown applied.');return;}
     if(a==='confront-resource'){state.tools.confrontResource=btn.getAttribute('data-value');commit(false);render();return;}
     if(a==='confront-resource-roll'){state.tools.confrontResourceRoll=Math.max(1,Math.min(6,num(btn.getAttribute('data-value'))));state.tools.confrontResourceRollSet=true;commit(false);render();return;}
-    if(a==='confront-resource-apply'){if(!state.tools.confrontResourceRollSet)return;var ca=num(state.tools.confrontResourceRoll)*1000,cr=state.tools.confrontResource,cgain=applyResourceGain(cr,ca);state.statuses.confrontationCooldown=5;if(state.items.direwolf.obtained&&!state.items.direwolf.completed&&state.items.direwolf.bonds.indexOf('Confrontation')<0&&state.items.direwolf.bonds.length<2){state.items.direwolf.bonds.push('Confrontation');if(state.items.direwolf.bonds.length>=2)state.items.direwolf.completed=true;}state.tools.confrontStage='complete';commit(true,'Successful confrontation: +'+fmt(ca)+' '+RES_LABEL[cr]+' stolen; 5-turn cooldown applied.');toast(resourceGainMessage(cgain,RES_LABEL[cr])+'. The other player removes '+fmt(ca)+' '+RES_LABEL[cr]+'.','good');return;}
+    if(a==='confront-resource-apply'){if(!state.tools.confrontResourceRollSet)return;var ca=num(state.tools.confrontResourceRoll)*1000,cr=state.tools.confrontResource,cgain=applyResourceGain(cr,ca);state.statuses.confrontationCooldown=5;awardDirewolfBond('Confrontation');state.tools.confrontStage='complete';commit(true,'Successful confrontation: +'+fmt(ca)+' '+RES_LABEL[cr]+' stolen; 5-turn cooldown applied.');toast(resourceGainMessage(cgain,RES_LABEL[cr])+'. The other player removes '+fmt(ca)+' '+RES_LABEL[cr]+'.','good');return;}
     if(a==='confront-reset'){state.tools.confrontStage='choose';state.tools.confrontAttempt=0;state.tools.confrontPlayerRollSet=false;state.tools.confrontOtherRollSet=false;state.tools.confrontResourceRollSet=false;commit(false);render();return;}
 
     if(a==='wolf-d20-picker'){openModal('Direwolf approach d20','<p class="small muted">Tap the result on the physical d20.</p><div class="die-picker-grid">'+Array.from({length:20},function(_,i){var v=i+1;return '<button data-modal-action="wolf-d20-select" data-value="'+v+'">'+v+'</button>';}).join('')+'</div>');return;}
     if(a==='wolf-resolve'){if(!state.tools.wolfRollSet)return;var wf=Math.max(0,num(state.tools.wolfFood));if(state.resources.food<wf){toast('You do not have enough Food for that offer.','bad');return;}var wc=totals().cunning,wb=wc>=20?8:16,wbonus=Math.floor(wf/1000)*2,wsuccess=num(state.tools.wolfRoll)+wbonus>=wb;state.resources.food-=wf;state.tools.wolfFood=0;state.tools.wolfRollSet=false;if(wsuccess){state.items.direwolf.obtained=true;state.items.direwolf.completed=false;state.items.direwolf.bonds=[];state.items.direwolf.checkpointed=state.items.city.completed;commit(true,'Direwolf approached successfully. '+fmt(wf)+' Food spent.');toast('Direwolf approached. Gain two different Bond Points.','good');}else{commit(true,'Direwolf approach failed. '+fmt(wf)+' Food spent.');toast('Approach failed. Any Food offered is spent; try again on a later turn.','warn');}return;}
 
-    if(a==='crew-hire'){state.tools.crewStage='travel';state.tools.crewTurns=0;state.tools.crewRolls=0;state.tools.crewSearchRollSet=false;state.tools.crewBillAcknowledged=false;resetCrewPayment();state.items.gemstone={obtained:false,checkpointed:false,completed:false,type:''};commit(true,'Gemstone salvage crew hired: '+state.tools.crewType+'.');return;}
+    if(a==='crew-hire'){if(state.tools.crewBillDue!==null){state.tools.crewStage='bill';commit(false);render();toast('Settle the existing crew bill first.','warn');return;}state.tools.crewStage='travel';state.tools.crewTurns=0;state.tools.crewRolls=0;state.tools.crewSearchRollSet=false;state.tools.crewBillAcknowledged=false;resetCrewPayment();state.items.gemstone={obtained:false,checkpointed:false,completed:false,type:''};commit(true,'Gemstone salvage crew hired: '+state.tools.crewType+'.');return;}
     if(a==='crew-at-whirlpool'){state.tools.crewStage='search';state.tools.crewSearchRollSet=false;commit(false);render();return;}
     if(a==='crew-d20-picker'){openModal('Gemstone search d20','<p class="small muted">Tap the result on the physical d20.</p><div class="die-picker-grid">'+Array.from({length:20},function(_,i){var v=i+1;return '<button data-modal-action="crew-d20-select" data-value="'+v+'">'+v+'</button>';}).join('')+'</div>');return;}
     if(a==='crew-search-resolve'){if(!state.tools.crewSearchRollSet)return;var tgt=state.tools.crewType==='experienced'?13:18,suc=num(state.tools.crewSearchRoll)>=tgt;state.tools.crewRolls++;state.tools.crewSearchRollSet=false;if(suc){state.tools.crewStage='found';commit(true,'Gemstone search succeeded after '+state.tools.crewRolls+' search roll(s).');toast('Gemstone found. Draw/select the physical Gemstone.','good');}else{commit(false);render();toast('Search failed. Roll again; this roll has been added to the crew bill.','neutral');}return;}
     if(a==='gem-type-workflow'){state.items.gemstone.type=btn.getAttribute('data-value');commit(false);render();return;}
     if(a==='crew-reject-gem'){state.items.gemstone.type='';state.tools.crewStage='search';state.tools.crewSearchRollSet=false;commit(false);render();toast('Gemstone returned to the whirlpool. Continue searching on your next turn.','neutral');return;}
     if(a==='crew-keep-gem'){if(!state.items.gemstone.type)return;state.items.gemstone.obtained=true;state.items.gemstone.checkpointed=state.items.city.completed;if(hasAbility('R’hllor'))state.items.gemstone.completed=true;state.tools.crewStage='return';commit(true,(state.items.gemstone.type||'Gemstone')+' Gemstone kept.');return;}
-    if(a==='crew-returned'){var cexp=state.tools.crewType==='experienced',crate=cexp?300:100,cbill=(num(state.tools.crewTurns)+num(state.tools.crewRolls))*crate;state.tools.crewDebt=Math.max(0,cbill);resetCrewPayment();state.tools.crewStage='bill';state.tools.crewBillAcknowledged=false;commit(true,'Gemstone salvage crew returned to port. Bill due: '+fmt(cbill)+' resources.');return;}
-    if(a==='crew-pay-inc'||a==='crew-pay-dec'){var cpr=btn.getAttribute('data-resource'),cps=Math.max(0,num(btn.getAttribute('data-step'))),cpay=Math.max(0,num(state.tools.crewPayment[cpr])),csel=crewPaymentTotal(),cdebt=crewDebtAmount(),cavail=Math.max(0,num(state.resources[cpr]));if(a==='crew-pay-inc'){var cadd=Math.min(cps,Math.max(0,cavail-cpay),Math.max(0,cdebt-csel));state.tools.crewPayment[cpr]=cpay+cadd;}else state.tools.crewPayment[cpr]=Math.max(0,cpay-cps);commit(false);render();return;}
-    if(a==='crew-pay-max'){var cmr=btn.getAttribute('data-resource'),cmsel=crewPaymentTotal(),cmcur=Math.max(0,num(state.tools.crewPayment[cmr])),cmavail=Math.max(0,num(state.resources[cmr])),cmroom=Math.max(0,crewDebtAmount()-cmsel);state.tools.crewPayment[cmr]=cmcur+Math.min(Math.max(0,cmavail-cmcur),cmroom);commit(false);render();return;}
-    if(a==='crew-pay-confirm'){var ctotal=crewPaymentTotal(),cavailTotal=totalResources(),cdue=crewDebtAmount(),crequired=Math.min(cdue,cavailTotal);if(ctotal!==crequired){toast('Select '+fmt(crequired)+' resources to pay now.','warn');return;}RESOURCES.forEach(function(r){var v=Math.max(0,num(state.tools.crewPayment[r]));state.resources[r]=Math.max(0,state.resources[r]-v);});state.tools.crewDebt=Math.max(0,cdue-ctotal);resetCrewPayment();state.tools.crewBillAcknowledged=true;state.tools.crewStage='activate';commit(true,'Salvage crew paid '+fmt(ctotal)+' resources'+(state.tools.crewDebt>0?'; '+fmt(state.tools.crewDebt)+' resources remain as debt.':'; bill cleared.'));toast(state.tools.crewDebt>0?'Crew paid as much as possible. '+fmt(state.tools.crewDebt)+' resources remain as debt.':'Salvage crew bill paid in full.',state.tools.crewDebt>0?'warn':'good');return;}
+    if(a==='crew-returned'){if(state.tools.crewStage!=='return'||state.tools.crewBillDue!==null)return;var cexp=state.tools.crewType==='experienced',crate=cexp?300:100,cbill=(num(state.tools.crewTurns)+num(state.tools.crewRolls))*crate;state.tools.crewBillDue=Math.max(0,cbill);resetCrewPayment();if(totalResources()<crewBillAmount())selectAllCrewResources();state.tools.crewStage='bill';state.tools.crewBillAcknowledged=false;commit(true,'Gemstone salvage crew returned to port. Bill due: '+fmt(cbill)+' resources.');return;}
+    if(a==='crew-pay-inc'||a==='crew-pay-dec'){if(state.tools.crewBillDue===null)return;var cpr=btn.getAttribute('data-resource');if(RESOURCES.indexOf(cpr)<0)return;var cps=Math.max(0,num(btn.getAttribute('data-step'))),cpay=crewPaymentFor(cpr),csel=crewPaymentTotal(),cdue=crewBillAmount(),cavail=Math.max(0,num(state.resources[cpr]));if(a==='crew-pay-inc'){state.tools.crewPayment[cpr]=cpay+Math.min(cps,Math.max(0,cavail-cpay),Math.max(0,cdue-csel));}else state.tools.crewPayment[cpr]=Math.max(0,cpay-cps);commit(false);render();return;}
+    if(a==='crew-pay-max'){if(state.tools.crewBillDue===null)return;var cmr=btn.getAttribute('data-resource');if(RESOURCES.indexOf(cmr)<0)return;var cmsel=crewPaymentTotal(),cmcur=crewPaymentFor(cmr),cmavail=Math.max(0,num(state.resources[cmr])),cmroom=Math.max(0,crewBillAmount()-cmsel);state.tools.crewPayment[cmr]=cmcur+Math.min(Math.max(0,cmavail-cmcur),cmroom);commit(false);render();return;}
+    if(a==='crew-pay-all'){if(state.tools.crewBillDue===null||totalResources()>crewBillAmount())return;selectAllCrewResources();commit(false);render();return;}
+    if(a==='crew-pay-confirm'){if(state.tools.crewBillDue===null)return;var ctotal=crewPaymentTotal(),cavailTotal=totalResources(),cdue=crewBillAmount(),crequired=Math.min(cdue,cavailTotal);if(ctotal!==crequired){toast('Select '+fmt(crequired)+' resources to pay now.','warn');return;}RESOURCES.forEach(function(r){state.resources[r]-=crewPaymentFor(r);});var unpaid=Math.max(0,cdue-ctotal);state.tools.crewDebt=crewDebtAmount()+unpaid;state.tools.crewBillDue=null;resetCrewPayment();state.tools.crewBillAcknowledged=true;state.tools.crewStage=state.items.gemstone.completed?'complete':'activate';commit(true,'Salvage crew paid '+fmt(ctotal)+' resources'+(unpaid>0?'; '+fmt(unpaid)+' resources carried forward as debt.':'; bill cleared.'));toast(unpaid>0?'Crew paid as much as possible. '+fmt(unpaid)+' resources carried forward as debt.':'Salvage crew bill paid in full.',unpaid>0?'warn':'good');return;}
     if(a==='crew-complete'){state.tools.crewStage='complete';commit(false);render();return;}
     if(a==='gem-complete-workflow'){if(!state.items.gemstone.obtained||!state.items.gemstone.type)return;state.items.gemstone.completed=true;state.tools.crewStage='complete';commit(true,state.items.gemstone.type+' Gemstone activated and secured.');toast('Gemstone activated. Attribute totals updated.','good');return;}
 
-    if(a==='knights-prisoner-found'){state.tools.knightsStage='first';state.tools.knightsTurn=0;state.tools.knightsDirectionSet=false;state.tools.knightsDistanceSet=false;commit(false);render();return;}
-    if(a==='knights-chase-distance'){state.tools.knightsDistance=Math.max(2,Math.min(12,num(btn.getAttribute('data-value'))));state.tools.knightsDistanceSet=true;commit(false);render();return;}
-    if(a==='knights-direction'){state.tools.knightsDirection=Math.max(1,Math.min(6,num(btn.getAttribute('data-value'))));state.tools.knightsDirectionSet=true;commit(false);render();return;}
+    if(a==='knights-movement-mode'){if(state.tools.knightsGenerated)return;var km=btn.getAttribute('data-value');if(['manual','automatic'].indexOf(km)<0)return;state.tools.knightsMovementMode=km;state.tools.knightsDirectionSet=false;state.tools.knightsDistanceSet=false;commit(false);render();return;}
+    if(a==='knights-generate'){if(state.tools.knightsMovementMode!=='automatic'||state.tools.knightsGenerated||['first','chase'].indexOf(state.tools.knightsStage)<0)return;var firstMove=state.tools.knightsStage==='first',direction=randomDie(6),dice=firstMove?[randomDie(20)]:[randomDie(6),randomDie(6)],distance=dice.reduce(function(total,v){return total+v;},0);state.tools.knightsGenerated={direction:direction,dice:dice,distance:distance};state.tools.knightsDirection=direction;state.tools.knightsDirectionSet=true;state.tools.knightsDistance=distance;state.tools.knightsDistanceSet=true;commit(true,'Prisoner movement generated: '+['','North','North-East','South-East','South','South-West','North-West'][direction]+' · '+distance+' tiles.');return;}
+    if(a==='knights-prisoner-found'){state.tools.knightsStage='first';state.tools.knightsTurn=0;state.tools.knightsGenerated=null;state.tools.knightsDirectionSet=false;state.tools.knightsDistanceSet=false;commit(false);render();return;}
+    if(a==='knights-chase-distance'){if(state.tools.knightsGenerated)return;state.tools.knightsDistance=Math.max(2,Math.min(12,num(btn.getAttribute('data-value'))));state.tools.knightsDistanceSet=true;commit(false);render();return;}
+    if(a==='knights-direction'){if(state.tools.knightsGenerated)return;state.tools.knightsDirection=Math.max(1,Math.min(6,num(btn.getAttribute('data-value'))));state.tools.knightsDirectionSet=true;commit(false);render();return;}
     if(a==='knights-d20-picker'){openModal('Prisoner first-move d20','<p class="small muted">Tap the distance shown on the physical d20.</p><div class="die-picker-grid">'+Array.from({length:20},function(_,i){var v=i+1;return '<button data-modal-action="knights-d20-select" data-value="'+v+'">'+v+'</button>';}).join('')+'</div>');return;}
-    if(a==='knights-first-moved'){if(!state.tools.knightsDirectionSet||!state.tools.knightsDistanceSet)return;state.tools.knightsStage='chase';state.tools.knightsTurn=1;state.tools.knightsDirectionSet=false;state.tools.knightsDistanceSet=false;state.tools.knightsDistance=0;commit(true,'Escaped prisoner first movement recorded.');toast('Move the prisoner, then on its next movement roll a fresh direction and 2d6 distance.','neutral');return;}
-    if(a==='knights-chase-turn'){if(!state.tools.knightsDirectionSet||!state.tools.knightsDistanceSet){toast('Record a fresh direction and 2d6 distance first.','warn');return;}state.tools.knightsTurn++;state.tools.knightsDirectionSet=false;state.tools.knightsDistanceSet=false;state.tools.knightsDistance=0;commit(true,'Escaped prisoner movement '+state.tools.knightsTurn+' recorded.');toast('Movement recorded. Roll fresh dice for the prisoner’s next movement.','neutral');return;}
+    if(a==='knights-first-moved'){if(!state.tools.knightsDirectionSet||!state.tools.knightsDistanceSet)return;state.tools.knightsStage='chase';state.tools.knightsTurn=1;state.tools.knightsGenerated=null;state.tools.knightsDirectionSet=false;state.tools.knightsDistanceSet=false;state.tools.knightsDistance=0;commit(true,'Escaped prisoner first movement recorded.');toast('Move the prisoner, then chase normally. On its next turn, generate or enter a fresh movement.','neutral');return;}
+    if(a==='knights-chase-turn'){if(!state.tools.knightsDirectionSet||!state.tools.knightsDistanceSet){toast('Record a fresh direction and 2d6 distance first.','warn');return;}state.tools.knightsTurn++;state.tools.knightsGenerated=null;state.tools.knightsDirectionSet=false;state.tools.knightsDistanceSet=false;state.tools.knightsDistance=0;commit(true,'Escaped prisoner movement '+state.tools.knightsTurn+' recorded.');toast('Movement recorded. Generate or enter a fresh movement on the prisoner’s next turn.','neutral');return;}
     if(a==='knights-caught'||a==='knights-home-capture'){state.tools.knightsStage='return';commit(true,'Escaped prisoner captured.');toast('Prisoner captured. Return them to the Sky Cell.','good');return;}
     if(a==='knights-lost'){state.tools.knightsStage='search';state.tools.knightsTurn=0;commit(true,'Escaped prisoner lost; another prisoner reward is required.');toast('Prisoner lost. Find another escaped-prisoner reward.','warn');return;}
     if(a==='knights-skycell'){state.items.knights.completed=true;state.items.knights.used=false;state.tools.knightsStage='complete';commit(true,'Knights of the Vale obtained by returning the prisoner to the Sky Cell.');toast('Knights of the Vale obtained. One free Stronghold Attack is available.','good');return;}
@@ -3870,27 +3997,36 @@ if(a==='raid-select'){var rsel=btn.getAttribute('data-raid-attr');if((state.tool
     if(a==='war-finish'){state.tools.warStage='declare';state.tools.warNotice='';state.tools.warLootItem='';state.tools.warLootGemType='';state.siegeTurns=0;commit(false);render();return;}
     if(a==='undo-war'){if(state.warCount>0){state.warCount--;state.tools.warNotice='';state.tools.warStage='declare';commit();toast('Last Stronghold Attack count undone.','neutral');}return;}if(a==='siege-inc'){state.siegeTurns=Math.min(15,state.siegeTurns+1);commit();return;}if(a==='siege-dec'){state.siegeTurns=Math.max(0,state.siegeTurns-1);commit();return;}if(a==='siege-reset'){state.siegeTurns=0;commit();return;}
     if(a==='add-weirwood-direct'){var wid=btn.getAttribute('data-weirwood');if(wid&&!hasWeirwood(wid)){state.weirwoodHeld.push(wid);commit();toast((weirwoodDef(wid)||{}).name+' recorded as held.','good');}return;}if(a==='add-weirwood'){var ws=document.getElementById('weirwoodAddSelect'),wid=ws?ws.value:'';if(wid&&!hasWeirwood(wid)){state.weirwoodHeld.push(wid);commit();toast((weirwoodDef(wid)||{}).name+' recorded as held.','good');}return;}if(a==='use-weirwood'){var wid2=btn.getAttribute('data-weirwood'),wd=weirwoodDef(wid2);if(!wd||!hasWeirwood(wid2))return;if(wid2==='greyscale-serum')state.statuses.greyscale=false;if(wid2==='escape-artist'){state.statuses.inPrison=false;state.statuses.prisonAttempts=0;state.tools.prisonStage='choose';}removeWeirwood(wid2);commit();toast((wd?wd.name:'Weirwood card')+' used and removed from held cards.','good');return;}if(a==='export-save'){exportSave();return;}if(a==='import-save'){var inp=document.getElementById('importFile');if(inp)inp.click();return;}if(a==='reset-save'){openConfirm('Reset entire game?','This will erase all tracked resources, attributes, Faces, item progress, statuses, bounties, held Weirwood cards, Suspicion and action history on this device. This cannot be undone.','reset-save-confirm','Yes, reset game');return;}
-  });
+  }
+  view.addEventListener('click',handleActivityClick);
+  activityBody.addEventListener('click',handleActivityClick);
 
-  view.addEventListener('change',function(e){
+  function handleActivityChange(e){
     var el=e.target;
+    var paymentResource=el.getAttribute('data-crew-payment');
+    if(paymentResource&&RESOURCES.indexOf(paymentResource)>=0&&state.tools.crewBillDue!==null){var otherSelected=crewPaymentTotal()-crewPaymentFor(paymentResource);state.tools.crewPayment[paymentResource]=Math.min(Math.max(0,num(el.value)),Math.max(0,num(state.resources[paymentResource])),Math.max(0,crewBillAmount()-otherSelected));commit(false);render();return;}
     if(el.getAttribute('data-resource-input')){var key=el.getAttribute('data-resource-input'),oldVal=Math.max(0,num(state.resources[key])),newVal=Math.max(0,num(el.value));if(newVal>oldVal){applyResourceGain(key,newVal-oldVal);}else state.resources[key]=newVal;commit(false);el.value=state.resources[key];}
     if(el.id==='secretsTestIntelligence'){state.tools.secretsTestIntelligence=Math.max(0,num(el.value));commit(false);render();return;}
     if(el.id==='bountyTargetInline'){state.bounty.target=el.value;state.bounty.location='';resetBountyAssist();commit();}
     if(el.id==='marketAmount'){var mkey=state.tools.marketFrom.toLowerCase(),mmax=num(state.resources[mkey]);state.tools.marketAmount=Math.max(0,Math.min(num(el.value),mmax));el.value=state.tools.marketAmount;saveState();updateToolResults();}
     if(el.id==='importFile'&&el.files&&el.files[0])importSave(el.files[0]);
-  });
-  view.addEventListener('input',function(e){
+  }
+  view.addEventListener('change',handleActivityChange);
+  activityBody.addEventListener('change',handleActivityChange);
+  function handleActivityInput(e){
     if(e.target.id==='marketAmount'){var mk2=state.tools.marketFrom.toLowerCase(),mx2=num(state.resources[mk2]);state.tools.marketAmount=Math.max(0,Math.min(num(e.target.value),mx2));e.target.value=state.tools.marketAmount;saveState();updateToolResults();}
     if(e.target.id==='shipwreckGoldAmount'){state.tools.shipwreckGold=Math.max(0,num(e.target.value));saveState();}
     if(e.target.id==='ruleSearch')updateRulesContent(e.target.value);
-  });
+  }
+  view.addEventListener('input',handleActivityInput);
+  activityBody.addEventListener('input',handleActivityInput);
 
   view.addEventListener('toggle',function(e){
     var d=e.target;if(!d||d.tagName!=='DETAILS')return;rememberPanelState(d);
   },true);
 
   modalBody.addEventListener('change',function(e){
+    if(e.target.id==='backupImportFile'&&e.target.files&&e.target.files[0]){importSave(e.target.files[0]);return;}
     if(e.target.id==='faceCharacter'){var pv=document.getElementById('facePickerPreview');if(pv)pv.innerHTML=facePreviewHtml(e.target.value);}
     if(e.target.id==='imagePackFileModal'&&e.target.files&&e.target.files[0]){e.target.setAttribute('data-file-ready','1');}
   });
@@ -3902,6 +4038,12 @@ if(a==='raid-select'){var rsel=btn.getAttribute('data-raid-attr');if((state.tool
   modalBody.addEventListener('click',function(e){
     var btn=e.target.closest?e.target.closest('button'):null;if(!btn)return;var a=btn.getAttribute('data-modal-action');
 
+    if(a==='menu-back'){openAppMenu();return;}
+    if(a==='menu-history'){openHistory();return;}
+    if(a==='menu-backup'){openSaveBackup();return;}
+    if(a==='backup-export'){exportSave();return;}
+    if(a==='backup-import'){var backupInput=document.getElementById('backupImportFile');if(backupInput)backupInput.click();return;}
+    if(a==='backup-reset'){openConfirm('Reset entire game?','This will erase your tracked game progress on this device. Export a save first if you want to keep it. This cannot be undone.','reset-save-confirm','Yes, reset game');return;}
     if(a==='paged-guide'){openPagedGuide(btn.getAttribute('data-guide-key'),num(btn.getAttribute('data-step')),false);return;}
     if(a==='manual-status-toggle'){var mst=btn.getAttribute('data-status');if(mst&&Object.prototype.hasOwnProperty.call(state.statuses,mst)){if(mst==='greyscale'&&hasAbility('Immunity')&&!state.statuses[mst]){toast('Immunity prevents greyscale.','good');return;}state.statuses[mst]=!state.statuses[mst];commit(false);openStatusManager();}return;}
     if(a==='manual-cooldown-dec'){state.statuses.confrontationCooldown=Math.max(0,num(state.statuses.confrontationCooldown)-1);commit(false);openStatusManager();return;}
@@ -3922,7 +4064,7 @@ if(a==='raid-select'){var rsel=btn.getAttribute('data-raid-attr');if((state.tool
     if(a==='foe-d20-select'){state.tools.foeTargetRoll=Math.max(1,Math.min(20,num(btn.getAttribute('data-value'))));state.tools.foeTargetRollSet=true;closeModal();commit(false);render();return;}
     if(a==='wolf-d20-select'){state.tools.wolfRoll=Math.max(1,Math.min(20,num(btn.getAttribute('data-value'))));state.tools.wolfRollSet=true;closeModal();commit(false);render();return;}
     if(a==='crew-d20-select'){state.tools.crewSearchRoll=Math.max(1,Math.min(20,num(btn.getAttribute('data-value'))));state.tools.crewSearchRollSet=true;closeModal();commit(false);render();return;}
-    if(a==='knights-d20-select'){state.tools.knightsDistance=Math.max(1,Math.min(20,num(btn.getAttribute('data-value'))));state.tools.knightsDistanceSet=true;closeModal();commit(false);render();return;}
+    if(a==='knights-d20-select'){if(state.tools.knightsGenerated){closeModal();return;}state.tools.knightsDistance=Math.max(1,Math.min(20,num(btn.getAttribute('data-value'))));state.tools.knightsDistanceSet=true;closeModal();commit(false);render();return;}
     if(a==='dragon-initial-select'){state.tools.dragonInitialRoll=Math.max(1,Math.min(20,num(btn.getAttribute('data-value'))));state.tools.dragonInitialRollSet=true;closeModal();commit(false);render();return;}
     if(a==='dragon-extra-select'){state.tools.dragonExtraRoll=Math.max(1,Math.min(20,num(btn.getAttribute('data-value'))));state.tools.dragonExtraRollSet=true;closeModal();commit(false);render();return;}
     if(a==='dragon-revive-select'){var rv=Math.max(1,Math.min(20,num(btn.getAttribute('data-value'))));closeModal();if(rv===20){state.items.egg.obtained=true;state.items.egg.hatched=false;state.tools.dragonStage='obtained';commit(true,'Dragon Egg obtained using Revive.');toast('Natural 20. Dragon Egg obtained.','good');}else{commit(false);render();toast('Revive roll failed. Continue with any remaining 13+ attribute attempts.','warn');}return;}
