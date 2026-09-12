@@ -610,7 +610,7 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .guide-mode .walkthrough-dot.active{background:#c6e0f5}.guide-mode .walkthrough-progress{color:#c5d6e6}
 .checkpoint-box h3{margin:0 0 10px}.checkpoint-box .summary-line{flex-wrap:wrap}
 
-/* v0.38: physical Item photographs, shared by the list and quest popup. */
+/* v0.39: physical Item photographs, shared by the list and quest popup. */
 .item-photo{display:block;object-fit:contain;object-position:center;background:radial-gradient(ellipse at center,#493c2e 0%,#251f1a 75%);border:1px solid var(--line);border-radius:10px;flex-shrink:0}
 .item-photo-thumb{width:72px;height:96px}
 .item-launcher{gap:14px;padding:12px}
@@ -623,7 +623,7 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .item-overview-copy>p{font-family:var(--font-body);font-size:13px;line-height:1.55;color:var(--muted);margin:10px 0 12px}
 @media(max-width:380px){.item-photo-thumb{width:60px;height:80px}.item-launcher{gap:10px}.item-photo-detail{width:84px;height:112px}.item-overview{gap:12px}}
 
-/* v0.38: optional outer-board location artwork. */
+/* v0.39: optional outer-board location artwork. */
 .location-choice-grid img{width:72px;height:54px;object-fit:contain;background:#26221d}
 .location-choice-grid button{padding:9px;gap:10px}
 .location-choice-grid span{line-height:1.35;overflow-wrap:anywhere}
@@ -631,7 +631,7 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .bounty-location-photo img{display:block;width:100%;height:auto;max-height:180px;object-fit:contain}
 .bounty-location-photo figcaption{font-family:var(--font-heading);font-size:17px;margin-top:8px;color:var(--text)}
 
-/* v0.38: optional component references beside physical game actions. */
+/* v0.39: optional component references beside physical game actions. */
 .dice-reference{display:flex;align-items:center;gap:10px;margin:12px 0;color:var(--text);font-size:13px;line-height:1.4}
 .dice-reference-images{display:flex;flex:0 0 auto;gap:3px}
 .dice-reference img{display:block;width:48px;height:48px;object-fit:contain}
@@ -642,7 +642,7 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .component-reference p{font-size:12px;line-height:1.5;color:var(--muted);margin:5px 0 0}
 @media(max-width:360px){.component-reference>img{width:60px;height:60px}.component-reference{gap:9px}.dice-reference img{width:42px;height:42px}}
 
-/* v0.38: outer-board symbols are scoped to board-space interfaces. */
+/* v0.39: outer-board symbols are scoped to board-space interfaces. */
 .outer-space-photo{display:block;flex:0 0 auto;width:64px;height:64px;object-fit:contain;padding:6px;border:1px solid #38342f;border-radius:9px;box-sizing:border-box}
 .outer-space-dark{background:#050505}.outer-space-weirwood{background:#e7ddc8;border-color:#b6a68a}
 .outer-space-large{width:96px;height:96px;padding:8px}
@@ -674,7 +674,7 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .opposed-threshold strong{display:block;font-size:26px;line-height:1.35;margin:5px 0}
 .opposed-threshold p{margin:7px 0 0;line-height:1.5}
 
-/* v0.38: consistent board-picture choices and padded Item frames. */
+/* v0.39: consistent board-picture choices and padded Item frames. */
 .activity-launcher>.outer-space-mosaic{flex:0 0 64px}
 .activity-launcher>.tool-launcher-copy{flex:1;min-width:0}
 .location-choice-grid .picture-choice,
@@ -726,14 +726,18 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .carried-item-pictures{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:10px;margin:12px 0}
 .carried-item-pictures figure{margin:0;padding:10px;background:#000;border:1px solid var(--line);border-radius:10px;text-align:center}
 .carried-item-pictures img{display:block;width:100%;height:105px;object-fit:contain;margin:0 auto 8px}.carried-item-pictures strong,.carried-item-pictures small{display:block;line-height:1.4}.carried-item-pictures small{color:var(--muted);margin-top:5px}
-.item-progress-icons{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;min-height:48px;margin-top:10px;align-items:end}
+.item-progress-track{position:relative;height:48px;margin-top:10px;isolation:isolate}
+.item-progress-track.empty{height:8px}
+.item-progress-track>.progress{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);margin:0;z-index:0}
+.item-progress-icons{position:relative;z-index:1;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;height:48px;align-items:center}
 .item-progress-icons:empty{display:none}
-.progress-item{display:grid;place-items:center;min-width:0;width:100%;height:48px;padding:2px;background:#000;border:1px solid var(--line);border-radius:7px}
-.progress-item img{display:block;width:100%;height:42px;object-fit:contain}.progress-item span{font-size:8px;line-height:1.2;overflow-wrap:anywhere}
+.progress-item{display:grid;place-items:center;min-width:0;width:100%;height:48px;padding:0;background:none;border:0;border-radius:0;box-shadow:none}
+.progress-item:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
+.progress-item img{display:block;width:100%;height:46px;object-fit:contain;background:none;border:0}.progress-item span{font-size:8px;line-height:1.2;overflow-wrap:anywhere}
 </style>
-<title>West of Westeros Companion v0.38</title>
+<title>West of Westeros Companion v0.39</title>
 </head>
-<body data-app-version="0.38">
+<body data-app-version="0.39">
 <div class="app-shell" id="appShell">
 <header class="topbar">
 <div>
@@ -1381,7 +1385,7 @@ window.WOW_DATA = {
       "requiresActivation": false
     }
   ],
-  "sourceVersion": "Rules v6 + Tables v4 + Character/Weirwood card imports · app v0.38",
+  "sourceVersion": "Rules v6 + Tables v4 + Character/Weirwood card imports · app v0.39",
   "ruleSections": [
     {
       "num": "1",
@@ -2694,7 +2698,7 @@ window.WOW_DATA = {
 
   function defaultState(){
     return {
-      version:38,
+      version:39,
       guideSeen:false,
       walkthroughSeen:false,
       tutorialsSeen:{},
@@ -2873,7 +2877,7 @@ window.WOW_DATA = {
     if(num(s.version)<20)s.tutorialsSeen={};
     if(!s.items.gemstone.obtained&&!s.items.gemstone.completed&&s.tools.crewStage!=='found')s.items.gemstone.type='';
     syncItemAcquisitionOrder(s);
-    s.version=38;
+    s.version=39;
     if(!s.items.gemstone.obtained){s.items.gemstone.completed=false;if(!(s.items.gemstone.lost&&s.items.gemstone.lostType))s.items.gemstone.checkpointed=false;if(s.tools.crewStage!=='found'||s.items.gemstone.lost)s.items.gemstone.type='';}
     if(s.items.gemstone.completed) s.items.gemstone.obtained=true;
     if(!s.items.direwolf.obtained){s.items.direwolf.completed=false;s.items.direwolf.checkpointed=false;s.items.direwolf.bonds=[];}
@@ -3429,7 +3433,7 @@ window.WOW_DATA = {
   function finishWalkthrough(){
     state.walkthroughSeen=true;state.guideSeen=true;saveState();closeModal();setView('game');
   }
-  function openAppMenu(){openModal('Menu','<div class="app-menu"><button data-modal-action="menu-history">History</button><button data-modal-action="menu-backup">Save & backup</button><button data-modal-action="manage-artwork">Image pack</button></div><p class="tiny muted">West of Westeros · v0.38</p>');}
+  function openAppMenu(){openModal('Menu','<div class="app-menu"><button data-modal-action="menu-history">History</button><button data-modal-action="menu-backup">Save & backup</button><button data-modal-action="manage-artwork">Image pack</button></div><p class="tiny muted">West of Westeros · v0.39</p>');}
   function openSaveBackup(){openModal('Save & backup','<p class="small muted">Progress is saved automatically on this device. Export a copy to keep a backup or transfer your game.</p><div class="save-actions"><button data-modal-action="backup-export">Export save</button><button data-modal-action="backup-import">Import save</button><button class="danger" data-modal-action="backup-reset">Reset game</button></div><input type="file" id="backupImportFile" accept=".json,application/json" class="hidden"><div class="modal-actions"><button class="ghost" data-modal-action="menu-back">Back to menu</button></div>');}
   function openGuideHub(){
     var keys=['openingGame','innerBoard','bounty','items','stronghold','settlement','foe','prison','shipwreck','confrontation','strongholdAttack','direwolf','gemstone','knights','dragonEgg'];
@@ -3829,7 +3833,7 @@ function renderGame(){
   function itemProgressHtml(){
     var order=syncItemAcquisitionOrder(state),completed=completedPrereqs();
     var pictures=order.map(function(k){var def=D.items.filter(function(it){return it.id===k;})[0],name=def?def.name:k,src=itemImageSource(k),status=state.items[k].completed?'quest complete':'carried · quest unfinished';return '<button class="progress-item" data-action="open-activity" data-activity="item-'+k+'" title="'+esc(name+' · '+status)+'" aria-label="'+esc(name+' · '+status)+'">'+(src?'<img src="'+esc(src)+'" alt="" width="60" height="60" decoding="async">':'<span>'+esc(name)+'</span>')+'</button>';}).join('');
-    return '<div class="row" style="margin-top:14px"><span class="small muted">Items collected</span><strong>'+order.length+'/7</strong></div><div class="item-progress-icons">'+pictures+'</div><div class="progress" role="progressbar" aria-label="Items collected" aria-valuemin="0" aria-valuemax="7" aria-valuenow="'+order.length+'"><span style="width:'+(order.length/7*100)+'%"></span></div><p class="tiny muted" style="margin:7px 0 0">'+completed+' of 7 Item quests completed</p>';
+    return '<div class="row" style="margin-top:14px"><span class="small muted">Items collected</span><strong>'+order.length+'/7</strong></div><div class="item-progress-track '+(!order.length?'empty':'')+'"><div class="progress" role="progressbar" aria-label="Items collected" aria-valuemin="0" aria-valuemax="7" aria-valuenow="'+order.length+'"><span style="width:'+(order.length/7*100)+'%"></span></div><div class="item-progress-icons">'+pictures+'</div></div><p class="tiny muted" style="margin:7px 0 0">'+completed+' of 7 Item quests completed</p>';
   }
   function carriedItemPicturesHtml(){
     var keys=carriedCheckpointItems(),names={secrets:'Secrets of the Hidden World',direwolf:'Untamed Direwolf',gemstone:'Gemstone',sword:'Dragon glass',egg:'Dragon Egg'};
