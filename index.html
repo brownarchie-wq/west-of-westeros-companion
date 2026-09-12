@@ -610,7 +610,7 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .guide-mode .walkthrough-dot.active{background:#c6e0f5}.guide-mode .walkthrough-progress{color:#c5d6e6}
 .checkpoint-box h3{margin:0 0 10px}.checkpoint-box .summary-line{flex-wrap:wrap}
 
-/* v0.39: physical Item photographs, shared by the list and quest popup. */
+/* v0.40: physical Item photographs, shared by the list and quest popup. */
 .item-photo{display:block;object-fit:contain;object-position:center;background:radial-gradient(ellipse at center,#493c2e 0%,#251f1a 75%);border:1px solid var(--line);border-radius:10px;flex-shrink:0}
 .item-photo-thumb{width:72px;height:96px}
 .item-launcher{gap:14px;padding:12px}
@@ -623,7 +623,7 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .item-overview-copy>p{font-family:var(--font-body);font-size:13px;line-height:1.55;color:var(--muted);margin:10px 0 12px}
 @media(max-width:380px){.item-photo-thumb{width:60px;height:80px}.item-launcher{gap:10px}.item-photo-detail{width:84px;height:112px}.item-overview{gap:12px}}
 
-/* v0.39: optional outer-board location artwork. */
+/* v0.40: optional outer-board location artwork. */
 .location-choice-grid img{width:72px;height:54px;object-fit:contain;background:#26221d}
 .location-choice-grid button{padding:9px;gap:10px}
 .location-choice-grid span{line-height:1.35;overflow-wrap:anywhere}
@@ -631,7 +631,7 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .bounty-location-photo img{display:block;width:100%;height:auto;max-height:180px;object-fit:contain}
 .bounty-location-photo figcaption{font-family:var(--font-heading);font-size:17px;margin-top:8px;color:var(--text)}
 
-/* v0.39: optional component references beside physical game actions. */
+/* v0.40: optional component references beside physical game actions. */
 .dice-reference{display:flex;align-items:center;gap:10px;margin:12px 0;color:var(--text);font-size:13px;line-height:1.4}
 .dice-reference-images{display:flex;flex:0 0 auto;gap:3px}
 .dice-reference img{display:block;width:48px;height:48px;object-fit:contain}
@@ -642,7 +642,7 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .component-reference p{font-size:12px;line-height:1.5;color:var(--muted);margin:5px 0 0}
 @media(max-width:360px){.component-reference>img{width:60px;height:60px}.component-reference{gap:9px}.dice-reference img{width:42px;height:42px}}
 
-/* v0.39: outer-board symbols are scoped to board-space interfaces. */
+/* v0.40: outer-board symbols are scoped to board-space interfaces. */
 .outer-space-photo{display:block;flex:0 0 auto;width:64px;height:64px;object-fit:contain;padding:6px;border:1px solid #38342f;border-radius:9px;box-sizing:border-box}
 .outer-space-dark{background:#050505}.outer-space-weirwood{background:#e7ddc8;border-color:#b6a68a}
 .outer-space-large{width:96px;height:96px;padding:8px}
@@ -674,7 +674,7 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .opposed-threshold strong{display:block;font-size:26px;line-height:1.35;margin:5px 0}
 .opposed-threshold p{margin:7px 0 0;line-height:1.5}
 
-/* v0.39: consistent board-picture choices and padded Item frames. */
+/* v0.40: consistent board-picture choices and padded Item frames. */
 .activity-launcher>.outer-space-mosaic{flex:0 0 64px}
 .activity-launcher>.tool-launcher-copy{flex:1;min-width:0}
 .location-choice-grid .picture-choice,
@@ -729,15 +729,33 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .item-progress-track{position:relative;height:48px;margin-top:10px;isolation:isolate}
 .item-progress-track.empty{height:8px}
 .item-progress-track>.progress{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);margin:0;z-index:0}
-.item-progress-icons{position:relative;z-index:1;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;height:48px;align-items:center}
+.item-progress-icons{position:relative;z-index:1;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:0;height:48px;align-items:center}
 .item-progress-icons:empty{display:none}
 .progress-item{display:grid;place-items:center;min-width:0;width:100%;height:48px;padding:0;background:none;border:0;border-radius:0;box-shadow:none}
 .progress-item:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
 .progress-item img{display:block;width:100%;height:46px;object-fit:contain;background:none;border:0}.progress-item span{font-size:8px;line-height:1.2;overflow-wrap:anywhere}
+
+.inventory-weirwood{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:14px}
+.inventory-weirwood .picture-choice{display:flex;flex-direction:column;align-items:center;gap:9px;background:#000;color:var(--text);padding:12px;text-align:center}
+button[data-action="settlement-reward-choice"]{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#000;color:var(--text);text-align:center}
+button[data-action="settlement-reward-choice"].active{border-color:var(--accent2);box-shadow:inset 0 0 0 2px var(--accent2)}
+.settlement-reward-image{width:100%;height:125px;object-fit:contain;background:#000}
+.inventory-card-preview{display:flex;justify-content:center;padding:16px;background:#000;border-radius:10px}
+.progress-item.celebrating img{visibility:hidden}
+.item-celebration{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;background:rgba(6,8,12,.85);padding:24px;text-align:center}
+.item-celebration-content{display:flex;flex-direction:column;align-items:center;gap:16px;max-width:440px;width:100%;color:var(--text)}
+.item-celebration h2{margin:0;font:inherit;font-size:26px;font-weight:700}
+.item-celebration p{margin:0;color:var(--accent2);letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+.item-celebration-art{display:block;width:min(68vw,310px);height:min(45vh,310px);object-fit:contain;background:none;filter:drop-shadow(0 0 28px rgba(224,177,86,.5));animation:item-reveal-in 850ms cubic-bezier(.16,1,.3,1) both}
+.item-celebration button{margin-top:8px}
+.item-celebration.flying{background:transparent;transition:background .65s ease}
+.item-celebration.flying h2,.item-celebration.flying p,.item-celebration.flying button{visibility:hidden}
+@keyframes item-reveal-in{from{opacity:0;transform:scale(.5) translateY(22px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@media(prefers-reduced-motion:reduce){.item-celebration-art{animation:none}.item-celebration.flying{transition:none}}
 </style>
-<title>West of Westeros Companion v0.39</title>
+<title>West of Westeros Companion v0.40</title>
 </head>
-<body data-app-version="0.39">
+<body data-app-version="0.40">
 <div class="app-shell" id="appShell">
 <header class="topbar">
 <div>
@@ -1385,7 +1403,7 @@ window.WOW_DATA = {
       "requiresActivation": false
     }
   ],
-  "sourceVersion": "Rules v6 + Tables v4 + Character/Weirwood card imports · app v0.39",
+  "sourceVersion": "Rules v6 + Tables v4 + Character/Weirwood card imports · app v0.40",
   "ruleSections": [
     {
       "num": "1",
@@ -2698,7 +2716,7 @@ window.WOW_DATA = {
 
   function defaultState(){
     return {
-      version:39,
+      version:40,
       guideSeen:false,
       walkthroughSeen:false,
       tutorialsSeen:{},
@@ -2877,7 +2895,7 @@ window.WOW_DATA = {
     if(num(s.version)<20)s.tutorialsSeen={};
     if(!s.items.gemstone.obtained&&!s.items.gemstone.completed&&s.tools.crewStage!=='found')s.items.gemstone.type='';
     syncItemAcquisitionOrder(s);
-    s.version=39;
+    s.version=40;
     if(!s.items.gemstone.obtained){s.items.gemstone.completed=false;if(!(s.items.gemstone.lost&&s.items.gemstone.lostType))s.items.gemstone.checkpointed=false;if(s.tools.crewStage!=='found'||s.items.gemstone.lost)s.items.gemstone.type='';}
     if(s.items.gemstone.completed) s.items.gemstone.obtained=true;
     if(!s.items.direwolf.obtained){s.items.direwolf.completed=false;s.items.direwolf.checkpointed=false;s.items.direwolf.bonds=[];}
@@ -2958,7 +2976,48 @@ window.WOW_DATA = {
     var kept=0,bytes=0;(state.history||[]).forEach(function(h){if(!h.undo)return;bytes+=JSON.stringify(h.undo).length;if(++kept>20||bytes>1000000)delete h.undo;});
   }
   function addHistory(text){if(!text)return null;var entry={id:makeId(),at:new Date().toISOString(),text:text};state.history.unshift(entry);if(state.history.length>300)state.history.length=300;return entry;}
+  var itemCelebrationQueue=[],itemCelebrationActive=false,itemCelebrationTimer=0,itemCelebrationNode=null,itemCelebrationGeneration=0;
+  function completedItemKeys(s){return Object.keys(s.items||{}).filter(function(k){return k==='egg'?s.items[k].hatched:s.items[k].completed;});}
+  function queueItemCompletions(before,after){
+    var old=completedItemKeys(before||{});completedItemKeys(after).forEach(function(k){if(old.indexOf(k)<0&&itemCelebrationQueue.indexOf(k)<0)itemCelebrationQueue.push(k);});
+    if(itemCelebrationQueue.length&&!itemCelebrationActive){clearTimeout(itemCelebrationTimer);itemCelebrationTimer=setTimeout(showNextItemCelebration,0);}
+  }
+  function cancelItemCelebrations(){
+    itemCelebrationGeneration++;clearTimeout(itemCelebrationTimer);itemCelebrationQueue=[];itemCelebrationActive=false;
+    if(itemCelebrationNode){itemCelebrationNode.remove();itemCelebrationNode=null;}Array.prototype.forEach.call(document.querySelectorAll('.progress-item.celebrating'),function(el){el.classList.remove('celebrating');});syncOverlayState();
+  }
+  function showNextItemCelebration(){
+    if(itemCelebrationActive)return;
+    var key=itemCelebrationQueue.shift();if(!key)return;
+    if(completedItemKeys(state).indexOf(key)<0){showNextItemCelebration();return;}
+    closeModal();closeActivity(false);setView('game');
+    var target=document.querySelector?document.querySelector('[data-progress-item="'+key+'"]'):null;
+    if(target&&target.scrollIntoView)target.scrollIntoView({block:'center',behavior:'auto'});
+    var focusTarget=target||(document.querySelector?document.querySelector('[data-action="space-chooser"]'):null);
+    var def=D.items.filter(function(x){return x.id===key;})[0],name=def?def.name:key,src=itemImageSource(key),generation=++itemCelebrationGeneration;
+    var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var overlay=document.createElement('div');overlay.className='item-celebration';overlay.setAttribute('role','dialog');overlay.setAttribute('aria-modal','true');overlay.setAttribute('aria-labelledby','itemCelebrationTitle');
+    overlay.innerHTML='<div class="item-celebration-content"><p>'+ (key==='egg'?'Final objective complete':'Item quest complete')+'</p>'+(src?'<img class="item-celebration-art" src="'+esc(src)+'" alt="">':'')+'<h2 id="itemCelebrationTitle">'+esc(name)+'</h2><button type="button" class="ghost">Continue</button></div>';
+    document.body.appendChild(overlay);itemCelebrationNode=overlay;itemCelebrationActive=true;syncOverlayState();
+    var button=overlay.querySelector('button'),art=overlay.querySelector('img'),ended=false;if(target&&art)target.classList.add('celebrating');
+    function finish(){if(ended||generation!==itemCelebrationGeneration)return;ended=true;clearTimeout(itemCelebrationTimer);overlay.remove();itemCelebrationNode=null;itemCelebrationActive=false;if(target)target.classList.remove('celebrating');syncOverlayState();if(focusTarget&&focusTarget.focus)focusTarget.focus();itemCelebrationTimer=setTimeout(showNextItemCelebration,150);}
+    button.addEventListener('click',finish);button.focus();
+    overlay.addEventListener('keydown',function(e){if(e.key==='Escape'){e.preventDefault();e.stopPropagation();finish();}else if(e.key==='Tab'){e.preventDefault();button.focus();}});
+    function fly(){
+      if(ended||generation!==itemCelebrationGeneration)return;
+      var destination=target&&target.querySelector('img');
+      if(reduced||!art||!destination||!art.animate){finish();return;}
+      var from=art.getBoundingClientRect(),to=destination.getBoundingClientRect();if(!from.width||!to.width){finish();return;}
+      var nw=art.naturalWidth||from.width,nh=art.naturalHeight||from.height,scale=Math.min(to.width/nw,to.height/nh)/Math.min(from.width/nw,from.height/nh);
+      overlay.classList.add('flying');
+      var animation=art.animate([{transform:'translate(0,0) scale(1)',filter:'drop-shadow(0 0 28px rgba(224,177,86,.5))'},{transform:'translate('+(to.left+to.width/2-from.left-from.width/2)+'px,'+(to.top+to.height/2-from.top-from.height/2)+'px) scale('+scale+')',filter:'drop-shadow(0 0 0 transparent)'}],{duration:850,easing:'cubic-bezier(.65,0,.25,1)',fill:'forwards'});
+      animation.onfinish=finish;itemCelebrationTimer=setTimeout(finish,1000);
+    }
+    function ready(){if(ended||generation!==itemCelebrationGeneration)return;itemCelebrationTimer=setTimeout(fly,reduced?3600:2600);}
+    if(art&&art.decode)art.decode().then(ready,ready);else ready();
+  }
   function commit(rerender,label){
+    queueItemCompletions(undoBefore,state);
     syncItemAcquisitionOrder(state);
     var now=historySnapshot(state),msg=label||summariseHistoryChange(lastHistorySnapshot,now);
     if(msg){var entry=addHistory(msg);entry.undo={state:undoBefore,historyHead:undoHistoryHead,view:undoView,activity:undoActivity};trimUndoHistory();}
@@ -2966,6 +3025,7 @@ window.WOW_DATA = {
     saveState();if(rerender!==false)render();
   }
   function undoLatestHistory(expectedId){
+    cancelItemCelebrations();
     var entry=state.history[0];if(!entry||entry.id!==expectedId||!entry.undo||!entry.undo.state)return;
     var u=entry.undo,remaining=[],head=u.historyHead;if(head){var at=state.history.findIndex(function(h){return h.id===head;});if(at>=0)remaining=state.history.slice(at);}
     var previous;
@@ -3249,7 +3309,7 @@ window.WOW_DATA = {
 
   function syncOverlayState(){
     var helpOpen=!modal.classList.contains('hidden'),activityOpen=!!activeActivity,shell=document.getElementById('appShell');
-    if(helpOpen||activityOpen){document.body.classList.add('modal-open');if(shell)shell.setAttribute('inert','');}else{document.body.classList.remove('modal-open');if(shell)shell.removeAttribute('inert');}
+    if(helpOpen||activityOpen||itemCelebrationActive){document.body.classList.add('modal-open');if(shell)shell.setAttribute('inert','');}else{document.body.classList.remove('modal-open');if(shell)shell.removeAttribute('inert');}
     if(helpOpen&&activityOpen){activityModal.setAttribute('inert','');activityModal.setAttribute('aria-hidden','true');}else{activityModal.removeAttribute('inert');activityModal.removeAttribute('aria-hidden');}
   }
   function openModal(t,html){modal.classList.remove('guide-mode');clearTimeout(revealTimer);revealGeneration++;modalTitle.textContent=t;modalBody.innerHTML=html;modal.classList.remove('hidden');syncOverlayState();}
@@ -3433,7 +3493,7 @@ window.WOW_DATA = {
   function finishWalkthrough(){
     state.walkthroughSeen=true;state.guideSeen=true;saveState();closeModal();setView('game');
   }
-  function openAppMenu(){openModal('Menu','<div class="app-menu"><button data-modal-action="menu-history">History</button><button data-modal-action="menu-backup">Save & backup</button><button data-modal-action="manage-artwork">Image pack</button></div><p class="tiny muted">West of Westeros · v0.39</p>');}
+  function openAppMenu(){openModal('Menu','<div class="app-menu"><button data-modal-action="menu-history">History</button><button data-modal-action="menu-backup">Save & backup</button><button data-modal-action="manage-artwork">Image pack</button></div><p class="tiny muted">West of Westeros · v0.40</p>');}
   function openSaveBackup(){openModal('Save & backup','<p class="small muted">Progress is saved automatically on this device. Export a copy to keep a backup or transfer your game.</p><div class="save-actions"><button data-modal-action="backup-export">Export save</button><button data-modal-action="backup-import">Import save</button><button class="danger" data-modal-action="backup-reset">Reset game</button></div><input type="file" id="backupImportFile" accept=".json,application/json" class="hidden"><div class="modal-actions"><button class="ghost" data-modal-action="menu-back">Back to menu</button></div>');}
   function openGuideHub(){
     var keys=['openingGame','innerBoard','bounty','items','stronghold','settlement','foe','prison','shipwreck','confrontation','strongholdAttack','direwolf','gemstone','knights','dragonEgg'];
@@ -3664,10 +3724,17 @@ function activeBenefitsHtml(){
     var ratio=1462*c[2]/(2048*c[3]),w=Math.min(132,120*ratio),h=w/ratio;
     return '<span class="weirwood-art" aria-hidden="true"><span class="weirwood-art-crop" style="width:'+w.toFixed(2)+'px;height:'+h.toFixed(2)+'px"><img data-weirwood-art="'+esc(key)+'" src="'+esc(src)+'" alt="" decoding="async" loading="lazy" style="width:'+(100/c[2]).toFixed(4)+'%;height:'+(100/c[3]).toFixed(4)+'%;left:'+(-100*c[0]/c[2]).toFixed(4)+'%;top:'+(-100*c[1]/c[3]).toFixed(4)+'%"></span></span>';
   }
+function weirwoodSelectionDetail(choice){
+  var c=weirwoodDef(choice);return c?'<div class="result"><strong>'+esc(c.name)+'</strong><p class="small">'+esc(c.text)+'</p></div>':choice==='immediate'?'<p class="small muted">Carry out the physical card’s effect and record any resource or condition changes on the Game page. Confirm below when finished.</p>':'';
+}
+function useHeldWeirwood(wid2){var wd=weirwoodDef(wid2);if(!wd||!hasWeirwood(wid2))return;if(wid2==='greyscale-serum')state.statuses.greyscale=false;if(wid2==='escape-artist'){state.statuses.inPrison=false;state.statuses.prisonAttempts=0;state.tools.prisonStage='choose';}removeWeirwood(wid2);commit();toast((wd?wd.name:'Weirwood card')+' used and removed from held cards.','good');completeActivity();}
+function heldWeirwoodPicturesHtml(){
+  return state.weirwoodHeld.length?'<div class="inventory-weirwood">'+state.weirwoodHeld.map(function(id){var c=weirwoodDef(id);return c?'<button class="choice-btn picture-choice" data-action="inventory-weirwood-view" data-weirwood="'+esc(id)+'">'+weirwoodArtwork(id)+'<strong>'+esc(c.name)+'</strong><small>View / use card</small></button>':'';}).join('')+'</div>':'';
+}
 function weirwoodTrackerHtml(){
   var defs=D.weirwoodKeepable||[],choice=state.tools.weirwoodChoice||'',selected=weirwoodDef(choice);
   var held=state.weirwoodHeld.map(function(id){var c=weirwoodDef(id);return c?'<div class="held-card-row"><div><strong>'+esc(c.name)+'</strong><span>'+esc(c.text)+'</span></div><button class="small primary" data-action="use-weirwood" data-weirwood="'+esc(c.id)+'">Use card</button></div>':'';}).join('');
-  return '<div class="workflow-instruction"><strong>Draw one physical Weirwood card.</strong> Read its instructions, then choose whether to resolve it now or keep it for later.</div><button class="choice-btn wide-action '+(choice==='immediate'?'active':'')+'" data-action="weirwood-choice" data-value="immediate"><strong>Immediate effect</strong><small>Follow the card’s instructions now</small></button><p class="tiny muted">Or select the card you are keeping:</p><div class="choice-grid weirwood-choice">'+defs.map(function(c){return '<button class="choice-btn picture-choice '+(choice===c.id?'active':'')+'" data-action="weirwood-choice" data-value="'+esc(c.id)+'" aria-pressed="'+(choice===c.id)+'" '+(hasWeirwood(c.id)?'disabled':'')+'>'+weirwoodArtwork(c.id)+'<strong>'+esc(c.name)+'</strong>'+(hasWeirwood(c.id)?'<small>Already held</small>':'')+'</button>';}).join('')+'</div>'+(selected?'<div class="result"><strong>'+esc(selected.name)+'</strong><p class="small">'+esc(selected.text)+'</p></div>':choice==='immediate'?'<p class="small muted">Carry out the physical card’s effect and record any resource or condition changes on the Game page. Confirm below when finished.</p>':'')+'<button class="primary wide-action" style="margin-top:12px" data-action="weirwood-confirm" '+(!choice?'disabled':'')+'>'+(selected?'Confirm & keep card':'Card resolved · finish')+'</button><hr class="workflow-divider"><h3>Your held Weirwood cards</h3>'+(held?'<div class="held-card-list">'+held+'</div>':'<p class="small muted">No cards currently held.</p>');
+  return '<div class="workflow-instruction"><strong>Draw one physical Weirwood card.</strong> Read its instructions, then choose whether to resolve it now or keep it for later.</div><button class="choice-btn wide-action '+(choice==='immediate'?'active':'')+'" data-action="weirwood-choice" data-value="immediate"><strong>Immediate effect</strong><small>Follow the card’s instructions now</small></button><p class="tiny muted">Or select the card you are keeping:</p><div class="choice-grid weirwood-choice">'+defs.map(function(c){return '<button class="choice-btn picture-choice '+(choice===c.id?'active':'')+'" data-action="weirwood-choice" data-value="'+esc(c.id)+'" aria-pressed="'+(choice===c.id)+'" '+(hasWeirwood(c.id)?'disabled':'')+'>'+weirwoodArtwork(c.id)+'<strong>'+esc(c.name)+'</strong>'+(hasWeirwood(c.id)?'<small>Already held</small>':'')+'</button>';}).join('')+'</div>'+'<div id="weirwoodSelectionDetail" aria-live="polite">'+weirwoodSelectionDetail(choice)+'</div><button id="weirwoodSelectionConfirm" class="primary wide-action" style="margin-top:12px" data-action="weirwood-confirm" '+(!choice?'disabled':'')+'>'+(selected?'Confirm & keep card':'Card resolved · finish')+'</button><hr class="workflow-divider"><h3>Your held Weirwood cards</h3>'+(held?'<div class="held-card-list">'+held+'</div>':'<p class="small muted">No cards currently held.</p>');
 }
 
   function bountyLocationButtons(){
@@ -3792,8 +3859,8 @@ function renderGame(){
   var statusSummary='<section class="card flat"><div class="compact-toolbar"><div>'+(statusNames.length?statusNames.map(function(x){return '<span class="pill warn" style="margin:2px 4px 2px 0">'+esc(x)+'</span>';}).join(''):'<span class="muted small">No active status effects</span>')+'</div><div class="row wrap">'+(state.statuses.foeMissTurn?'<button class="primary small" data-action="foe-missed-turn-clear">I have missed my turn · clear</button>':'')+'<button class="ghost small" data-action="manual-status">Manual change</button></div></div></section>';
   var characterContent=sectionTitle('Attributes','attributes','')+'<section class="grid grid-5">'+ATTRS.map(function(a){return '<div class="stat"><label>'+ATTR_LABEL[a]+'</label><strong>'+t[a]+'</strong></div>';}).join('')+'</section><div class="row inline-edit"><button class="ghost small" data-action="edit-attributes">'+(state.setupComplete?'Attribute adjustments':'Select starting attributes')+'</button></div>';
   var weaponSummary=state.inventory.assassinationWeapons>0?'Yes':'No';
-  var weirSummary=state.weirwoodHeld.length?'Yes':'No';
-  var inventoryContent=sectionTitle('Resources','resources','')+'<section class="resources-list">'+RESOURCES.map(resourceControl).join('')+'</section>'+(crewDebtAmount()>0?'<div class="notice warn"><strong>Salvage crew debt: '+fmt(crewDebtAmount())+' resources.</strong><br><span class="tiny">Any resources you gain are automatically paid to the crew until this debt is cleared.</span></div>':'')+sectionTitle('Inventory','','')+'<section class="card flat inventory-summary"><div class="summary-line"><div><strong>Assassination weapon</strong><br><span>'+weaponSummary+'</span></div><button class="ghost small" data-action="manual-weapons">Manual change</button></div><div class="summary-line"><div><strong>Weirwood cards</strong><br><span>'+weirSummary+'</span></div><button class="ghost small" data-action="manual-weirwood">Manual change</button></div></section>';
+  var weirSummary=state.weirwoodHeld.length?state.weirwoodHeld.length+' held':'No cards held';
+  var inventoryContent=sectionTitle('Resources','resources','')+'<section class="resources-list">'+RESOURCES.map(resourceControl).join('')+'</section>'+(crewDebtAmount()>0?'<div class="notice warn"><strong>Salvage crew debt: '+fmt(crewDebtAmount())+' resources.</strong><br><span class="tiny">Any resources you gain are automatically paid to the crew until this debt is cleared.</span></div>':'')+sectionTitle('Inventory','','')+'<section class="card flat inventory-summary"><div class="summary-line"><div><strong>Assassination weapon</strong><br><span>'+weaponSummary+'</span></div><button class="ghost small" data-action="manual-weapons">Manual change</button></div><div class="summary-line"><div><strong>Weirwood cards</strong><br><span>'+weirSummary+'</span></div><button class="ghost small" data-action="manual-weirwood">Manual change</button></div>'+heldWeirwoodPicturesHtml()+'</section>';
   characterContent+=inventoryContent+sectionTitle('Current status','conditions','')+statusSummary+sectionTitle('Active benefits','benefits','')+'<section class="card flat">'+activeBenefitsHtml()+'</section>';
   view.innerHTML='<section class="card hero"><div class="hero-row"><div><div class="muted small">Current player</div><h2 style="margin:2px 0 0">'+esc(state.playerName||'Player')+'</h2></div><button class="ghost small" data-action="edit-player">Edit</button></div>'+itemProgressHtml()+'<div class="status-row" style="margin-top:12px">'+(statusPills.join('')||'<span class="muted small">No active conditions</span>')+'</div></section>'+setupPrompt+spaceLauncher+goal+homePanel('Character & resources',ATTRS.map(function(a){return ATTR_LABEL[a].slice(0,3)+' '+t[a];}).join(' · ')+(statusPills.length?' · '+statusPills.length+' active status':'') ,characterContent,true,'characterPanel','');
 }
@@ -3832,8 +3899,8 @@ function renderGame(){
   }
   function itemProgressHtml(){
     var order=syncItemAcquisitionOrder(state),completed=completedPrereqs();
-    var pictures=order.map(function(k){var def=D.items.filter(function(it){return it.id===k;})[0],name=def?def.name:k,src=itemImageSource(k),status=state.items[k].completed?'quest complete':'carried · quest unfinished';return '<button class="progress-item" data-action="open-activity" data-activity="item-'+k+'" title="'+esc(name+' · '+status)+'" aria-label="'+esc(name+' · '+status)+'">'+(src?'<img src="'+esc(src)+'" alt="" width="60" height="60" decoding="async">':'<span>'+esc(name)+'</span>')+'</button>';}).join('');
-    return '<div class="row" style="margin-top:14px"><span class="small muted">Items collected</span><strong>'+order.length+'/7</strong></div><div class="item-progress-track '+(!order.length?'empty':'')+'"><div class="progress" role="progressbar" aria-label="Items collected" aria-valuemin="0" aria-valuemax="7" aria-valuenow="'+order.length+'"><span style="width:'+(order.length/7*100)+'%"></span></div><div class="item-progress-icons">'+pictures+'</div></div><p class="tiny muted" style="margin:7px 0 0">'+completed+' of 7 Item quests completed</p>';
+    var pictures=order.map(function(k){var def=D.items.filter(function(it){return it.id===k;})[0],name=def?def.name:k,src=itemImageSource(k),status=state.items[k].completed?'quest complete':'carried · quest unfinished';return '<button class="progress-item" data-progress-item="'+k+'" data-action="open-activity" data-activity="item-'+k+'" title="'+esc(name+' · '+status)+'" aria-label="'+esc(name+' · '+status)+'">'+(src?'<img src="'+esc(src)+'" alt="" width="60" height="60" decoding="async">':'<span>'+esc(name)+'</span>')+'</button>';}).join('');
+    return '<div class="row" style="margin-top:14px"><span class="small muted">Items collected</span><strong>'+order.length+'/7</strong></div><div class="item-progress-track '+(!order.length?'empty':'')+'"><div class="progress" role="progressbar" aria-label="Items collected" aria-valuemin="0" aria-valuemax="7" aria-valuenow="'+order.length+'"><span style="width:'+(order.length?(order.length-.5)/7*100:0)+'%"></span></div><div class="item-progress-icons">'+pictures+'</div></div><p class="tiny muted" style="margin:7px 0 0">'+completed+' of 7 Item quests completed</p>';
   }
   function carriedItemPicturesHtml(){
     var keys=carriedCheckpointItems(),names={secrets:'Secrets of the Hidden World',direwolf:'Untamed Direwolf',gemstone:'Gemstone',sword:'Dragon glass',egg:'Dragon Egg'};
@@ -3944,21 +4011,25 @@ function cityRaidWorkflowHtml(){
   return workflowDots(2,3,'City Raid progress')+bountyStageShell('Stage 3 of 3','Decide whether to continue','The last area succeeded. Your accumulated Gold is still at risk until you leave the raid.','<div class="raid-haul"><div><span class="tiny muted">Current unbanked haul</span><br><strong>'+fmt(haul)+' Gold</strong></div><span class="pill">'+successes+'/5 cleared</span></div>'+(successes<5?'<div class="stage-actions"><button data-action="raid-continue">Attempt another area</button><button class="primary" data-action="raid-leave">Leave with '+fmt(haul)+' Gold</button></div>':'<button class="primary wide-action" data-action="raid-leave">All five cleared · leave with '+fmt(haul)+' Gold</button>'));
 }
 function workflowDots(index,count,label){return '<div class="workflow-progress" aria-label="'+esc(label||'Progress')+'">'+Array.from({length:count},function(_,i){return '<span class="'+(i<index?'done':i===index?'active':'')+'"></span>';}).join('')+'</div>';}
+function settlementSucceeded(){return typeof state.tools.villageOutcome==='boolean'?state.tools.villageOutcome:!!state.tools.villagePlayerRollSet&&num(state.tools.villagePlayerRoll)+totals().combat>num(state.tools.villageTargetRoll)+state.suspicion;}
+function settlementRewardImage(key){var src=componentImage(key);return src?'<img class="settlement-reward-image" src="'+esc(src)+'" alt="" decoding="async">':'';}
 function settlementWorkflowHtml(){
   var stage=state.tools.villageStage||'choose',mode=state.tools.villageMode||'neutral',cost=mode==='neutral'?500:1000,combat=totals().combat,susp=state.suspicion;
   if(stage==='choose')return workflowDots(0,3,'Settlement influence progress')+bountyStageShell('Stage 1 of 3','Choose the Settlement','Grow your network to collect more resources whenever you land on a Resource Space. A neutral Settlement costs 500 Gold to influence. Taking over a Settlement in another player’s network costs 1,000 Gold. The cost is paid before the attempt.','<div class="workflow-instruction">Choose the Settlement type. Once you begin, the Gold is spent even if the attempt fails or you abandon it.</div>'+choiceButtons(['neutral','enemy'],mode,'settlement-mode',function(v){return v==='neutral'?'Neutral Settlement':'Another player’s Settlement';},'two-choice')+'<div class="workflow-summary"><div><span>Attempt cost</span><strong>'+fmt(cost)+' Gold</strong></div><div><span>Your Combat</span><strong>'+combat+'</strong></div><div><span>Your Suspicion</span><strong>'+susp+'</strong></div></div><button class="primary wide-action" data-action="settlement-begin" '+(state.resources.gold<cost?'disabled':'')+'>Pay '+fmt(cost)+' Gold & begin attempt</button>'+(state.resources.gold<cost?'<p class="tiny bad-text">You do not have enough Gold for this attempt.</p>':''));
-  var pr=Math.max(0,Math.min(9,num(state.tools.villagePlayerRoll))),tr=Math.max(1,Math.min(20,num(state.tools.villageTargetRoll)||1)),both=!!state.tools.villagePlayerRollSet&&!!state.tools.villageTargetRollSet,pt=pr+combat,st=tr+susp,success=pt>st;
+  var pr=Math.max(0,Math.min(9,num(state.tools.villagePlayerRoll))),tr=Math.max(1,Math.min(20,num(state.tools.villageTargetRoll)||1)),both=!!state.tools.villagePlayerRollSet&&!!state.tools.villageTargetRollSet,pt=pr+combat,st=tr+susp,success=settlementSucceeded();
   if(stage==='roll'){
     var opposing=state.tools.villageRollStep==='opponent';
-    return workflowDots(1,3,'Settlement influence progress')+bountyStageShell('Stage 2 of 3',opposing?'Settlement’s defence value':'Your influence roll',opposing?'Reveal the Settlement’s defence value first. Your Suspicion is added to it. Then make your physical d10 roll.':'Roll your physical d10. Add your Combat to its result.',opposedRollPage('village','<div class="notice compact-notice"><strong>'+fmt(cost)+' Gold paid.</strong></div><div class="workflow-summary"><div><span>Your Combat</span><strong>'+combat+'</strong></div><div><span>Suspicion</span><strong>'+susp+'</strong></div>'+(!opposing&&both?'<div><span>Your total</span><strong>'+pt+'</strong></div>':'')+'</div>',smallDieChoices('settlement-d10-select',pr,state.tools.villagePlayerRollSet,0,9),npcRollControl('village'),'<div class="result"><strong>You '+pt+' · Settlement '+st+'</strong><p>'+(success?'Success':'Failure · ties fail')+'</p></div>','settlement-result','Continue to result',success)+'<button class="ghost wide-action" style="margin-top:12px" data-action="settlement-abandon">Abandon attempt</button>');
+    var paid='<div class="notice compact-notice"><strong>'+fmt(cost)+' Gold paid.</strong></div>';
+    var body=paid+(opposing?npcRollControl('village')+'<button class="primary wide-action" data-action="opposed-roll-next" data-system="village" '+(!state.tools.villageTargetRollSet?'disabled':'')+'>Continue to your roll</button>':opposedThresholdHtml('village')+diceReferenceHtml(['d10'])+'<p class="small">Roll your physical d10, then record whether you met the requirement above. A tied total fails.</p><div class="choice-grid two-choice"><button class="primary" data-action="settlement-outcome" data-result="success">Success</button><button class="danger" data-action="settlement-outcome" data-result="failure">Failure</button></div><button class="ghost wide-action" style="margin-top:12px" data-action="opposed-roll-back" data-system="village">View Settlement value</button>');
+    return workflowDots(1,3,'Settlement influence progress')+bountyStageShell('Stage 2 of 3',opposing?'Settlement’s defence value':'Your influence attempt',opposing?'Reveal the Settlement’s defence value first. Your Suspicion is added to it. Then make your physical d10 roll.':'Meet the d10 requirement to establish influence.',body+'<button class="ghost wide-action" style="margin-top:12px" data-action="settlement-abandon">Abandon attempt</button>');
   }
   var resultBody='<div class="stage-result '+(success?'good':'bad')+' result"><strong>'+(success?'Influence attempt succeeded':'Influence attempt failed')+'</strong></div>';
   if(!success){resultBody+='<p class="small muted">The '+fmt(cost)+' Gold cost was already paid.'+(mode==='enemy'?' You must wait five turns before attempting to take over that Settlement again.':'')+'</p><button class="primary wide-action" data-action="village-finish-failure">Finish attempt</button>';}
   else{
     if(mode==='neutral')resultBody+='<p class="small muted">Place one of your clear coloured cubes over the Settlement. It joins your network and counts towards future Resource Space payouts. Then draw one red reward card and record what it says.</p>';
-    else resultBody+='<p class="small muted">Replace the other player’s coloured cube with one of your own. This Settlement now counts towards your Resource Space payouts instead of theirs. Then choose either 2,000 of each resource, or a red reward card if you are still looking for an escaped prisoner.</p><div class="choice-grid two-choice"><button class="choice-btn '+(state.tools.villageReward==='resources2000'?'active':'')+'" data-action="settlement-reward-choice" data-value="resources2000"><strong>2,000 of each resource</strong><small>The other player records the corresponding loss.</small></button><button class="choice-btn '+(state.tools.villageReward&&state.tools.villageReward.indexOf('card')===0||state.tools.villageReward==='prisoner'?'active':'')+'" data-action="settlement-reward-choice" data-value="card"><strong>Red reward card</strong><small>Record the physical card below.</small></button></div>';
+    else resultBody+='<p class="small muted">Replace the other player’s coloured cube with one of your own. This Settlement now counts towards your Resource Space payouts instead of theirs. Then choose either 2,000 of each resource, or a red reward card if you are still looking for an escaped prisoner.</p><div class="choice-grid two-choice"><button class="choice-btn '+(state.tools.villageReward==='resources2000'?'active':'')+'" data-action="settlement-reward-choice" data-value="resources2000">'+settlementRewardImage('settlement-resources')+'<strong>2,000 of each resource</strong><small>The other player records the corresponding loss.</small></button><button class="choice-btn '+(state.tools.villageReward&&state.tools.villageReward.indexOf('card')===0||state.tools.villageReward==='prisoner'?'active':'')+'" data-action="settlement-reward-choice" data-value="card"><strong>Red reward card</strong><small>Record the physical card below.</small></button></div>';
     var showCards=mode==='neutral'||state.tools.villageReward==='card'||state.tools.villageReward==='card500'||state.tools.villageReward==='card1000'||state.tools.villageReward==='prisoner';
-    if(showCards)resultBody+='<div class="tiny muted" style="margin:10px 0 5px">Red reward card</div><div class="choice-grid reward-choice"><button class="choice-btn '+(state.tools.villageReward==='card1000'?'active':'')+'" data-action="settlement-reward-choice" data-value="card1000"><strong>Resources +1,000</strong><small>+1,000 Wood, Stone and Food</small></button><button class="choice-btn '+(state.tools.villageReward==='card500'?'active':'')+'" data-action="settlement-reward-choice" data-value="card500"><strong>Resources +500</strong><small>+500 Wood, Stone and Food</small></button><button class="choice-btn '+(state.tools.villageReward==='prisoner'?'active':'')+'" data-action="settlement-reward-choice" data-value="prisoner"><strong>Escaped prisoner</strong><small>Begins the Knights of the Vale chase</small></button></div>';
+    if(showCards)resultBody+='<div class="tiny muted" style="margin:10px 0 5px">Red reward card</div><div class="choice-grid reward-choice"><button class="choice-btn '+(state.tools.villageReward==='card1000'?'active':'')+'" data-action="settlement-reward-choice" data-value="card1000">'+settlementRewardImage('settlement-resources')+'<strong>Resources +1,000</strong><small>+1,000 Wood, Stone and Food</small></button><button class="choice-btn '+(state.tools.villageReward==='card500'?'active':'')+'" data-action="settlement-reward-choice" data-value="card500">'+settlementRewardImage('settlement-resources')+'<strong>Resources +500</strong><small>+500 Wood, Stone and Food</small></button><button class="choice-btn '+(state.tools.villageReward==='prisoner'?'active':'')+'" data-action="settlement-reward-choice" data-value="prisoner">'+settlementRewardImage('settlement-prisoner')+'<strong>Escaped prisoner</strong><small>Begins the Knights of the Vale chase</small></button></div>';
     var rewardReady=mode==='enemy'?['resources2000','card1000','card500','prisoner'].indexOf(state.tools.villageReward)>=0:['card1000','card500','prisoner'].indexOf(state.tools.villageReward)>=0;
     resultBody+='<button class="primary wide-action" style="margin-top:10px" data-action="village-resolve" data-result="success" '+(!rewardReady?'disabled':'')+'>Confirm influence & reward</button>';
   }
@@ -4314,7 +4385,12 @@ function updateToolResults(){
       }
       if(a==='opposed-roll-next'&&!ready)return;obj[key]=a==='opposed-roll-next'?'opponent':'player';commit(false);render();if(activeActivity)activityCard.scrollTop=0;return;
     }
-    if(a==='weirwood-choice'){var choice=btn.getAttribute('data-value');if(choice!=='immediate'&&(!weirwoodDef(choice)||hasWeirwood(choice)))return;state.tools.weirwoodChoice=choice;commit(false);render();return;}
+    if(a==='inventory-weirwood-view'){var heldId=btn.getAttribute('data-weirwood'),heldCard=weirwoodDef(heldId);if(!heldCard||!hasWeirwood(heldId))return;openModal(heldCard.name,'<div class="inventory-card-preview">'+weirwoodArtwork(heldId)+'</div><p class="help-copy">'+esc(heldCard.text)+'</p><p class="small muted">Follow the physical card’s instructions. Confirm below when you play it.</p><button class="primary wide-action" data-modal-action="inventory-weirwood-use" data-weirwood="'+esc(heldId)+'">Confirm use & remove card</button>');return;}
+    if(a==='weirwood-choice'){var choice=btn.getAttribute('data-value');if(choice!=='immediate'&&(!weirwoodDef(choice)||hasWeirwood(choice)))return;if(state.tools.weirwoodChoice===choice)return;state.tools.weirwoodChoice=choice;commit(false);
+      var choices=activityBody.querySelectorAll?activityBody.querySelectorAll('[data-action="weirwood-choice"]'):[];
+      Array.prototype.forEach.call(choices,function(el){var selected=el.getAttribute('data-value')===choice;el.classList[selected?'add':'remove']('active');el.setAttribute('aria-pressed',String(selected));});
+      var detail=document.getElementById('weirwoodSelectionDetail'),confirm=document.getElementById('weirwoodSelectionConfirm');
+      if(detail)detail.innerHTML=weirwoodSelectionDetail(choice);if(confirm){confirm.disabled=false;confirm.textContent=weirwoodDef(choice)?'Confirm & keep card':'Card resolved · finish';}return;}
     if(a==='weirwood-confirm'){var choice=state.tools.weirwoodChoice,card=weirwoodDef(choice);if(choice!=='immediate'&&(!card||hasWeirwood(choice)))return;if(card)state.weirwoodHeld.push(choice);state.tools.weirwoodChoice='';commit(true,card?card.name+' kept from the Weirwood deck.':'Immediate Weirwood card resolved.');toast(card?card.name+' added to your held cards.':'Weirwood card resolved.','good');completeActivity();return;}
     if(a==='show-context-guide'){openContextTutorial(btn.getAttribute('data-tutorial-key'),true);return;}
     if(a==='dismiss-context-guide'){markTutorialSeen(btn.getAttribute('data-tutorial-key'));render();return;}
@@ -4533,7 +4609,7 @@ function updateToolResults(){
     if(a==='ability-heal'){var cond=btn.getAttribute('data-condition');if(cond==='greyscale'||cond==='poison'){state.statuses[cond]=false;commit();toast('Healer used: '+cond+' cured. Remember to miss 3 turns.','good');}return;}
     if(a==='ability-terrain'){f=findFace(btn.getAttribute('data-id'));if(!f||f.abilityUsed)return;var an=f.abilityName,res=an==='Desert-dweller'?'stone':an==='Fertile Land'?'food':'wood',each=an==='Winter is Coming'?3000:5000;openModal(an,'<p class="help-copy">Enter the number of qualifying Settlements in your network, including your Stronghold if it is in the required terrain.</p><label class="field"><span>Qualifying Settlements / Stronghold</span><input type="number" min="0" inputmode="numeric" id="terrainCount" value="1"></label><div class="result"><span class="muted small">Reward per qualifying location</span><br><strong>'+fmt(each)+' '+RES_LABEL[res]+'</strong></div><button class="primary wide-action" data-modal-action="ability-terrain-confirm" data-id="'+esc(f.id)+'" data-resource="'+res+'" data-each="'+each+'">Apply reward</button>');return;}
 
-    if(a==='village-resolve'){if(state.tools.villageStage!=='result'||!state.tools.villagePlayerRollSet||!state.tools.villageTargetRollSet)return;var vm=state.tools.villageMode||'neutral',vreward=state.tools.villageReward||'',vsuccess=num(state.tools.villagePlayerRoll)+totals().combat>num(state.tools.villageTargetRoll)+state.suspicion;if(!vsuccess){toast('The displayed result is no longer a success. Check the rolls again.','warn');return;}var allowed=vm==='enemy'?['resources2000','card1000','card500','prisoner']:['card1000','card500','prisoner'];if(allowed.indexOf(vreward)<0){toast('Select the reward you received first.','warn');return;}state.villages+=1;if(vreward==='resources2000')RESOURCES.forEach(function(r){applyResourceGain(r,2000);});if(vreward==='card1000')['wood','stone','food'].forEach(function(r){applyResourceGain(r,1000);});if(vreward==='card500')['wood','stone','food'].forEach(function(r){applyResourceGain(r,500);});if(vreward==='prisoner'){state.tools.knightsStage='first';state.tools.knightsTurn=0;state.tools.knightsGenerated=null;state.tools.knightsDirectionSet=false;state.tools.knightsDistanceSet=false;}awardDirewolfBond('Settlement influence');state.tools.villageStage='choose';state.tools.villageCostPaid=false;state.tools.villageReward='';state.tools.villagePlayerRollSet=false;state.tools.villageRollStep='opponent';state.tools.villageTargetRollSet=false;state.tools.villageTargetRollAuto=false;commit(true,'Settlement influence succeeded: '+(vm==='neutral'?'neutral Settlement joined your network':'another player’s Settlement joined your network')+(vreward==='resources2000'?' and +2,000 of each resource':vreward==='card1000'?' and red card gave +1,000 Wood, Stone and Food':vreward==='card500'?' and red card gave +500 Wood, Stone and Food':'; escaped prisoner revealed')+'.');toast(vreward==='prisoner'?'Influence established. Place your cube over the Settlement; the escaped-prisoner chase has begun.':'Influence established. Place your cube over the Settlement; reward applied.','good');completeActivity();return;}
+    if(a==='village-resolve'){if(state.tools.villageStage!=='result'||!state.tools.villageCostPaid||!state.tools.villageTargetRollSet)return;var vm=state.tools.villageMode||'neutral',vreward=state.tools.villageReward||'',vsuccess=settlementSucceeded();if(!vsuccess){toast('The displayed result is no longer a success. Check the rolls again.','warn');return;}var allowed=vm==='enemy'?['resources2000','card1000','card500','prisoner']:['card1000','card500','prisoner'];if(allowed.indexOf(vreward)<0){toast('Select the reward you received first.','warn');return;}state.villages+=1;if(vreward==='resources2000')RESOURCES.forEach(function(r){applyResourceGain(r,2000);});if(vreward==='card1000')['wood','stone','food'].forEach(function(r){applyResourceGain(r,1000);});if(vreward==='card500')['wood','stone','food'].forEach(function(r){applyResourceGain(r,500);});if(vreward==='prisoner'){state.tools.knightsStage='first';state.tools.knightsTurn=0;state.tools.knightsGenerated=null;state.tools.knightsDirectionSet=false;state.tools.knightsDistanceSet=false;}awardDirewolfBond('Settlement influence');state.tools.villageStage='choose';state.tools.villageCostPaid=false;state.tools.villageReward='';state.tools.villagePlayerRollSet=false;state.tools.villageRollStep='opponent';state.tools.villageTargetRollSet=false;state.tools.villageTargetRollAuto=false;commit(true,'Settlement influence succeeded: '+(vm==='neutral'?'neutral Settlement joined your network':'another player’s Settlement joined your network')+(vreward==='resources2000'?' and +2,000 of each resource':vreward==='card1000'?' and red card gave +1,000 Wood, Stone and Food':vreward==='card500'?' and red card gave +500 Wood, Stone and Food':'; escaped prisoner revealed')+'.');toast(vreward==='prisoner'?'Influence established. Place your cube over the Settlement; the escaped-prisoner chase has begun.':'Influence established. Place your cube over the Settlement; reward applied.','good');completeActivity();return;}
     if(a==='resource-space-add'){var rs=btn.getAttribute('data-resource-type'),controlledNow=state.villages+(state.settlementFormed?1:0),payoutNow=1000*Math.max(1,controlledNow);if(hasAbility(RES_LABEL[rs]+' Scholar'))payoutNow*=2;var rsg=applyResourceGain(rs,payoutNow);commit(true,'Resource space: '+resourceGainMessage(rsg,RES_LABEL[rs]));toast(resourceGainMessage(rsg,RES_LABEL[rs])+'.','good');completeActivity();return;}
 
     if(a==='prison-stage-back'){state.tools.prisonStage='choose';commit(false);render();return;}
@@ -4550,8 +4626,13 @@ function updateToolResults(){
     if(a==='settlement-mode'){state.tools.villageMode=btn.getAttribute('data-value');state.tools.villagePlayerRollSet=false;state.tools.villageRollStep='opponent';state.tools.villageTargetRollSet=false;state.tools.villageTargetRollAuto=false;commit(false);render();return;}
     if(a==='settlement-abandon'){state.tools.villageStage='choose';state.tools.villageCostPaid=false;state.tools.villageReward='';state.tools.villagePlayerRollSet=false;state.tools.villageRollStep='opponent';state.tools.villageTargetRollSet=false;state.tools.villageTargetRollAuto=false;commit(true,'Settlement influence attempt abandoned after the upfront cost was paid.');toast('Attempt abandoned. The Gold already paid is not refunded.','warn');completeActivity();return;}
     if(a==='settlement-reward-choice'){state.tools.villageReward=btn.getAttribute('data-value')||'';commit(false);render();return;}
-    if(a==='village-finish-failure'){var fm=state.tools.villageMode||'neutral';state.tools.villageStage='choose';state.tools.villageCostPaid=false;state.tools.villageReward='';state.tools.villagePlayerRollSet=false;state.tools.villageRollStep='opponent';state.tools.villageTargetRollSet=false;state.tools.villageTargetRollAuto=false;commit(true,'Settlement influence attempt failed.'+(fm==='enemy'?' Five-turn retry restriction applies.':''));toast(fm==='enemy'?'Attempt recorded. Wait five turns before trying to take over that Settlement again.':'Attempt recorded.','warn');completeActivity();return;}
-    if(a==='settlement-begin'){if(state.tools.villageStage!=='choose'||state.tools.villageCostPaid)return;var sm=state.tools.villageMode||'neutral',sc=sm==='neutral'?500:1000;if(state.resources.gold<sc){toast('You need '+fmt(sc)+' Gold to begin this influence attempt.','bad');return;}state.resources.gold-=sc;state.tools.villageCostPaid=true;state.tools.villageReward='';state.tools.villageStage='roll';state.tools.villagePlayerRollSet=false;state.tools.villageRollStep='opponent';state.tools.villageTargetRollSet=false;state.tools.villageTargetRollAuto=false;commit(true,'Settlement influence attempt begun: '+fmt(sc)+' Gold paid.');toast(fmt(sc)+' Gold paid. The attempt is now committed.','neutral');return;}
+    if(a==='village-finish-failure'){if(state.tools.villageStage!=='result'||!state.tools.villageCostPaid||settlementSucceeded())return;var fm=state.tools.villageMode||'neutral';state.tools.villageStage='choose';state.tools.villageCostPaid=false;state.tools.villageReward='';state.tools.villagePlayerRollSet=false;state.tools.villageRollStep='opponent';state.tools.villageTargetRollSet=false;state.tools.villageTargetRollAuto=false;commit(true,'Settlement influence attempt failed.'+(fm==='enemy'?' Five-turn retry restriction applies.':''));toast(fm==='enemy'?'Attempt recorded. Wait five turns before trying to take over that Settlement again.':'Attempt recorded.','warn');completeActivity();return;}
+    if(a==='settlement-begin'){if(state.tools.villageStage!=='choose'||state.tools.villageCostPaid)return;var sm=state.tools.villageMode||'neutral',sc=sm==='neutral'?500:1000;if(state.resources.gold<sc){toast('You need '+fmt(sc)+' Gold to begin this influence attempt.','bad');return;}state.resources.gold-=sc;state.tools.villageCostPaid=true;state.tools.villageOutcome=null;state.tools.villageReward='';state.tools.villageStage='roll';state.tools.villagePlayerRollSet=false;state.tools.villageRollStep='opponent';state.tools.villageTargetRollSet=false;state.tools.villageTargetRollAuto=false;commit(true,'Settlement influence attempt begun: '+fmt(sc)+' Gold paid.');toast(fmt(sc)+' Gold paid. The attempt is now committed.','neutral');return;}
+    if(a==='settlement-outcome'){
+      if(state.tools.villageStage!=='roll'||state.tools.villageRollStep!=='player'||!state.tools.villageCostPaid||!state.tools.villageTargetRollSet)return;
+      var outcome=btn.getAttribute('data-result');if(outcome!=='success'&&outcome!=='failure')return;
+      state.tools.villageOutcome=outcome==='success';state.tools.villageStage='result';commit(false);render();return;
+    }
     if(a==='settlement-d10-select'){if(state.tools.villageStage!=='roll'||!state.tools.villageTargetRollSet||state.tools.villageRollStep!=='player')return;state.tools.villagePlayerRoll=Math.max(0,Math.min(9,num(btn.getAttribute('data-value'))));state.tools.villagePlayerRollSet=true;commit(false);render();return;}
     if(a==='settlement-d20-picker'){if(npcRollLocked('village'))return;var sv=Math.max(1,Math.min(20,num(state.tools.villageTargetRoll)||1));openModal('Settlement d20 result','<p class="small muted">Tap the number shown on the physical d20.</p><div class="die-picker-grid">'+Array.from({length:20},function(_,i){var v=i+1;return '<button type="button" class="'+(state.tools.villageTargetRollSet&&sv===v?'active':'')+'" data-modal-action="settlement-d20-select" data-value="'+v+'">'+v+'</button>';}).join('')+'</div>');return;}
     if(a==='settlement-result'){if(!state.tools.villagePlayerRollSet||!state.tools.villageTargetRollSet)return;state.tools.villageStage='result';commit(false);render();return;}
@@ -4661,7 +4742,7 @@ if(a==='raid-select'){var rsel=btn.getAttribute('data-raid-attr');if((state.tool
     if(a==='war-loot-complete'){state.tools.warStage='complete';commit(true,'Stronghold Attack completed after an Item was chosen.');toast('Stronghold Attack complete. Update the stolen Item in the Items page as needed.','good');return;}
     if(a==='war-finish'){state.tools.warStage='declare';state.tools.warNotice='';state.tools.warLootItem='';state.tools.warLootGemType='';state.siegeTurns=0;commit(false);render();completeActivity();return;}
     if(a==='undo-war'){if(state.warCount>0){state.warCount--;state.tools.warNotice='';state.tools.warStage='declare';commit();toast('Last Stronghold Attack count undone.','neutral');}return;}if(a==='siege-inc'){state.siegeTurns=Math.min(15,state.siegeTurns+1);commit();return;}if(a==='siege-dec'){state.siegeTurns=Math.max(0,state.siegeTurns-1);commit();return;}if(a==='siege-reset'){state.siegeTurns=0;commit();return;}
-    if(a==='add-weirwood-direct'){var wid=btn.getAttribute('data-weirwood');if(wid&&!hasWeirwood(wid)){state.weirwoodHeld.push(wid);commit();toast((weirwoodDef(wid)||{}).name+' recorded as held.','good');}return;}if(a==='add-weirwood'){var ws=document.getElementById('weirwoodAddSelect'),wid=ws?ws.value:'';if(wid&&!hasWeirwood(wid)){state.weirwoodHeld.push(wid);commit();toast((weirwoodDef(wid)||{}).name+' recorded as held.','good');}return;}if(a==='use-weirwood'){var wid2=btn.getAttribute('data-weirwood'),wd=weirwoodDef(wid2);if(!wd||!hasWeirwood(wid2))return;if(wid2==='greyscale-serum')state.statuses.greyscale=false;if(wid2==='escape-artist'){state.statuses.inPrison=false;state.statuses.prisonAttempts=0;state.tools.prisonStage='choose';}removeWeirwood(wid2);commit();toast((wd?wd.name:'Weirwood card')+' used and removed from held cards.','good');completeActivity();return;}if(a==='export-save'){exportSave();return;}if(a==='import-save'){var inp=document.getElementById('importFile');if(inp)inp.click();return;}if(a==='reset-save'){openConfirm('Reset entire game?','This will erase all tracked resources, attributes, Faces, item progress, statuses, bounties, held Weirwood cards, Suspicion and action history on this device. This cannot be undone.','reset-save-confirm','Yes, reset game');return;}
+    if(a==='add-weirwood-direct'){var wid=btn.getAttribute('data-weirwood');if(wid&&!hasWeirwood(wid)){state.weirwoodHeld.push(wid);commit();toast((weirwoodDef(wid)||{}).name+' recorded as held.','good');}return;}if(a==='add-weirwood'){var ws=document.getElementById('weirwoodAddSelect'),wid=ws?ws.value:'';if(wid&&!hasWeirwood(wid)){state.weirwoodHeld.push(wid);commit();toast((weirwoodDef(wid)||{}).name+' recorded as held.','good');}return;}if(a==='use-weirwood'){useHeldWeirwood(btn.getAttribute('data-weirwood'));return;}if(a==='export-save'){exportSave();return;}if(a==='import-save'){var inp=document.getElementById('importFile');if(inp)inp.click();return;}if(a==='reset-save'){openConfirm('Reset entire game?','This will erase all tracked resources, attributes, Faces, item progress, statuses, bounties, held Weirwood cards, Suspicion and action history on this device. This cannot be undone.','reset-save-confirm','Yes, reset game');return;}
   }
   view.addEventListener('click',handleActivityClick);
   activityBody.addEventListener('click',handleActivityClick);
@@ -4727,6 +4808,7 @@ if(a==='raid-select'){var rsel=btn.getAttribute('data-raid-attr');if((state.tool
     if(a==='defence-physical-select'){if(state.bounty.defenceReady||state.bounty.stage!=='defence')return;var dv=num(btn.getAttribute('data-value'));if(dv<1||dv>6)return;state.bounty.defenceRoll=dv;state.bounty.defenceReady=true;state.bounty.defenceAuto=false;state.bounty.defenceAttr='';closeModal();commit(false);render();return;}
     if(a==='bounty-d20-select'){if(btn.getAttribute('data-die')!=='player'&&npcRollLocked('bounty'))return;var dw=btn.getAttribute('data-die')==='player'?'player':'target',dv=Math.max(1,Math.min(20,num(btn.getAttribute('data-value'))));if(dw==='player'){state.bounty.playerD20=dv;state.bounty.playerRollSet=true;}else{state.bounty.targetD20=dv;state.bounty.targetRollSet=true;state.bounty.targetRollAuto=false;}closeModal();commit(false);render();return;}
     if(a==='blackmail-d20-select'){state.bounty.blackmailRoll=Math.max(1,Math.min(20,num(btn.getAttribute('data-value'))));state.bounty.blackmailRollSet=true;closeModal();commit(false);render();return;}
+    if(a==='inventory-weirwood-use'){useHeldWeirwood(btn.getAttribute('data-weirwood'));return;}
     if(a==='settlement-d20-select'){if(npcRollLocked('village'))return;state.tools.villageTargetRollAuto=false;state.tools.villageTargetRoll=Math.max(1,Math.min(20,num(btn.getAttribute('data-value'))));state.tools.villageTargetRollSet=true;closeModal();commit(false);render();return;}
     if(a==='foe-d20-select'){if(npcRollLocked('foe'))return;state.tools.foeTargetRollAuto=false;state.tools.foeTargetRoll=Math.max(1,Math.min(20,num(btn.getAttribute('data-value'))));state.tools.foeTargetRollSet=true;closeModal();commit(false);render();return;}
     if(a==='wolf-d20-select'){state.tools.wolfRoll=Math.max(1,Math.min(20,num(btn.getAttribute('data-value'))));state.tools.wolfRollSet=true;closeModal();commit(false);render();return;}
