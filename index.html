@@ -610,7 +610,7 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .guide-mode .walkthrough-dot.active{background:#c6e0f5}.guide-mode .walkthrough-progress{color:#c5d6e6}
 .checkpoint-box h3{margin:0 0 10px}.checkpoint-box .summary-line{flex-wrap:wrap}
 
-/* v0.36: physical Item photographs, shared by the list and quest popup. */
+/* v0.38: physical Item photographs, shared by the list and quest popup. */
 .item-photo{display:block;object-fit:contain;object-position:center;background:radial-gradient(ellipse at center,#493c2e 0%,#251f1a 75%);border:1px solid var(--line);border-radius:10px;flex-shrink:0}
 .item-photo-thumb{width:72px;height:96px}
 .item-launcher{gap:14px;padding:12px}
@@ -623,7 +623,7 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .item-overview-copy>p{font-family:var(--font-body);font-size:13px;line-height:1.55;color:var(--muted);margin:10px 0 12px}
 @media(max-width:380px){.item-photo-thumb{width:60px;height:80px}.item-launcher{gap:10px}.item-photo-detail{width:84px;height:112px}.item-overview{gap:12px}}
 
-/* v0.36: optional outer-board location artwork. */
+/* v0.38: optional outer-board location artwork. */
 .location-choice-grid img{width:72px;height:54px;object-fit:contain;background:#26221d}
 .location-choice-grid button{padding:9px;gap:10px}
 .location-choice-grid span{line-height:1.35;overflow-wrap:anywhere}
@@ -631,7 +631,7 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .bounty-location-photo img{display:block;width:100%;height:auto;max-height:180px;object-fit:contain}
 .bounty-location-photo figcaption{font-family:var(--font-heading);font-size:17px;margin-top:8px;color:var(--text)}
 
-/* v0.36: optional component references beside physical game actions. */
+/* v0.38: optional component references beside physical game actions. */
 .dice-reference{display:flex;align-items:center;gap:10px;margin:12px 0;color:var(--text);font-size:13px;line-height:1.4}
 .dice-reference-images{display:flex;flex:0 0 auto;gap:3px}
 .dice-reference img{display:block;width:48px;height:48px;object-fit:contain}
@@ -642,7 +642,7 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .component-reference p{font-size:12px;line-height:1.5;color:var(--muted);margin:5px 0 0}
 @media(max-width:360px){.component-reference>img{width:60px;height:60px}.component-reference{gap:9px}.dice-reference img{width:42px;height:42px}}
 
-/* v0.36: outer-board symbols are scoped to board-space interfaces. */
+/* v0.38: outer-board symbols are scoped to board-space interfaces. */
 .outer-space-photo{display:block;flex:0 0 auto;width:64px;height:64px;object-fit:contain;padding:6px;border:1px solid #38342f;border-radius:9px;box-sizing:border-box}
 .outer-space-dark{background:#050505}.outer-space-weirwood{background:#e7ddc8;border-color:#b6a68a}
 .outer-space-large{width:96px;height:96px;padding:8px}
@@ -674,7 +674,7 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .opposed-threshold strong{display:block;font-size:26px;line-height:1.35;margin:5px 0}
 .opposed-threshold p{margin:7px 0 0;line-height:1.5}
 
-/* v0.36: consistent board-picture choices and padded Item frames. */
+/* v0.38: consistent board-picture choices and padded Item frames. */
 .activity-launcher>.outer-space-mosaic{flex:0 0 64px}
 .activity-launcher>.tool-launcher-copy{flex:1;min-width:0}
 .location-choice-grid .picture-choice,
@@ -699,10 +699,41 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .item-photo-thumb{width:90px;height:106px;padding:7px 11px}
 .item-photo-detail{width:146px;height:174px;padding:11px 15px}
 @media(max-width:380px){.item-photo-thumb{width:76px;height:94px;padding:7px 10px}.item-photo-detail{width:112px;height:140px;padding:9px 12px}}
+
+/* Weirwood illustrations are clipped separately from the printed card headings and rules. */
+.weirwood-choice .picture-choice{display:flex;flex-direction:column;align-items:center;gap:10px;padding:12px 10px;background:#000;color:var(--text);text-align:center;border:1px solid #5b5040;border-radius:10px;min-width:0}
+.weirwood-choice .picture-choice.active{border-color:var(--accent2);box-shadow:inset 0 0 0 2px var(--accent2)}
+.weirwood-art{display:grid;place-items:center;flex:0 0 auto;width:132px;max-width:100%;height:120px;overflow:hidden;background:#000}
+.weirwood-art-crop{display:block;position:relative;overflow:hidden;background:#000;flex:0 0 auto}
+.weirwood-art-crop img{display:block;position:absolute;max-width:none;object-fit:fill;border:0;border-radius:0;margin:0;padding:0}
+.history-undo{padding:14px;border:1px solid var(--accent);border-radius:12px;background:#211b13;margin:12px 0 16px}
+.history-undo p{margin:8px 0 12px;line-height:1.5}
+.whirlpool-card-action{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.whirlpool-card-action p{margin:8px 0 0;line-height:1.5}
+
+/* Compact black navigation rows; large artwork is reserved for choices inside assistants. */
+.space-grid .outer-space-choice{display:flex;flex-direction:row;align-items:center;gap:10px;text-align:left;background:#000;color:var(--text);padding:12px;min-width:0}
+.space-grid .outer-space-choice-copy{flex:1;min-width:0}.space-grid .outer-space-choice-copy strong{font-size:16px}
+.space-grid .outer-space-choice>b{font-size:22px;color:var(--accent2);flex:0 0 auto}
+.space-grid .outer-space-choice>.outer-space-photo,.space-grid .outer-space-choice>.quest-location-photo,.outer-board-launcher>.outer-space-photo{width:56px;height:56px;padding:4px;border:0;border-radius:0;background:transparent}
+.space-grid .outer-space-choice>.port-photo{width:56px;height:56px;flex:0 0 56px;border:0}
+.outer-space-choice>.outer-space-mosaic,.activity-launcher.outer-board-launcher>.outer-space-mosaic{grid-template-columns:repeat(2,26px);gap:4px;flex:0 0 56px}
+.outer-space-choice>.outer-space-mosaic .outer-space-photo,.outer-board-launcher>.outer-space-mosaic .outer-space-photo{width:26px;height:26px;padding:1px;border:0;background:transparent}
+.activity-launcher.outer-board-launcher{background:#000}
+.gemstone-picture-choices .picture-choice{display:flex;flex-direction:column;align-items:center;gap:8px;padding:12px 8px;background:#000;color:var(--text);border:1px solid #5b5040;min-width:0;text-align:center}
+.gemstone-picture-choices .picture-choice img{width:min(100%,120px);height:110px;object-fit:contain}
+.gemstone-picture-choices .picture-choice.active{border-color:var(--accent2);box-shadow:inset 0 0 0 2px var(--accent2)}
+.carried-item-pictures{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:10px;margin:12px 0}
+.carried-item-pictures figure{margin:0;padding:10px;background:#000;border:1px solid var(--line);border-radius:10px;text-align:center}
+.carried-item-pictures img{display:block;width:100%;height:105px;object-fit:contain;margin:0 auto 8px}.carried-item-pictures strong,.carried-item-pictures small{display:block;line-height:1.4}.carried-item-pictures small{color:var(--muted);margin-top:5px}
+.item-progress-icons{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;min-height:48px;margin-top:10px;align-items:end}
+.item-progress-icons:empty{display:none}
+.progress-item{display:grid;place-items:center;min-width:0;width:100%;height:48px;padding:2px;background:#000;border:1px solid var(--line);border-radius:7px}
+.progress-item img{display:block;width:100%;height:42px;object-fit:contain}.progress-item span{font-size:8px;line-height:1.2;overflow-wrap:anywhere}
 </style>
-<title>West of Westeros Companion v0.36</title>
+<title>West of Westeros Companion v0.38</title>
 </head>
-<body data-app-version="0.36">
+<body data-app-version="0.38">
 <div class="app-shell" id="appShell">
 <header class="topbar">
 <div>
@@ -1350,7 +1381,7 @@ window.WOW_DATA = {
       "requiresActivation": false
     }
   ],
-  "sourceVersion": "Rules v6 + Tables v4 + Character/Weirwood card imports · app v0.36",
+  "sourceVersion": "Rules v6 + Tables v4 + Character/Weirwood card imports · app v0.38",
   "ruleSections": [
     {
       "num": "1",
@@ -2663,7 +2694,7 @@ window.WOW_DATA = {
 
   function defaultState(){
     return {
-      version:36,
+      version:38,
       guideSeen:false,
       walkthroughSeen:false,
       tutorialsSeen:{},
@@ -2805,7 +2836,8 @@ window.WOW_DATA = {
     s.tools.secretsTestIntelligence=Math.max(0,num(s.tools.secretsTestIntelligence));
     if(s.tools.warStage==='declare'&&s.tools.warNotice)s.tools.warStage='travel';
     if(!Array.isArray(s.history)) s.history=[];
-    s.history=s.history.slice(0,300);
+    s.history=s.history.filter(function(h){return h&&typeof h.text==='string';}).slice(0,300);
+    var undoCount=0,undoBytes=0;s.history.forEach(function(h){var u=h.undo;if(!u)return;if(!u.state||typeof u.state!=='object'||!u.state.resources||!u.state.tools||!u.state.items){delete h.undo;return;}delete u.state.history;undoBytes+=JSON.stringify(u).length;if(++undoCount>20||undoBytes>1000000)delete h.undo;});
     s.weirwoodHeld=s.weirwoodHeld.map(function(x){
       if(typeof x==='string'){
         var defs=D.weirwoodKeepable||[],j;
@@ -2839,8 +2871,10 @@ window.WOW_DATA = {
     else if(s.items.egg&&s.items.egg.obtained)s.tools.dragonStage='obtained';
     if(num(s.version)<18&&s.tutorialsSeen)delete s.tutorialsSeen.strongholdAttack;
     if(num(s.version)<20)s.tutorialsSeen={};
-    s.version=36;
-    if(!s.items.gemstone.obtained){s.items.gemstone.completed=false;s.items.gemstone.checkpointed=false;s.items.gemstone.type='';}
+    if(!s.items.gemstone.obtained&&!s.items.gemstone.completed&&s.tools.crewStage!=='found')s.items.gemstone.type='';
+    syncItemAcquisitionOrder(s);
+    s.version=38;
+    if(!s.items.gemstone.obtained){s.items.gemstone.completed=false;if(!(s.items.gemstone.lost&&s.items.gemstone.lostType))s.items.gemstone.checkpointed=false;if(s.tools.crewStage!=='found'||s.items.gemstone.lost)s.items.gemstone.type='';}
     if(s.items.gemstone.completed) s.items.gemstone.obtained=true;
     if(!s.items.direwolf.obtained){s.items.direwolf.completed=false;s.items.direwolf.checkpointed=false;s.items.direwolf.bonds=[];}
     if(s.items.direwolf.completed) s.items.direwolf.obtained=true;
@@ -2883,7 +2917,7 @@ window.WOW_DATA = {
     return out;
   }
   function historySnapshot(s){
-    return {playerName:s.playerName,setupComplete:s.setupComplete,baseAttributes:s.baseAttributes,manualModifiers:s.manualModifiers,resources:s.resources,crewDebt:Math.max(0,num(s.tools&&s.tools.crewDebt)),inventory:{assassinationWeapons:s.inventory.assassinationWeapons},faces:s.faces.map(function(f){return {id:f.id,name:f.name,tier:f.tier,abilityUnlocked:f.abilityUnlocked,abilityUsed:f.abilityUsed};}),items:historyItemState(s.items),statuses:s.statuses,suspicion:s.suspicion,settlementFormed:s.settlementFormed,villages:s.villages,warCount:s.warCount,siegeTurns:s.siegeTurns,weirwoodHeld:s.weirwoodHeld.slice(),bounty:{tier:s.bounty.tier,target:s.bounty.target,location:s.bounty.location}};
+    return JSON.parse(JSON.stringify({playerName:s.playerName,setupComplete:s.setupComplete,baseAttributes:s.baseAttributes,manualModifiers:s.manualModifiers,resources:s.resources,crewDebt:Math.max(0,num(s.tools&&s.tools.crewDebt)),inventory:{assassinationWeapons:s.inventory.assassinationWeapons},faces:s.faces.map(function(f){return {id:f.id,name:f.name,tier:f.tier,abilityUnlocked:f.abilityUnlocked,abilityUsed:f.abilityUsed};}),items:historyItemState(s.items),statuses:s.statuses,suspicion:s.suspicion,settlementFormed:s.settlementFormed,villages:s.villages,warCount:s.warCount,siegeTurns:s.siegeTurns,weirwoodHeld:s.weirwoodHeld.slice(),bounty:{tier:s.bounty.tier,target:s.bounty.target,location:s.bounty.location}}));
   }
   function sameValue(a,b){return JSON.stringify(a)===JSON.stringify(b);}
   function summariseHistoryChange(before,after){
@@ -2908,15 +2942,42 @@ window.WOW_DATA = {
     if(!parts.length)return '';
     return parts.slice(0,4).join(' · ')+(parts.length>4?' · +'+(parts.length-4)+' more change'+(parts.length-4===1?'':'s'):'');
   }
-  var lastHistorySnapshot=historySnapshot(state);
-  function addHistory(text){if(!text)return;state.history.unshift({id:makeId(),at:new Date().toISOString(),text:text});if(state.history.length>300)state.history.length=300;}
-  function commit(rerender,label){var now=historySnapshot(state),msg=label||summariseHistoryChange(lastHistorySnapshot,now);if(msg)addHistory(msg);lastHistorySnapshot=historySnapshot(state);saveState();if(rerender!==false)render();}
+  function undoStateSnapshot(s){
+    var copy={};Object.keys(s).forEach(function(k){if(k!=='history')copy[k]=s[k];});return JSON.parse(JSON.stringify(copy));
+  }
+  var lastHistorySnapshot=historySnapshot(state),undoBefore=undoStateSnapshot(state),undoHistoryHead=(state.history[0]||{}).id||'',undoView='game',undoActivity='';
+  function beginUndoAction(){
+    undoBefore=undoStateSnapshot(state);undoHistoryHead=(state.history[0]||{}).id||'';undoView=currentView;undoActivity=activeActivity;
+    lastHistorySnapshot=historySnapshot(state);
+  }
+  function trimUndoHistory(){
+    var kept=0,bytes=0;(state.history||[]).forEach(function(h){if(!h.undo)return;bytes+=JSON.stringify(h.undo).length;if(++kept>20||bytes>1000000)delete h.undo;});
+  }
+  function addHistory(text){if(!text)return null;var entry={id:makeId(),at:new Date().toISOString(),text:text};state.history.unshift(entry);if(state.history.length>300)state.history.length=300;return entry;}
+  function commit(rerender,label){
+    syncItemAcquisitionOrder(state);
+    var now=historySnapshot(state),msg=label||summariseHistoryChange(lastHistorySnapshot,now);
+    if(msg){var entry=addHistory(msg);entry.undo={state:undoBefore,historyHead:undoHistoryHead,view:undoView,activity:undoActivity};trimUndoHistory();}
+    lastHistorySnapshot=historySnapshot(state);undoBefore=undoStateSnapshot(state);undoHistoryHead=(state.history[0]||{}).id||'';undoView=currentView;undoActivity=activeActivity;
+    saveState();if(rerender!==false)render();
+  }
+  function undoLatestHistory(expectedId){
+    var entry=state.history[0];if(!entry||entry.id!==expectedId||!entry.undo||!entry.undo.state)return;
+    var u=entry.undo,remaining=[],head=u.historyHead;if(head){var at=state.history.findIndex(function(h){return h.id===head;});if(at>=0)remaining=state.history.slice(at);}
+    var previous;
+    try{previous=normaliseState(deepMerge(defaultState(),JSON.parse(JSON.stringify(u.state))));}catch(e){toast('This action could not be restored.','bad');return;}
+    previous.history=remaining;previous.tutorialsSeen=state.tutorialsSeen;previous.guideSeen=state.guideSeen;previous.walkthroughSeen=state.walkthroughSeen;
+    pauseSecretTimer();secretTimerRemaining=60;pendingBondToast='';closeModal();closeActivity(false);state=previous;
+    lastHistorySnapshot=historySnapshot(state);undoBefore=undoStateSnapshot(state);undoHistoryHead=(state.history[0]||{}).id||'';
+    saveState();setView(['game','faces','items','tools','rules'].indexOf(u.view)>=0?u.view:'game');if(u.activity&&activityRegistry[canonicalActivity(u.activity)])openActivity(u.activity);
+    openHistory();toast('Undone: '+entry.text,'neutral');
+  }
   function esc(s){return String(s===undefined||s===null?'':s).replace(/[&<>'"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[c];});}
   function fmt(n){return Number(n||0).toLocaleString('en-GB');}
   function num(v){var n=Number(String(v).replace(/,/g,''));return isFinite(n)?n:0;}
-  var IMAGE_GROUPS=['portraits','items','locations','guideImages','components','outerSpaces','questLocations'];
+  var IMAGE_GROUPS=['portraits','items','locations','guideImages','components','outerSpaces','questLocations','weirwoodCards','gemstones'];
   var imagePackBusy=false,imagePackLoading=true,imagePackLoadFailed=false;
-  function emptyImagePack(){return {format:'west-of-westeros-images',version:2,portraits:{},items:{},locations:{},guideImages:{},components:{},outerSpaces:{},questLocations:{}};}
+  function emptyImagePack(){return {format:'west-of-westeros-images',version:2,portraits:{},items:{},locations:{},guideImages:{},components:{},outerSpaces:{},questLocations:{},weirwoodCards:{},gemstones:{}};}
   function imagePackCount(p){return IMAGE_GROUPS.reduce(function(n,g){return n+Object.keys(p&&p[g]||{}).length;},0);}
   function normaliseImagePack(raw){
     if(!raw||typeof raw!=='object'||Array.isArray(raw))throw new Error('Choose an image-pack JSON file.');
@@ -3117,10 +3178,11 @@ window.WOW_DATA = {
   }
   function whirlpoolWorkflowHtml(dragon){
     var s=dragon?state.tools.dragonWhirlpool:state.tools.whirlpool,extra=' data-dragon="'+(dragon?'1':'0')+'"',r=s.strength;
-    if(!r)return bountyStageShell(dragon?'Dragon Island':'Whirlpool','Face the whirlpool','A two-in-three chance of safe passage; otherwise the suction pulls you under.','<button class="primary wide-action" data-action="whirlpool-reveal"'+extra+'>Reveal whirlpool outcome</button>');
+    var cardAction=hasWeirwood('whirlpool-enchantment')&&(!r||r>4)?'<div class="whirlpool-card-action"><button class="primary wide-action" data-action="whirlpool-use-enchantment"'+extra+'>Play Whirlpool Enchantment</button><p class="small muted">Discard this card to pass the whirlpool unaffected.</p></div>':'';
+    if(!r)return bountyStageShell(dragon?'Dragon Island':'Whirlpool','Face the whirlpool','A two-in-three chance of safe passage; otherwise the suction pulls you under.','<button class="primary wide-action" data-action="whirlpool-reveal"'+extra+'>Reveal whirlpool outcome</button>'+cardAction);
     if(r<=4)return bountyStageShell('Safe passage','Cross the whirlpool',dragon?'Travel onto the volcanic island on your next turn before facing the mother dragon.':'Continue any movement remaining from your original movement roll.','<div class="result"><strong>You cross safely</strong></div><button class="primary wide-action" data-action="whirlpool-finish"'+extra+'>Passage recorded</button>');
     var choose=state.items.secrets.completed;
-    return bountyStageShell('Pulled under','Find your exit',choose?'Secrets of the Hidden World lets you choose the whirlpool you emerge from. Your turn then ends.':'The whirlpool transports you to another whirlpool and your turn ends.',choose?'<div class="result"><strong>Choose your exit on the board</strong></div><button class="primary wide-action" data-action="whirlpool-finish"'+extra+'>Exit chosen · end turn</button>':s.exit?'<div class="result"><span class="small muted">Count clockwise</span><br><strong>'+s.exit+' whirlpools</strong></div><p class="small muted">Count around the map from this whirlpool, excluding the whirlpools around Dragon Island. Move to that exit; your turn ends there.</p><button class="primary wide-action" data-action="whirlpool-finish"'+extra+'>Exit reached · end turn</button>':'<button class="primary wide-action" data-action="whirlpool-exit"'+extra+'>Reveal whirlpool exit</button><p class="small muted">The exit count uses the sum of two independent 1–6 selections.</p>');
+    return bountyStageShell('Pulled under','Find your exit',choose?'Secrets of the Hidden World lets you choose the whirlpool you emerge from. Your turn then ends.':'The whirlpool transports you to another whirlpool and your turn ends.',(choose?'<div class="result"><strong>Choose your exit on the board</strong></div><button class="primary wide-action" data-action="whirlpool-finish"'+extra+'>Exit chosen · end turn</button>':s.exit?'<div class="result"><span class="small muted">Count clockwise</span><br><strong>'+s.exit+' whirlpools</strong></div><p class="small muted">Count around the map from this whirlpool, excluding the whirlpools around Dragon Island. Move to that exit; your turn ends there.</p><button class="primary wide-action" data-action="whirlpool-finish"'+extra+'>Exit reached · end turn</button>':'<button class="primary wide-action" data-action="whirlpool-exit"'+extra+'>Reveal whirlpool exit</button><p class="small muted">The exit count uses the sum of two independent 1–6 selections.</p>')+cardAction);
   }
   function swordWorkflowHtml(){
     var i=state.items.sword,s=state.tools.ruins;
@@ -3138,9 +3200,9 @@ window.WOW_DATA = {
   function strongholdCheckpointHtml(){
     var formed=state.settlementFormed||state.items.city.completed,keys=carriedCheckpointItems(),pending=keys.filter(function(k){return !state.items[k].checkpointed;}),names={secrets:'Secrets of the Hidden World',direwolf:'Untamed Direwolf',gemstone:'Gemstone',sword:'Dragon glass'},home=state.items.city.completed?'Fortress':'Stronghold';
     var content='<div class="checkpoint-box"><h3>Checkpoint carried Items</h3><p class="small muted">Visit your own '+home+' to set a return point for incomplete Items. You can then keep carrying them. If dropped later, collect them from this checkpoint before continuing their quests.</p>';
+    content+=carriedItemPicturesHtml();
     if(!formed)return content+'<p class="notice">Establish your Stronghold first.</p></div>';
-    if(keys.length)content+='<div class="inventory-summary">'+keys.map(function(k){return '<div class="summary-line"><strong>'+names[k]+'</strong><span>'+(state.items[k].checkpointed?'Checkpoint set':'No checkpoint')+'</span></div>';}).join('')+'</div>';
-    else content+='<p class="small muted">No carried incomplete Items need checkpointing. Completed Items are already secured.</p>';
+    if(!keys.length)content+='<p class="small muted">No carried incomplete Items need checkpointing. Completed Items are already secured.</p>';
     if(state.items.egg.obtained&&!state.items.egg.hatched)content+='<p class="notice">The Dragon Egg cannot be checkpointed.</p>';
     if(pending.length)content+='<button class="'+(strongholdVisitConfirmed?'status-toggle active':'ghost')+' wide-action" data-action="stronghold-arrival" aria-pressed="'+strongholdVisitConfirmed+'">'+(strongholdVisitConfirmed?'Arrival confirmed ✓':'I’m at my '+home)+'</button><p class="tiny muted">Confirm only when your piece is at your own '+home+', rather than another Settlement in your network.</p><button class="primary wide-action" data-action="stronghold-checkpoint-all" '+(!strongholdVisitConfirmed?'disabled':'')+'>Checkpoint all '+pending.length+' carried Item'+(pending.length===1?'':'s')+'</button>';
     else if(keys.length)content+='<p class="small muted">All carried Items already have checkpoints'+(state.items.city.completed?' through your Fortress':'')+'.</p>';
@@ -3156,7 +3218,7 @@ window.WOW_DATA = {
     var summary='<div class="workflow-summary"><div><span>Days left in this location</span><strong>'+remaining+'</strong></div><div><span>Intel bonus</span><strong>+'+b.intel+'</strong></div></div>';
     if(remaining<=0)return bountyStageShell('Bounty expired','The target has left','Return the target and location cards to their decks.','<button class="primary wide-action" data-action="bounty-expire-clear">Clear lost bounty</button>');
     if(b.lastResult==='failure')return bountyStageShell('Attempt failed','Decide your next attempt','The defending attribute stays fixed for the rest of this target’s stay.',summary+'<div class="stage-actions"><button class="primary" data-action="bounty-next-attempt">Attempt again</button>'+(remaining>1?'<button data-action="bounty-retry-intel">Gather 1 more day of Intel</button>':'')+'</div>');
-    if(!b.targetRollSet)return bountyStageShell('Stage 5 of 6','Reveal the target’s defence','Reveal the defending attribute and defence value before rolling your physical d20. The first reveal selects the defending attribute and a value from 1–20; later attempts keep the same attribute.',summary+(b.defenceReady&&attr?'<p class="small muted">Defending attribute retained: '+ATTR_LABEL[attr]+'.</p>':'')+'<button class="primary wide-action" data-action="bounty-reveal-attempt">Reveal defence value</button>');
+    if(!b.targetRollSet)return bountyStageShell('Stage 5 of 6','Reveal defence','Reveal the defending attribute and defence value before rolling your physical d20. The first reveal selects the defending attribute and a value from 1–20; later attempts keep the same attribute.',summary+(b.defenceReady&&attr?'<p class="small muted">Defending attribute retained: '+ATTR_LABEL[attr]+'.</p>':'')+'<button class="primary wide-action" data-action="bounty-reveal-attempt">Reveal defence value</button>');
     var details='<div class="workflow-summary"><div><span>Target’s selection</span><strong>'+num(b.targetD20)+'</strong></div>'+(attr?'<div><span>Target’s '+ATTR_LABEL[attr]+'</span><strong>'+num(c.attrs[attr])+'</strong></div><div><span>Target total</span><strong>'+(num(b.targetD20)+num(c.attrs[attr]))+'</strong></div><div><span>Your '+ATTR_LABEL[attr]+' + Intel</span><strong>'+num(totals()[attr])+' + '+num(b.intel)+'</strong></div>':'')+'</div>';
     if(choices.length>1&&!attr)details+='<p class="small muted">The target’s highest attribute is tied. Choose which tied attribute defends before rolling your die.</p>'+choiceButtons(choices,b.defenceAttr,'bounty-def-attr',function(a){return ATTR_LABEL[a]+' '+c.attrs[a];},'attr-choice');
     if(b.tier==='Low'&&hasAbility('Valar Morghulis')&&!b.defenceReselectUsed&&num(b.attemptsUsed)===0)details+='<button class="ghost wide-action" data-action="bounty-reselect-defence">Use Valar Morghulis · select defence again</button>';
@@ -3222,8 +3284,8 @@ window.WOW_DATA = {
   function artworkPromptDismissed(){try{return localStorage.getItem('wow-private-image-pack-prompt-v1')==='dismissed';}catch(e){return false;}}
   function dismissArtworkPrompt(){try{localStorage.setItem('wow-private-image-pack-prompt-v1','dismissed');}catch(e){}}
   function openArtworkManager(firstRun){
-    var busy=imagePackBusy||imagePackLoading,count=imagePackCount(imagePack),summary=[['portraits','Character portraits'],['items','Items'],['locations','Locations'],['guideImages','Guide pictures'],['components','Dice & game pieces'],['outerSpaces','Outer-board spaces'],['questLocations','Quest locations']].map(function(x){return '<div class="summary-line"><strong>'+x[1]+'</strong><span>'+Object.keys(imagePack&&imagePack[x[0]]||{}).length+'</span></div>';}).join('');
-    openModal('Image pack','<p class="small muted">Import character portraits, Item pictures, locations, dice, game pieces, outer-board spaces and quest locations. New images are added to your collection; matching images are updated. Other images stay in place.</p><div class="inventory-summary">'+summary+'</div><p class="tiny muted">Images stay in this browser or home-screen app on this device. They are separate from your saved game. Export the combined pack to copy your images to another device.</p>'+(imagePackLoadFailed?'<p class="notice">Your saved images could not be loaded. Reopen the companion before importing or removing images.</p>':'')+'<label class="field"><span>Image-pack JSON file</span><input id="imagePackFileModal" type="file" accept=".json,application/json" '+(busy?'disabled':'')+'></label><div class="item-actions"><button class="primary" data-modal-action="image-pack-import-modal" '+(busy||imagePackLoadFailed?'disabled':'')+'>'+(imagePackBusy?'Saving images…':imagePackLoading?'Loading images…':'Import image pack')+'</button>'+(count?'<button class="ghost" data-modal-action="image-pack-export-modal" '+(busy?'disabled':'')+'>Export combined pack</button><button class="ghost" data-modal-action="image-pack-remove-modal" '+(busy||imagePackLoadFailed?'disabled':'')+'>Remove images</button>':'')+'</div>');
+    var busy=imagePackBusy||imagePackLoading,count=imagePackCount(imagePack),summary=[['portraits','Character portraits'],['items','Items'],['locations','Locations'],['guideImages','Guide pictures'],['components','Dice & game pieces'],['outerSpaces','Outer-board spaces'],['questLocations','Quest locations'],['weirwoodCards','Keepable Weirwood cards'],['gemstones','Gemstone types']].map(function(x){return '<div class="summary-line"><strong>'+x[1]+'</strong><span>'+Object.keys(imagePack&&imagePack[x[0]]||{}).length+'</span></div>';}).join('');
+    openModal('Image pack','<p class="small muted">Import character portraits, Item pictures, locations, dice, game pieces, outer-board spaces, quest locations and keepable Weirwood cards. New images are added to your collection; matching images are updated. Other images stay in place.</p><div class="inventory-summary">'+summary+'</div><p class="tiny muted">Images stay in this browser or home-screen app on this device. They are separate from your saved game. Export the combined pack to copy your images to another device.</p>'+(imagePackLoadFailed?'<p class="notice">Your saved images could not be loaded. Reopen the companion before importing or removing images.</p>':'')+'<label class="field"><span>Image-pack JSON file</span><input id="imagePackFileModal" type="file" accept=".json,application/json" '+(busy?'disabled':'')+'></label><div class="item-actions"><button class="primary" data-modal-action="image-pack-import-modal" '+(busy||imagePackLoadFailed?'disabled':'')+'>'+(imagePackBusy?'Saving images…':imagePackLoading?'Loading images…':'Import image pack')+'</button>'+(count?'<button class="ghost" data-modal-action="image-pack-export-modal" '+(busy?'disabled':'')+'>Export combined pack</button><button class="ghost" data-modal-action="image-pack-remove-modal" '+(busy||imagePackLoadFailed?'disabled':'')+'>Remove images</button>':'')+'</div>');
   }
   var WALKTHROUGH = [
     {title:'Welcome to West of Westeros',html:'<p>Welcome, assassin. Build your power through bounties, alliances and dangerous journeys across the West.</p><p>This companion keeps track of your character and helps resolve the events you encounter. Your pieces, cards and dice bring the adventure to life on the physical board.</p><p>Begin with this short introduction to the game.</p>'},
@@ -3254,7 +3316,7 @@ window.WOW_DATA = {
 
   var PAGED_GUIDES = {
     settlement:{"title": "Settlement influence", "query": "4.3 Settlements", "pages": [{"title": "Grow your resource income", "html": "<p><strong>Controlling Settlements increases what you collect from Resource Spaces.</strong> Each Settlement in your network and your established Stronghold count as one share of 1,000 of the resource you land on. The minimum payout is 1,000.</p><p>For example, two Settlements plus your Stronghold give <strong>3,000 per Resource Space</strong>, before ability bonuses.</p>"}, {"title": "Pay before the attempt", "html": "<p>Pay <strong>500 Gold</strong> to try a neutral Settlement, or <strong>1,000 Gold</strong> to try to take another player’s Settlement. The Gold is spent even if you fail or abandon the attempt.</p>"}, {"title": "Overcome its defence", "html": "<p>First reveal the Settlement’s defence value and add your <strong>Suspicion</strong> to it. Then roll your physical d10 and add your <strong>Combat</strong>.</p><p>Your total must be higher; a tie fails. If you fail to take over another player’s Settlement, wait five turns before trying that Settlement again.</p>"}, {"title": "Claim the Settlement and reward", "html": "<p>Place your coloured cube over the Settlement, replacing the previous owner’s cube where applicable. It now counts towards your future Resource Space payouts.</p><p>A neutral Settlement gives a red reward card: +500 or +1,000 each of <strong>Wood, Stone and Food</strong> (no Gold), or an escaped prisoner. A takeover offers the choice shown in the assistant.</p>"}]},
-    openingGame:{"title": "Your opening turns", "query": "2 Starting the Game", "pages": [{"title": "Take your starting place", "html": "<p>Place your player token on the <strong>Little Birds space nearest to you</strong>. The youngest player takes the first turn, then play passes clockwise.</p><p>You receive your first bounty immediately, before setting off around the board.</p>"}, {"title": "Choose the first bounty", "html": "<p>Look at the <strong>top three low-tier character cards</strong> and choose one target. Then draw a <strong>purple bounty-location card</strong> to find out which city they are in.</p><p>Record these on the Bounties page. The next player may begin their turn while you choose the cards. Once you have your bounty, you can begin travelling towards its city.</p>"}, {"title": "Decide before rolling", "html": "<p>Before each outer-board movement roll, announce <strong>clockwise or anticlockwise</strong> and choose <strong>one d6 or two d6</strong>.</p><p>One die gives more control over where you stop; two dice can carry you further. Make both decisions before rolling.</p>"}, {"title": "Move your piece", "html": "<p>With <strong>two d6</strong>, add their results and move that exact number of spaces in your chosen direction.</p><p>With <strong>one d6</strong>, you may move any number of spaces up to the result. However, if the full roll lands on a <strong>red-banner detrimental space</strong>, you must land there rather than stopping short to avoid it.</p><p>Players may share a space and pass each other.</p>"}, {"title": "Resolve your landing", "html": "<p>Follow the space you land on. A Resource Space supplies resources; a Raid offers a chance to steal Gold; a Foe tests an attribute. Red-banner spaces include Foes, Brotherhood Without Banners, Iron Bank Tax and Captured.</p><p>Choose <strong>I landed on a space…</strong> on the Game page, then select the space to open its instructions or assistant.</p>"}, {"title": "When you reach the target", "html": "<p>At the city named on your bounty card, return to Bounties and confirm your arrival. Roll the <strong>d10</strong> to find out how long the target stays, then decide how many days to spend on Intel or takedown attempts.</p><p>The Bounty guide explains that sequence in detail. For now, choose your first target and location.</p>"}], "finalAction": "opening-bounty", "finalLabel": "Go to Bounties"},
+    openingGame:{"title": "Your opening turns", "query": "2 Starting the Game", "pages": [{"title": "Place the resource drops", "html": "<p>Together, decide how many <strong>opaque red Resource Drop cubes</strong> to use. Divide them between the players, then each player places their share on resource tiles of their choice in the <strong>inner section of the board</strong>.</p><p>The tile underneath each cube determines which resource it contains. Leave the cubes there until someone explores the drop, then remove that cube after its resources have been collected.</p>"}, {"title": "Take your starting place", "html": "<p>Place your player token on the <strong>Little Birds space nearest to you</strong>. The youngest player takes the first turn, then play passes clockwise.</p><p>You receive your first bounty immediately, before setting off around the board.</p>"}, {"title": "Choose the first bounty", "html": "<p>Look at the <strong>top three low-tier character cards</strong> and choose one target. Then draw a <strong>purple bounty-location card</strong> to find out which city they are in.</p><p>Record these on the Bounties page. The next player may begin their turn while you choose the cards. Once you have your bounty, you can begin travelling towards its city.</p>"}, {"title": "Decide before rolling", "html": "<p>Before each outer-board movement roll, announce <strong>clockwise or anticlockwise</strong> and choose <strong>one d6 or two d6</strong>.</p><p>One die gives more control over where you stop; two dice can carry you further. Make both decisions before rolling.</p>"}, {"title": "Move your piece", "html": "<p>With <strong>two d6</strong>, add their results and move that exact number of spaces in your chosen direction.</p><p>With <strong>one d6</strong>, you may move any number of spaces up to the result. However, if the full roll lands on a <strong>red-banner detrimental space</strong>, you must land there rather than stopping short to avoid it.</p><p>Players may share a space and pass each other.</p>"}, {"title": "Resolve your landing", "html": "<p>Follow the space you land on. A Resource Space supplies resources; a Raid offers a chance to steal Gold; a Foe tests an attribute. Red-banner spaces include Foes, Brotherhood Without Banners, Iron Bank Tax and Captured.</p><p>Choose <strong>I landed on a space…</strong> on the Game page, then select the space to open its instructions or assistant.</p>"}, {"title": "When you reach the target", "html": "<p>At the city named on your bounty card, return to Bounties and confirm your arrival. Roll the <strong>d10</strong> to find out how long the target stays, then decide how many days to spend on Intel or takedown attempts.</p><p>The Bounty guide explains that sequence in detail. For now, choose your first target and location.</p>"}], "finalAction": "opening-bounty", "finalLabel": "Go to Bounties"},
     innerBoard:{"title": "Navigating the inner board", "query": "4.1 Movement", "pages": [{"title": "A Port gives you a choice", "html": "<p><strong>You do not have to enter the inner board.</strong> You may stay on the outer section and continue around it normally on your next turn.</p><p>If you choose to enter, wait until your <strong>next turn</strong>, roll for water movement and start counting from the water tile nearest your token. Ports let you move between the sections as often as you wish.</p>"}, {"title": "Sail across water", "html": "<p>For normal water movement, choose a <strong>d10 or d20</strong>. The result represents the wind and sets your maximum movement. Move in any direction, stopping after any number of tiles up to that result.</p><p>The d20 can take you further, but a <strong>19 or 20 starts a storm</strong>.</p>"}, {"title": "When a storm strikes", "html": "<p>Open the <strong>Storm assistant</strong> from Tools → Inner board & conflict. Select whether your movement die showed 19 or 20, then press <strong>Reveal storm movement</strong>.</p><p>The assistant selects a direction at random. After a 19, the distance is 1–6 tiles. After a 20, it adds two independent 1–6 selections. Move your piece using the revealed direction and distance.</p>"}, {"title": "Storms and shipwrecks", "html": "<p>At the map’s edge, reflect the storm’s direction and continue moving. If the storm carries you onto land, you become <strong>shipwrecked</strong> and drop any incomplete Items you carry, following their checkpoint rules.</p><p>Repairs cost <strong>2,000 Gold</strong>. Until you can pay, use only one d6 for water movement. The Iron Ship prevents storms from affecting you; other abilities may change repair costs.</p>"}, {"title": "Travel on land and cross the coast", "html": "<p>On normal land, roll the <strong>d20</strong>. Move in any direction and stop after any number of tiles up to the roll.</p><p>To switch between land and water, <strong>stop on a tile bordering the other terrain</strong>. On your next turn, roll the appropriate die and start counting from the adjacent tile of the new terrain.</p>"}, {"title": "Watch for whirlpools", "html": "<p>When you land on a whirlpool, open its assistant through <strong>I landed on a space…</strong> and select <strong>Reveal whirlpool outcome</strong>.</p><p>You have a two-in-three chance of crossing safely and continuing any remaining movement. Otherwise you are pulled under. Select <strong>Reveal whirlpool exit</strong>, count that many whirlpools clockwise around the map, excluding those around Dragon Island, and end your turn at the exit.</p><p>Secrets of the Hidden World lets you choose the exit instead.</p>"}, {"title": "Build a base and pursue quests", "html": "<p>You may establish one <strong>Stronghold</strong> on a tile fully surrounded by land, within 15 tiles of the Dragon’s Lair and at least three tiles from other Strongholds.</p><p>Influence Settlements to increase the resources you collect from Resource Spaces: each Settlement and your Stronghold count as one share of 1,000 of the resource you land on (minimum payout 1,000). Explore Shipwrecks for cards, and approach Resource Drops on adjacent tiles. Your <strong>Items</strong> page contains each quest and its current progress.</p><p>Use the physical board to choose your route. You can return to the outer section through a Port whenever it suits your plans.</p>"}], "finalAction": "port-summary", "finalLabel": "Back to Port"},
     bounty:{"title": "Bounties", "query": "3.1 Little Birds", "pages": [{"title": "1. Choose your target", "html": "<p>At a <strong>Little Birds</strong> space, look at the <strong>top three low-tier character cards</strong> and select one target. You may choose high tier once all five attributes are level 10 or above; high tier gives the top card only, unless an ability offers a choice.</p><p>If you decline every available target, return the cards to the bottom of their decks and end your turn. You may choose again next turn.</p>"}, {"title": "2. Discover their location", "html": "<p>On the same turn, draw a <strong>purple bounty-location card</strong>. It names one of the eight cities where your target was sighted. Begin travelling there on your next turn.</p>"}, {"title": "3. Find out how long they stay", "html": "<p>When you arrive, roll the <strong>d10</strong>. Its result is the number of days the target remains. A 0 means they have already left: keep the target and revisit Little Birds for a new location.</p>"}, {"title": "4. Choose intel or attempts", "html": "<p>Each available day buys either <strong>one takedown attempt</strong> or <strong>one point of Intel</strong>. Each Intel point adds +1 to your takedown total for this stay. Leave at least one day to make an attempt.</p><p>These days represent activity within the city. All your attempts and Intel gathering happen within the <strong>same game turn</strong>.</p>"}, {"title": "5. Reveal their defence", "html": "<p>Press <strong>Reveal defence value</strong> to select the defending attribute and a value from 1–20 together. Low tier has six equally likely outcomes: Magic, Intelligence, Combat, Stealth, Cunning or the target’s highest attribute. High tier always uses the highest attribute.</p><p>Choose between tied highest attributes if needed. The attribute stays fixed throughout the target’s stay; later attempts reveal only a new defence value.</p>"}, {"title": "6. Make your physical attempt", "html": "<p>The target’s total is its revealed value plus its defending attribute. Your matching attribute and Intel reduce the physical d20 result you need. <strong>You must beat the target’s total; a tie fails.</strong></p><p>The assistant shows the exact minimum result, such as <strong>12+</strong>. Roll your physical d20 on the table, then press <strong>I succeeded</strong> or <strong>I failed</strong>. You do not need to enter the number.</p><p>A failed attempt uses one day. Try again or gather more Intel while days remain. If the stay ends, return both bounty cards.</p>"}, {"title": "7. Assassinate or blackmail", "html": "<p>After a success, <strong>assassinate</strong> to keep the Face and gain its attributes. Playing a held assassination weapon also unlocks its ability and consumes the weapon. Suspicion rises by 1 for low tier or 2 for high tier.</p><p>Alternatively, <strong>blackmail</strong> for one resource: roll a d10 for low tier or d20 for high tier and multiply by <strong>500</strong>. Return the target card after blackmail, and return the location card when the bounty ends.</p>"}]},
     weirwood:{"title": "Weirwood", "query": "3.8 Weirwood Tree", "pages": [{"title": "Draw a card", "html": "<p>When you land on a Weirwood space, draw one physical <strong>Weirwood card</strong> and read its instructions.</p>"}, {"title": "Resolve or keep it", "html": "<p>Follow an immediate card’s instructions now, including any changes to your resources or conditions. If the card permits later use, keep it and record it in your held cards.</p>"}, {"title": "Use a held card", "html": "<p>Play a held card when its instructions allow. Carry out its effect and mark it used to remove it from your held cards.</p>"}]},
@@ -3329,7 +3391,7 @@ window.WOW_DATA = {
     if(firstUse&&!tutorialSeen('paged-'+key))markTutorialSeen('paged-'+key);
     index=Math.max(0,Math.min(g.pages.length-1,num(index)));var page=g.pages[index];
     var dots=g.pages.map(function(_,i){return '<span class="walkthrough-dot '+(i===index?'active':'')+'"></span>';}).join('');
-    var guideArt=key==='innerBoard'&&index===0?portPhoto(true,'Port on the outer board'):'';
+    var guideArt=key==='innerBoard'&&index===0?portPhoto(true,'Port on the outer board'):key==='openingGame'&&index===0?componentReferenceHtml('resource-drop','Resource Drop cubes','Place these opaque red cubes on inner-board resource tiles.'):'';
     var finalButton=g.finalAction?'<button class="primary" data-modal-action="'+esc(g.finalAction)+'">'+esc(g.finalLabel)+'</button>':'<button class="primary" data-modal-close="1">Got it</button>';
     var controls='<div class="modal-actions">'+(index>0?'<button class="ghost" data-modal-action="paged-guide" data-guide-key="'+esc(key)+'" data-step="'+(index-1)+'">Back</button>':'<button class="ghost" data-modal-action="open-rule" data-query="'+esc(g.query)+'">Full rule</button>')+(index<g.pages.length-1?'<button class="primary" data-modal-action="paged-guide" data-guide-key="'+esc(key)+'" data-step="'+(index+1)+'">Next</button>':finalButton)+'</div>';
     openGuideModal(g.title+' · '+page.title,'<div class="walkthrough-shell"><div class="walkthrough-progress"><strong>'+(index+1)+' of '+g.pages.length+'</strong><div class="walkthrough-dots">'+dots+'</div></div>'+guideArt+'<div class="walkthrough-copy">'+page.html+'</div>'+controls+'</div>');
@@ -3367,7 +3429,7 @@ window.WOW_DATA = {
   function finishWalkthrough(){
     state.walkthroughSeen=true;state.guideSeen=true;saveState();closeModal();setView('game');
   }
-  function openAppMenu(){openModal('Menu','<div class="app-menu"><button data-modal-action="menu-history">History</button><button data-modal-action="menu-backup">Save & backup</button><button data-modal-action="manage-artwork">Image pack</button></div><p class="tiny muted">West of Westeros · v0.36</p>');}
+  function openAppMenu(){openModal('Menu','<div class="app-menu"><button data-modal-action="menu-history">History</button><button data-modal-action="menu-backup">Save & backup</button><button data-modal-action="manage-artwork">Image pack</button></div><p class="tiny muted">West of Westeros · v0.38</p>');}
   function openSaveBackup(){openModal('Save & backup','<p class="small muted">Progress is saved automatically on this device. Export a copy to keep a backup or transfer your game.</p><div class="save-actions"><button data-modal-action="backup-export">Export save</button><button data-modal-action="backup-import">Import save</button><button class="danger" data-modal-action="backup-reset">Reset game</button></div><input type="file" id="backupImportFile" accept=".json,application/json" class="hidden"><div class="modal-actions"><button class="ghost" data-modal-action="menu-back">Back to menu</button></div>');}
   function openGuideHub(){
     var keys=['openingGame','innerBoard','bounty','items','stronghold','settlement','foe','prison','shipwreck','confrontation','strongholdAttack','direwolf','gemstone','knights','dragonEgg'];
@@ -3376,11 +3438,11 @@ window.WOW_DATA = {
   function openSpaceChooser(){
     openModal('I landed on a space…','<p class="small muted">Use the physical board to identify the space, then choose it below. The app will open the relevant assistant; it does not track your pawn or movement.</p><div class="space-group"><h3>Outer board</h3><div class="space-grid">'+[
       ['little-birds','Little Birds','Bounty target / location'],['raid','City Raid','Push-your-luck Gold raid'],['resource','Resource Space','Network resource payout'],['foe','Foe','White Walkers, thieves, witch or bear'],['iron-bank','Iron Bank Tax','Lose Gold or go to prison'],['brotherhood-tax','Brotherhood Without Banners','Lose Wood, Stone and Food'],['captured','Captured','Open the Prison assistant'],['market-north','Northern Market','Trade at northern rates'],['market-south','Southern Market','Trade at southern rates'],['weirwood','Weirwood','Draw and resolve the physical card'],['port','Port','Move between outer and inner board'],['roll-again','Roll Again','Take another movement roll']
-    ].map(function(x){return '<button class="outer-space-choice picture-choice" data-modal-action="space-route" data-space="'+x[0]+'">'+outerSpaceChoiceArt(x[0])+'<span class="outer-space-choice-copy"><strong>'+x[1]+'</strong><small>'+x[2]+'</small></span></button>';}).join('')+'</div></div><div class="space-group"><h3>Inner board</h3><div class="space-grid">'+[
+    ].map(function(x){return '<button class="outer-space-choice" data-modal-action="space-route" data-space="'+x[0]+'">'+outerSpaceChoiceArt(x[0])+'<span class="outer-space-choice-copy"><strong>'+x[1]+'</strong><small>'+x[2]+'</small></span><b aria-hidden="true">→</b></button>';}).join('')+'</div></div><div class="space-group"><h3>Inner board</h3><div class="space-grid">'+[
       ['settlement','Settlement','Establish or take over influence'],['shipwreck','Shipwreck','Draw a shipwreck card'],['whirlpool','Whirlpool','Reveal the outcome and exit'],['storm','Storm','Reveal direction and distance'],['ruins','Ancient Ruins','Movement / dragon glass / Stone Men'],['resource-drop','Resource Drop','Roll for the abandoned resources'],['other-player','Another player','Open Confrontation assistant'],['stronghold','Your Stronghold','Network and Item safekeeping']
     ].map(function(x){return '<button data-modal-action="space-route" data-space="'+x[0]+'"><strong>'+x[1]+'</strong><small>'+x[2]+'</small></button>';}).join('')+'</div></div><div class="space-group"><h3>Quest locations</h3><div class="space-grid">'+[
       ['citadel','Citadel Library','Secrets challenge / cure conditions'],['bran','Bran the Builder','Upgrade Stronghold to Fortress'],['always-winter','Land of Always Winter','Direwolf quest'],['priestess','Priestess from Asshai','Activate Gemstone'],['sky-cell','Sky Cell','Return escaped prisoner'],['shipyard','Euron’s Shipyard','Upgrade to Iron Ship'],['foundry','Gendry’s Foundry','Forge Valyrian Steel Sword'],['dragon-pit','Dragon Pit','Hatch the Dragon Egg']
-    ].map(function(x){return '<button class="outer-space-choice picture-choice" data-modal-action="space-route" data-space="'+x[0]+'">'+questLocationPhoto(x[0],false)+'<span class="outer-space-choice-copy"><strong>'+x[1]+'</strong><small>'+x[2]+'</small></span></button>';}).join('')+'</div></div>');
+    ].map(function(x){return '<button class="outer-space-choice" data-modal-action="space-route" data-space="'+x[0]+'">'+questLocationPhoto(x[0],false)+'<span class="outer-space-choice-copy"><strong>'+x[1]+'</strong><small>'+x[2]+'</small></span><b aria-hidden="true">→</b></button>';}).join('')+'</div></div>');
   }
   function openQuestLocation(space){
     var q={
@@ -3436,7 +3498,11 @@ window.WOW_DATA = {
   function openQuickGuide(){openGuideHub();}
 
   function homePanel(titleText,summaryText,content,open,id,tutorial){var isOpen=panelIsOpen(id,open);return '<details class="home-panel" '+(id?'id="'+esc(id)+'" data-ui-key="'+esc(id)+'" ':'')+(tutorial?'data-context-tutorial="'+esc(tutorial)+'" ':'')+(isOpen?'open':'')+'><summary><span><strong>'+esc(titleText)+'</strong><small>'+esc(summaryText||'')+'</small></span></summary><div class="home-panel-body">'+content+'</div></details>';}
-  function openHistory(){var rows=state.history||[];openModal('History','<p class="small muted">State-changing actions are recorded automatically on this device. Calculator selections and temporary helper values are not logged.</p>'+(rows.length?'<div class="history-list">'+rows.map(function(h){return '<div class="history-row"><time>'+esc(historyTime(h.at))+'</time><div>'+esc(h.text)+'</div></div>';}).join('')+'</div>':'<div class="empty">No recorded actions yet.</div>')+'<div class="modal-actions"><button class="ghost" type="button" data-modal-action="manage-artwork">Manage image pack</button></div>');}
+  function openHistory(){
+    var rows=state.history||[],latest=rows[0],canUndo=latest&&latest.undo;
+    var action=canUndo?'<div class="history-undo"><strong>Undo the latest action</strong><p class="small">'+esc(latest.text)+'</p><button class="primary wide-action" data-modal-action="history-undo" data-history-id="'+esc(latest.id)+'">Undo this action</button><p class="tiny muted">Restores the game and assistant progress before this action, including any later helper selections. Return physical pieces, cards and resources to match.</p></div>':'<p class="small muted">No action is available to undo. Up to 20 recent actions can be undone in order. Older history entries without a saved previous state cannot be reversed.</p>';
+    openModal('History','<p class="small muted">Game changes are recorded automatically on this device.</p>'+action+(rows.length?'<div class="history-list">'+rows.map(function(h){return '<div class="history-row"><time>'+esc(historyTime(h.at))+'</time><div>'+esc(h.text)+'</div></div>';}).join('')+'</div>':'<div class="empty">No recorded actions yet.</div>')+'<div class="modal-actions"><button class="ghost" data-modal-action="menu-back">Back to menu</button></div>');
+  }
   function openStatusManager(){
     var active=function(v){return v?' active':'';};
     openModal('Manual status change','<p class="small muted">Use this only for corrections or effects resolved outside an assistant.</p><div class="choice-grid two-choice"><button class="status-toggle'+active(state.statuses.greyscale)+'" data-modal-action="manual-status-toggle" data-status="greyscale">Greyscale'+(state.statuses.greyscale?' ✓':'')+'</button><button class="status-toggle'+active(state.statuses.poison)+'" data-modal-action="manual-status-toggle" data-status="poison">Poison'+(state.statuses.poison?' ✓':'')+'</button><button class="status-toggle'+active(state.statuses.shipDamaged)+'" data-modal-action="manual-status-toggle" data-status="shipDamaged">Ship damaged'+(state.statuses.shipDamaged?' ✓':'')+'</button><button class="status-toggle'+active(state.statuses.inPrison)+'" data-modal-action="manual-status-toggle" data-status="inPrison">In prison'+(state.statuses.inPrison?' ✓':'')+'</button><button class="status-toggle'+active(state.statuses.foeMissTurn)+'" data-modal-action="manual-status-toggle" data-status="foeMissTurn">Miss next turn'+(state.statuses.foeMissTurn?' ✓':'')+'</button></div><div class="counter-line" style="margin-top:12px"><span class="small muted">Confrontation cooldown</span><div class="stepper"><button data-modal-action="manual-cooldown-dec" '+(state.statuses.confrontationCooldown<=0?'disabled':'')+'>−</button><strong>'+state.statuses.confrontationCooldown+'</strong><button data-modal-action="manual-cooldown-inc">+</button></div></div><div class="modal-actions"><button class="primary" data-modal-close="1">Done</button></div>');
@@ -3588,10 +3654,16 @@ function activeBenefitsHtml(){
     var c=currentBountyCharacter();if(!c||!packPortrait(c.id))return '';
     return '<div class="bounty-target-preview">'+portraitHtml(c.id,true)+'<div class="meta"><strong>'+esc(c.name)+'</strong><div class="tiny muted">'+esc(c.tier)+' tier · '+ATTRS.map(function(a){return ATTR_LABEL[a].slice(0,3)+' '+num(c.attrs[a]);}).join(' · ')+'</div><div class="tiny muted" style="margin-top:4px">'+esc(c.ability)+'</div></div></div>';
   }
+  function weirwoodArtwork(key){
+    var src=imagePack&&imagePack.weirwoodCards&&imagePack.weirwoodCards[key];if(!src)return '';
+    var crops={'escape-artist':[.20,.305,.58,.375],'greyscale-serum':[.36,.39,.29,.315],'re-roll':[.27,.30,.43,.335],'resource-multiplier':[.15,.335,.67,.315],'stone-man':[.265,.33,.47,.335],'storm-conjurer':[.20,.36,.54,.29],'storm-repellent':[.20,.36,.54,.29],'whirlpool-enchantment':[.165,.40,.66,.225]},c=crops[key];if(!c)return '';
+    var ratio=1462*c[2]/(2048*c[3]),w=Math.min(132,120*ratio),h=w/ratio;
+    return '<span class="weirwood-art" aria-hidden="true"><span class="weirwood-art-crop" style="width:'+w.toFixed(2)+'px;height:'+h.toFixed(2)+'px"><img data-weirwood-art="'+esc(key)+'" src="'+esc(src)+'" alt="" decoding="async" loading="lazy" style="width:'+(100/c[2]).toFixed(4)+'%;height:'+(100/c[3]).toFixed(4)+'%;left:'+(-100*c[0]/c[2]).toFixed(4)+'%;top:'+(-100*c[1]/c[3]).toFixed(4)+'%"></span></span>';
+  }
 function weirwoodTrackerHtml(){
   var defs=D.weirwoodKeepable||[],choice=state.tools.weirwoodChoice||'',selected=weirwoodDef(choice);
   var held=state.weirwoodHeld.map(function(id){var c=weirwoodDef(id);return c?'<div class="held-card-row"><div><strong>'+esc(c.name)+'</strong><span>'+esc(c.text)+'</span></div><button class="small primary" data-action="use-weirwood" data-weirwood="'+esc(c.id)+'">Use card</button></div>':'';}).join('');
-  return '<div class="workflow-instruction"><strong>Draw one physical Weirwood card.</strong> Read its instructions, then choose whether to resolve it now or keep it for later.</div><button class="choice-btn wide-action '+(choice==='immediate'?'active':'')+'" data-action="weirwood-choice" data-value="immediate"><strong>Immediate effect</strong><small>Follow the card’s instructions now</small></button><p class="tiny muted">Or select the card you are keeping:</p><div class="choice-grid weirwood-choice">'+defs.map(function(c){return '<button class="choice-btn '+(choice===c.id?'active':'')+'" data-action="weirwood-choice" data-value="'+esc(c.id)+'" '+(hasWeirwood(c.id)?'disabled':'')+'>'+esc(c.name)+(hasWeirwood(c.id)?' <small>Already held</small>':'')+'</button>';}).join('')+'</div>'+(selected?'<div class="result"><strong>'+esc(selected.name)+'</strong><p class="small">'+esc(selected.text)+'</p></div>':choice==='immediate'?'<p class="small muted">Carry out the physical card’s effect and record any resource or condition changes on the Game page. Confirm below when finished.</p>':'')+'<button class="primary wide-action" style="margin-top:12px" data-action="weirwood-confirm" '+(!choice?'disabled':'')+'>'+(selected?'Confirm & keep card':'Card resolved · finish')+'</button><hr class="workflow-divider"><h3>Your held Weirwood cards</h3>'+(held?'<div class="held-card-list">'+held+'</div>':'<p class="small muted">No cards currently held.</p>');
+  return '<div class="workflow-instruction"><strong>Draw one physical Weirwood card.</strong> Read its instructions, then choose whether to resolve it now or keep it for later.</div><button class="choice-btn wide-action '+(choice==='immediate'?'active':'')+'" data-action="weirwood-choice" data-value="immediate"><strong>Immediate effect</strong><small>Follow the card’s instructions now</small></button><p class="tiny muted">Or select the card you are keeping:</p><div class="choice-grid weirwood-choice">'+defs.map(function(c){return '<button class="choice-btn picture-choice '+(choice===c.id?'active':'')+'" data-action="weirwood-choice" data-value="'+esc(c.id)+'" aria-pressed="'+(choice===c.id)+'" '+(hasWeirwood(c.id)?'disabled':'')+'>'+weirwoodArtwork(c.id)+'<strong>'+esc(c.name)+'</strong>'+(hasWeirwood(c.id)?'<small>Already held</small>':'')+'</button>';}).join('')+'</div>'+(selected?'<div class="result"><strong>'+esc(selected.name)+'</strong><p class="small">'+esc(selected.text)+'</p></div>':choice==='immediate'?'<p class="small muted">Carry out the physical card’s effect and record any resource or condition changes on the Game page. Confirm below when finished.</p>':'')+'<button class="primary wide-action" style="margin-top:12px" data-action="weirwood-confirm" '+(!choice?'disabled':'')+'>'+(selected?'Confirm & keep card':'Card resolved · finish')+'</button><hr class="workflow-divider"><h3>Your held Weirwood cards</h3>'+(held?'<div class="held-card-list">'+held+'</div>':'<p class="small muted">No cards currently held.</p>');
 }
 
   function bountyLocationButtons(){
@@ -3620,7 +3692,7 @@ function weirwoodTrackerHtml(){
     if(stage==='intel'){
       if(days===0)return bountyStageShell('Target moved on','The target has already left','Return the location card to the appropriate pile. Keep the same target and revisit Little Birds to draw a new location.','<div class="workflow-nav"><button class="primary" data-action="bounty-new-location">Record a new location</button></div>');
       var maxIntel=Math.max(0,days-num(state.bounty.attemptsUsed)-1);
-      return bountyStageShell('Stage 4 of 6','Decide how much intel to gather','Each day spent gathering intel adds +1 to every takedown roll, but uses one of the days the target is available. Leave at least one day for a takedown attempt.','<div class="workflow-summary"><div><span>Target stays</span><strong>'+days+' day'+(days===1?'':'s')+'</strong></div><div><span>Takedown bonus</span><strong>+'+intel+' intel</strong></div><div><span>Days remaining after intel/attempts</span><strong>'+bountyDaysRemaining()+'</strong></div></div><div class="counter-line"><span class="small muted">Days gathering intel</span><div class="stepper"><button data-action="bounty-intel-dec">−</button><strong>'+intel+'</strong><button data-action="bounty-intel-inc">+</button></div></div><p class="tiny muted">Maximum at this stage: '+maxIntel+' day'+(maxIntel===1?'':'s')+'. You can gather another day later after a failed attempt if time remains.</p><div class="workflow-nav"><button class="ghost" data-action="bounty-stage-back" data-stage="stay">Back</button><button class="primary" data-action="bounty-intel-confirm">Begin takedown</button></div>');
+      return bountyStageShell('Stage 4 of 6','Decide how much intel to gather','Each day spent gathering intel adds +1 to every takedown roll, but uses one of the days the target is available. Leave at least one day for a takedown attempt.','<div class="workflow-summary"><div><span>Target stays</span><strong>'+days+' day'+(days===1?'':'s')+'</strong></div><div><span>Takedown bonus</span><strong>+'+intel+' intel</strong></div><div><span>Days remaining for takedown</span><strong>'+bountyDaysRemaining()+'</strong></div></div><div class="counter-line"><span class="small muted">Days gathering intel</span><div class="stepper"><button data-action="bounty-intel-dec">−</button><strong>'+intel+'</strong><button data-action="bounty-intel-inc">+</button></div></div><p class="tiny muted">Maximum at this stage: '+maxIntel+' day'+(maxIntel===1?'':'s')+'. You can gather another day later after a failed attempt if time remains.</p><div class="workflow-nav"><button class="ghost" data-action="bounty-stage-back" data-stage="stay">Back</button><button class="primary" data-action="bounty-intel-confirm">Begin takedown</button></div>');
     }
     var choices=bountyDefenceChoices(c),attr=chosenBountyDefenceAttr(c),targetAttr=attr?num(c.attrs[attr]):0,ownAttr=attr?num(t[attr]):0;
     if(stage==='defence'||stage==='roll')return combinedBountyAttemptHtml();
@@ -3636,7 +3708,7 @@ function weirwoodTrackerHtml(){
   function conditionPill(key,label,tone){return '<span class="pill '+tone+'">'+esc(label)+' <button class="pill-help" type="button" data-action="condition-help" data-condition="'+esc(key)+'" aria-label="Explain '+esc(label)+'">?</button></span>';}
   function bountyTrackerHtml(){
     var t=totals(),highEligible=highTierEligible(),highSummary=ATTRS.map(function(a){return ATTR_LABEL[a]+' '+t[a];}).join(' · '),stage=state.bounty.stage||'select';
-    var selectBody=outerSpaceBanner('little-birds','Little Birds')+'<div class="segmented"><button class="'+(state.bounty.tier==='Low'?'active':'')+'" data-action="bounty-tier" data-tier="Low">Low tier</button><button class="'+(state.bounty.tier==='High'?'active':'')+' '+(!highEligible?'choice-locked':'')+'" data-action="bounty-tier" data-tier="High" aria-disabled="'+(!highEligible)+'">High tier</button></div>'+(!highEligible?'<p class="tiny muted">High tier unlocks when every current attribute is level 10 or above. Current totals: '+esc(highSummary)+'.</p>':'')+(hasAbility('Little Birds')&&state.bounty.tier==='High'?'<div class="notice compact-notice">Little Birds ability active: choose between two random high-tier targets from the physical deck.</div>':'')+'<div class="workflow-instruction">At Little Birds, choose your physical target card first, then draw the purple bounty-location card.</div><label class="field"><span>Target</span><select id="bountyTargetInline">'+bountyCharacterOptions()+'</select></label>'+bountyTargetPreviewHtml()+'<div class="tiny muted" style="margin:8px 0 5px">Target location</div>'+bountyLocationButtons()+'<div class="workflow-nav"><button class="primary" data-action="bounty-selection-confirm" '+(!state.bounty.target||!state.bounty.location?'disabled':'')+'>Bounty recorded · start travelling</button></div>';
+    var selectBody=outerSpaceBanner('little-birds','Little Birds')+'<div class="segmented"><button class="'+(state.bounty.tier==='Low'?'active':'')+'" data-action="bounty-tier" data-tier="Low">Low tier</button><button class="'+(state.bounty.tier==='High'?'active':'')+' '+(!highEligible?'choice-locked':'')+'" data-action="bounty-tier" data-tier="High" aria-disabled="'+(!highEligible)+'">High tier</button></div>'+(!highEligible?'<p class="tiny muted">High tier unlocks when every current attribute is level 10 or above. Current totals: '+esc(highSummary)+'.</p>':'')+(hasAbility('Little Birds')&&state.bounty.tier==='High'?'<div class="notice compact-notice">Little Birds ability active: choose between two random high-tier targets from the physical deck.</div>':'')+'<div class="workflow-instruction">At Little Birds, choose your physical target card first, then draw the purple bounty-location card.</div><label class="field"><span>Target</span><select id="bountyTargetInline">'+bountyCharacterOptions()+'</select></label>'+bountyTargetPreviewHtml()+'<div class="tiny muted" style="margin:8px 0 5px">Target location</div>'+bountyLocationButtons()+'<div class="workflow-nav"><button class="primary" id="bountySelectionConfirm" data-action="bounty-selection-confirm" '+(!state.bounty.target||!state.bounty.location?'disabled':'')+'>Bounty recorded · start travelling</button></div>';
     var body=stage==='select'?bountyStageShell('Stage 1 of 6','Choose and record your bounty','The physical cards decide who you are hunting and where they were last sighted.',selectBody):bountyAssistantHtml();
     return '<section class="card flat bounty-card">'+inlineGuide('bounty','Need a quick explanation?')+bountyProgressHtml()+body+'<div class="row wrap" style="margin-top:12px"><span class="tiny muted">Reveal the target’s defence first, then resolve your takedown with a physical d20.</span><button class="ghost small" data-action="clear-bounty-inline">Clear bounty</button></div></section>';
   }
@@ -3719,12 +3791,13 @@ function renderGame(){
   var weirSummary=state.weirwoodHeld.length?'Yes':'No';
   var inventoryContent=sectionTitle('Resources','resources','')+'<section class="resources-list">'+RESOURCES.map(resourceControl).join('')+'</section>'+(crewDebtAmount()>0?'<div class="notice warn"><strong>Salvage crew debt: '+fmt(crewDebtAmount())+' resources.</strong><br><span class="tiny">Any resources you gain are automatically paid to the crew until this debt is cleared.</span></div>':'')+sectionTitle('Inventory','','')+'<section class="card flat inventory-summary"><div class="summary-line"><div><strong>Assassination weapon</strong><br><span>'+weaponSummary+'</span></div><button class="ghost small" data-action="manual-weapons">Manual change</button></div><div class="summary-line"><div><strong>Weirwood cards</strong><br><span>'+weirSummary+'</span></div><button class="ghost small" data-action="manual-weirwood">Manual change</button></div></section>';
   characterContent+=inventoryContent+sectionTitle('Current status','conditions','')+statusSummary+sectionTitle('Active benefits','benefits','')+'<section class="card flat">'+activeBenefitsHtml()+'</section>';
-  view.innerHTML='<section class="card hero"><div class="hero-row"><div><div class="muted small">Current player</div><h2 style="margin:2px 0 0">'+esc(state.playerName||'Player')+'</h2></div><button class="ghost small" data-action="edit-player">Edit</button></div><div class="row" style="margin-top:14px"><span class="small muted">Prerequisite Items</span><strong>'+prog+'/7</strong></div><div class="progress"><span style="width:'+(prog/7*100)+'%"></span></div><div class="status-row" style="margin-top:12px">'+(statusPills.join('')||'<span class="muted small">No active conditions</span>')+'</div></section>'+setupPrompt+spaceLauncher+goal+homePanel('Character & resources',ATTRS.map(function(a){return ATTR_LABEL[a].slice(0,3)+' '+t[a];}).join(' · ')+(statusPills.length?' · '+statusPills.length+' active status':'') ,characterContent,true,'characterPanel','');
+  view.innerHTML='<section class="card hero"><div class="hero-row"><div><div class="muted small">Current player</div><h2 style="margin:2px 0 0">'+esc(state.playerName||'Player')+'</h2></div><button class="ghost small" data-action="edit-player">Edit</button></div>'+itemProgressHtml()+'<div class="status-row" style="margin-top:12px">'+(statusPills.join('')||'<span class="muted small">No active conditions</span>')+'</div></section>'+setupPrompt+spaceLauncher+goal+homePanel('Character & resources',ATTRS.map(function(a){return ATTR_LABEL[a].slice(0,3)+' '+t[a];}).join(' · ')+(statusPills.length?' · '+statusPills.length+' active status':'') ,characterContent,true,'characterPanel','');
 }
 
   function itemStatus(k){
     var i=state.items[k];
     if(k==='egg')return i.hatched?'Hatched':i.obtained?'Carried':completedPrereqs()===7?'Ready to attempt':'Locked · '+completedPrereqs()+'/7 prerequisites';
+    if(k==='gemstone'&&i.lost)return i.checkpointed?'At Stronghold · collect Gemstone':'Lost · not carried';
     if(k==='gemstone'&&state.tools.crewBillDue!==null)return 'Crew bill pending · '+fmt(crewBillAmount());
     if(k==='gemstone'&&!i.completed&&!i.obtained&&state.tools.crewStage!=='choose')return 'Expedition in progress';
     if(k==='knights'&&!i.completed&&state.tools.knightsStage==='return')return 'Prisoner captured · return to Sky Cell';
@@ -3738,8 +3811,34 @@ function renderGame(){
   }
   // Physical Item photographs come from the optional image pack.
 
+  function gemstonePhoto(type){return imagePack&&imagePack.gemstones&&imagePack.gemstones[type]||'';}
+  function itemImageSource(key){
+    if(key==='gemstone'){
+      var g=state.items.gemstone,showType=!g.lost&&(g.obtained||g.completed||state.tools.crewStage==='found');
+      return (showType&&g.type?gemstonePhoto(g.type):'')||gemstonePhoto('Protean')||(imagePack&&imagePack.items&&imagePack.items.gemstone)||'';
+    }
+    return imagePack&&imagePack.items&&imagePack.items[key]||'';
+  }
+  function gemstoneChoiceButtons(selected,action){
+    return '<div class="choice-grid gemstone-types gemstone-picture-choices">'+['Magic','Intelligence','Combat','Stealth','Cunning','Protean'].map(function(type){var src=gemstonePhoto(type);return '<button class="choice-btn picture-choice '+(selected===type?'active':'')+'" data-action="'+action+'" data-value="'+type+'" aria-pressed="'+(selected===type)+'">'+(src?'<img src="'+esc(src)+'" alt="" width="1254" height="1254" decoding="async">':'')+'<strong>'+type+'</strong></button>';}).join('')+'</div>';
+  }
+  function collectedItemKeys(s){return ['secrets','city','direwolf','gemstone','knights','ironship','sword'].filter(function(k){return s.items[k]&&(s.items[k].obtained||s.items[k].completed);});}
+  function syncItemAcquisitionOrder(s){
+    var keys=collectedItemKeys(s),seen=[];(Array.isArray(s.itemAcquisitionOrder)?s.itemAcquisitionOrder:[]).concat(keys).forEach(function(k){if(keys.indexOf(k)>=0&&seen.indexOf(k)<0)seen.push(k);});s.itemAcquisitionOrder=seen;return seen;
+  }
+  function itemProgressHtml(){
+    var order=syncItemAcquisitionOrder(state),completed=completedPrereqs();
+    var pictures=order.map(function(k){var def=D.items.filter(function(it){return it.id===k;})[0],name=def?def.name:k,src=itemImageSource(k),status=state.items[k].completed?'quest complete':'carried · quest unfinished';return '<button class="progress-item" data-action="open-activity" data-activity="item-'+k+'" title="'+esc(name+' · '+status)+'" aria-label="'+esc(name+' · '+status)+'">'+(src?'<img src="'+esc(src)+'" alt="" width="60" height="60" decoding="async">':'<span>'+esc(name)+'</span>')+'</button>';}).join('');
+    return '<div class="row" style="margin-top:14px"><span class="small muted">Items collected</span><strong>'+order.length+'/7</strong></div><div class="item-progress-icons">'+pictures+'</div><div class="progress" role="progressbar" aria-label="Items collected" aria-valuemin="0" aria-valuemax="7" aria-valuenow="'+order.length+'"><span style="width:'+(order.length/7*100)+'%"></span></div><p class="tiny muted" style="margin:7px 0 0">'+completed+' of 7 Item quests completed</p>';
+  }
+  function carriedItemPicturesHtml(){
+    var keys=carriedCheckpointItems(),names={secrets:'Secrets of the Hidden World',direwolf:'Untamed Direwolf',gemstone:'Gemstone',sword:'Dragon glass',egg:'Dragon Egg'};
+    if(state.items.egg.obtained&&!state.items.egg.hatched)keys.push('egg');
+    if(!keys.length)return '';
+    return '<div class="carried-item-pictures">'+keys.map(function(k){var src=k==='sword'?componentImage('dragon-glass'):itemImageSource(k);return '<figure>'+(src?'<img src="'+esc(src)+'" alt="" width="100" height="100" decoding="async">':'')+'<figcaption><strong>'+names[k]+'</strong><small>'+(k==='egg'?'Cannot be checkpointed':state.items[k].checkpointed?'Checkpoint set':'No checkpoint')+'</small></figcaption></figure>';}).join('')+'</div>';
+  }
   function itemPhotoHtml(key,name,large){
-    var src=imagePack&&imagePack.items&&imagePack.items[key];
+    var src=itemImageSource(key);
     return src?'<img class="item-photo '+(large?'item-photo-detail':'item-photo-thumb')+'" src="'+src+'" alt="'+(large?esc(name+' game piece'):'')+'" width="1086" height="1448" decoding="async"'+(large?'':' loading="lazy"')+'>':'';
   }
   function itemCard(it){
@@ -3763,6 +3862,11 @@ function checkpointControls(k){
   var remote=hasRemoteCheckpointAbility(),base=state.settlementFormed||state.items.city.completed;
   return '<div class="checkpoint-box"><strong>Carrying '+name.toLowerCase()+' · no checkpoint</strong><p class="tiny muted">'+(remote?'Smuggler/Squire lets you checkpoint it remotely.':'You may checkpoint it when you visit your Stronghold, then continue carrying it.')+'</p><button class="ghost wide-action" data-action="item-checkpoint" data-item="'+k+'" '+(!base?'disabled':'')+'>'+(remote?'Checkpoint remotely':'I am at my Stronghold · checkpoint')+'</button>'+(!base?'<button class="ghost small wide-action" data-jump-view="tools" data-jump-anchor="strongholdNetworkTool">Establish your Stronghold first</button>':'')+'</div>';
 }
+function gemstoneLossHtml(){
+  var g=state.items.gemstone;if(!g.lost)return '';
+  var recover=!!g.checkpointed&&!!g.lostType;
+  return '<div class="checkpoint-box"><strong>'+(recover?'Collect your Gemstone from its checkpoint':'Gemstone lost')+'</strong><p class="small">'+(recover?'Your Gemstone returned to your Stronghold or Fortress. Travel there to collect it before continuing its quest.':'Return the physical Gemstone to the appropriate pool. Any outstanding crew bill or debt must still be paid.')+'</p>'+(recover?'<button class="primary wide-action" data-action="gem-recover">I’m at my Stronghold · collect Gemstone</button>':'<button class="primary wide-action" data-action="gem-search-again" '+(state.tools.crewBillDue!==null?'disabled':'')+'>Begin another Gemstone search</button>')+'</div>';
+}
 function itemInlineControls(k,s){
   var remote=hasRemoteCheckpointAbility();
   if(k==='city'){
@@ -3784,7 +3888,10 @@ function itemInlineControls(k,s){
   }
   if(k==='knights')return knightsWorkflowHtml()+(s.completed?'<div class="item-actions"><button class="primary" data-action="knights-use" '+(s.used?'disabled':'')+'>'+(s.used?'Free attack used ✓':'Use free Stronghold Attack')+'</button><button class="ghost small" data-action="simple-reset" data-item="knights">Undo quest</button></div>':'');
   if(k==='direwolf')return direwolfWorkflowHtml()+(s.obtained&&!s.completed?'<div class="checkpoint-box"><strong>'+(s.checkpointed?'Direwolf checkpointed ✓':'Carrying an untamed Direwolf')+'</strong><button class="ghost wide-action" data-action="wolf-checkpoint">'+(s.checkpointed?'Remove checkpoint':remote?'Checkpoint remotely':'I am at my Stronghold · checkpoint')+'</button></div><button class="ghost small" data-action="wolf-reset">Reset Direwolf quest</button>':'');
-  if(k==='gemstone')return checkpointControls('gemstone')+gemstoneWorkflowHtml()+(s.obtained&&state.tools.crewBillDue===null?'<button class="ghost small" data-action="gem-reset">Reset Gemstone quest</button>':'');
+  if(k==='gemstone'){
+    var showWorkflow=!s.lost||state.tools.crewStage==='return'||state.tools.crewBillDue!==null;
+    return gemstoneLossHtml()+checkpointControls('gemstone')+(showWorkflow?gemstoneWorkflowHtml():'')+((s.obtained||s.completed)?'<button class="ghost wide-action" style="margin-top:12px" data-action="gem-record-loss">'+(s.completed?'Gemstone lost or stolen':'Gemstone dropped or lost')+'</button>':'')+(s.obtained&&state.tools.crewBillDue===null?'<button class="ghost small" data-action="gem-reset">Reset Gemstone quest</button>':'');
+  }
   if(k==='egg')return dragonWorkflowHtml()+(s.obtained?'<button class="ghost small" data-action="egg-reset">Reset Dragon Egg</button>':'');
   return '';
 }
@@ -3814,9 +3921,10 @@ function faceCard(f){
   function toolHead(titleText,helpKey,desc,tutorialKey){var help='';if(tutorialKey&&PAGED_GUIDES[tutorialKey])help='<button class="ghost activity-guide" type="button" data-action="open-paged-guide" data-guide-key="'+esc(tutorialKey)+'">How it works</button>';else if(tutorialKey&&CONTEXT_TUTORIALS[tutorialKey])help='<button class="ghost activity-guide" type="button" data-action="show-context-guide" data-tutorial-key="'+esc(tutorialKey)+'">How it works</button>';else if(helpKey&&HELP[helpKey])help='<button class="ghost activity-guide" type="button" data-help="'+esc(helpKey)+'">How it works</button>';return '<div class="tool-head"><div><p>'+esc(desc)+'</p></div><div class="tool-head-actions">'+help+'</div></div>';}
   function toolPanel(titleText,helpKey,desc,tutorialKey,body,id,note){
     var key={weirwoodTool:'weirwood',raidTool:'raid',marketTool:'market',prisonTool:'captured'}[id]||'',selectedFoe=id==='foeTool'&&state.tools.foeStage!=='choose'&&state.tools.foeType?'foe-'+state.tools.foeType:'',head=toolHead(titleText,helpKey,desc,tutorialKey),picture=outerSpacePhoto(selectedFoe||key,true,selectedFoe?'Selected Foe on the outer board':'');
+    var outerTool=['weirwoodTool','resourceSpaceTool','foeTool','raidTool','prisonTool','marketTool'].indexOf(id)>=0;
     var launcherArt=outerSpaceChoiceArt(id==='resourceSpaceTool'?'resource':id==='foeTool'?'foe':key);
     activityRegistry[id]={title:titleText,body:(picture?'<div class="outer-tool-overview">'+picture+'<div>'+head+'</div></div>':head)+body};
-    return '<button class="activity-launcher" type="button" id="'+esc(id)+'" data-action="open-activity" data-activity="'+esc(id)+'">'+launcherArt+'<span class="tool-launcher-copy"><strong>'+esc(titleText)+'</strong><small>'+esc(note||desc)+'</small></span><b aria-hidden="true">→</b></button>';
+    return '<button class="activity-launcher '+(outerTool?'outer-board-launcher':'')+'" type="button" id="'+esc(id)+'" data-action="open-activity" data-activity="'+esc(id)+'">'+launcherArt+'<span class="tool-launcher-copy"><strong>'+esc(titleText)+'</strong><small>'+esc(note||desc)+'</small></span><b aria-hidden="true">→</b></button>';
   }
 
 function raidPayout(n){return [0,500,1500,3000,5000,7500][Math.max(0,Math.min(5,num(n)))]||0;}
@@ -3878,7 +3986,7 @@ function itemOwnedForWar(k){
 function applyStolenItem(k){
   if(k==='secrets'){state.items.secrets.obtained=true;state.items.secrets.completed=true;state.items.secrets.checkpointed=true;}
   else if(k==='direwolf'){state.items.direwolf.obtained=true;state.items.direwolf.completed=true;state.items.direwolf.checkpointed=true;state.items.direwolf.bonds=['Stolen completed Item'];}
-  else if(k==='gemstone'){state.items.gemstone.obtained=true;state.items.gemstone.completed=true;state.items.gemstone.checkpointed=true;state.items.gemstone.type=state.tools.warLootGemType||state.items.gemstone.type||'Protean';}
+  else if(k==='gemstone'){state.items.gemstone.lost=false;state.items.gemstone.lostType='';state.items.gemstone.obtained=true;state.items.gemstone.completed=true;state.items.gemstone.checkpointed=true;state.items.gemstone.type=state.tools.warLootGemType||state.items.gemstone.type||'Protean';}
   else if(k==='knights'){state.items.knights.completed=true;state.items.knights.used=false;}
   else if(k==='sword'){state.items.sword.dragonGlass=true;state.items.sword.completed=true;}
 }
@@ -3894,7 +4002,7 @@ function strongholdAttackWorkflowHtml(nextWarCost,duelAttempts){
   if(stage==='loot'||stage==='auto'){
     var opts=[['secrets','Secrets of the Hidden World'],['direwolf','Direwolf'],['gemstone','Gemstone'],['knights','Knights of the Vale'],['sword','Valyrian Steel Sword']];
     var choices='<div class="loot-item-grid">'+opts.map(function(x){var owned=itemOwnedForWar(x[0]);return '<button class="choice-btn '+(state.tools.warLootItem===x[0]?'active':'')+'" data-action="war-loot-select" data-value="'+x[0]+'" '+(owned?'disabled':'')+'><strong>'+x[1]+'</strong><small>'+(owned?'You already possess this Item':'Choose only if the defender has it secured')+'</small></button>';}).join('')+'</div>';
-    if(state.tools.warLootItem==='gemstone')choices+='<div class="tiny muted" style="margin:10px 0 5px">Stolen Gemstone type</div>'+choiceButtons(['Magic','Intelligence','Combat','Stealth','Cunning','Protean'],state.tools.warLootGemType,'war-loot-gem-type',null,'gemstone-types');
+    if(state.tools.warLootItem==='gemstone')choices+='<div class="tiny muted" style="margin:10px 0 5px">Stolen Gemstone type</div>'+gemstoneChoiceButtons(state.tools.warLootGemType,'war-loot-gem-type');
     var ready=!!state.tools.warLootItem&&(state.tools.warLootItem!=='gemstone'||!!state.tools.warLootGemType);
     return workflowDots(3,4,'Stronghold Attack progress')+bountyStageShell('Attack successful','Choose a secured Item',stage==='auto'?'The defender stayed away for all 15 turns, so no duel is required.':'You won the duel.','<div class="workflow-instruction">Choose the secured Item you are physically taking from the defender. Fortress, Iron Ship and Dragon Egg cannot be stolen, and you cannot take an Item you already possess.</div>'+choices+'<button class="primary wide-action" style="margin-top:10px" data-action="war-loot-confirm" '+(!ready?'disabled':'')+'>Take selected Item & finish attack</button>');
   }
@@ -3993,10 +4101,9 @@ function gemstoneWorkflowHtml(){
   if(st==='choose'&&!g.obtained)return workflowDots(0,7,'Gemstone quest progress')+bountyStageShell('Stage 1 of 7','Hire a salvage crew','Hire the crew at any outer-board port. Their fee is based on every travel turn and search roll while they are with you.','<div class="tiny muted" style="margin-bottom:5px">Crew</div>'+choiceButtons(['experienced','inexperienced'],state.tools.crewType,'crew-type',function(v){return v==='experienced'?'Experienced · 300 per unit · 13+':'Inexperienced · 100 per unit · 18+';},'two-choice')+'<button class="primary wide-action" data-action="crew-hire">Hire crew</button>');
   if(st==='travel')return workflowDots(1,7,'Gemstone quest progress')+bountyStageShell('Stage 2 of 7','Travel to Dragon Island','Count every turn the crew remains aboard, including land movement and shipwrecked turns.','<div class="counter-line"><span>Travel turns with crew</span><div class="stepper"><button data-action="crew-turn-dec">−</button><strong>'+state.tools.crewTurns+'</strong><button data-action="crew-turn-inc">+</button></div></div><div class="result"><span class="muted small">Current bill</span><br><strong>'+fmt(bill)+' resources</strong></div><button class="primary wide-action" data-action="crew-at-whirlpool">We are positioned over a Dragon Island whirlpool</button>');
   if(st==='search'){
-    var sr=Math.max(1,Math.min(20,num(state.tools.crewSearchRoll)||1)),set=state.tools.crewSearchRollSet,success=set&&sr>=target;
-    return workflowDots(2,7,'Gemstone quest progress')+bountyStageShell('Stage 3 of 7','Search for a Gemstone','You may keep rolling the d20 in the same turn until the crew succeeds. Every search roll adds one billing unit.','<div class="workflow-summary"><div><span>Required roll</span><strong>'+target+'+</strong></div><div><span>Search rolls so far</span><strong>'+state.tools.crewRolls+'</strong></div><div><span>Current bill</span><strong>'+fmt(bill)+' resources</strong></div></div>'+d20PickerButton('crew-d20-picker','Search d20',sr,set)+(set?'<div class="stage-result '+(success?'good':'bad')+' result"><strong>'+(success?'Gemstone found':'Search failed')+'</strong></div>':'')+'<button class="'+(set?(success?'primary':'danger'):'primary')+' wide-action" data-action="crew-search-resolve" '+(!set?'disabled':'')+'>'+(set?(success?'Record success':'Record roll & try again'):'Resolve search roll')+'</button>');
+    return workflowDots(2,7,'Gemstone quest progress')+bountyStageShell('Stage 3 of 7','Search for a Gemstone','Roll your physical d20. Record whether you reached the required result. Each attempt adds one billable day to the crew’s fee; you may keep searching during this game turn.',diceReferenceHtml(['d20'])+'<div class="big-target"><span>Required on your physical d20</span><strong>'+target+'+</strong></div><div class="workflow-summary"><div><span>Search attempts</span><strong>'+state.tools.crewRolls+'</strong></div><div><span>Billable days so far</span><strong>'+units+'</strong></div><div><span>Current bill</span><strong>'+fmt(bill)+' resources</strong></div></div><div class="stage-actions"><button class="primary" data-action="crew-search-result" data-result="success">I found a Gemstone</button><button class="ghost" data-action="crew-search-result" data-result="failure">No Gemstone · add a day</button></div>');
   }
-  if(st==='found')return workflowDots(3,7,'Gemstone quest progress')+bountyStageShell('Stage 4 of 7','Record the Gemstone','Select the physical Gemstone you recovered. If you reject it, return it to the whirlpool and continue searching on your next turn.','<div class="tiny muted" style="margin-bottom:5px">Gemstone type'+(hasAbility('Maegi')?' · Maegi lets you choose from those remaining':'')+'</div>'+choiceButtons(types,g.type,'gem-type-workflow',null,'gemstone-types')+'<div class="stage-actions"><button class="ghost" data-action="crew-reject-gem">Return it & search next turn</button><button class="primary" data-action="crew-keep-gem" '+(!g.type?'disabled':'')+'>Keep this Gemstone</button></div>');
+  if(st==='found')return workflowDots(3,7,'Gemstone quest progress')+bountyStageShell('Stage 4 of 7','Record the Gemstone','Select the physical Gemstone you recovered. If you reject it, return it to the whirlpool and continue searching on your next turn.','<div class="tiny muted" style="margin-bottom:5px">Gemstone type'+(hasAbility('Maegi')?' · Maegi lets you choose from those remaining':'')+'</div>'+gemstoneChoiceButtons(g.type,'gem-type-workflow')+'<div class="stage-actions"><button class="ghost" data-action="crew-reject-gem">Return it & search next turn</button><button class="primary" data-action="crew-keep-gem" '+(!g.type?'disabled':'')+'>Keep this Gemstone</button></div>');
   if(st==='return')return workflowDots(4,7,'Gemstone quest progress')+bountyStageShell('Stage 5 of 7','Return the crew to a port','Continue counting travel turns until the salvage crew is back at any outer-board port.','<div class="counter-line"><span>Travel turns with crew</span><div class="stepper"><button data-action="crew-turn-dec">−</button><strong>'+state.tools.crewTurns+'</strong><button data-action="crew-turn-inc">+</button></div></div><div class="result"><span class="muted small">Crew bill</span><br><strong>'+fmt(bill)+' resources</strong></div><button class="primary wide-action" data-action="crew-returned">Crew has returned to port</button>');
   if(st==='bill'){
     var due=crewBillAmount(),selected=crewPaymentTotal(),available=totalResources(),required=Math.min(due,available),shortfall=Math.max(0,due-available),ready=selected===required;
@@ -4175,7 +4282,7 @@ function updateToolResults(){
     if(e.key==='Tab'&&overlay.querySelectorAll){var focusable=Array.prototype.filter.call(overlay.querySelectorAll('button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex="0"]'),function(el){return el.getClientRects().length>0;});if(!focusable.length)return;var first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&(document.activeElement===first||!overlay.contains(document.activeElement))){e.preventDefault();last.focus();}else if(!e.shiftKey&&(document.activeElement===last||!overlay.contains(document.activeElement))){e.preventDefault();first.focus();}}
   });
   function handleActivityClick(e){
-    var btn=e.target.closest?e.target.closest('button'):null;if(!btn)return;var a=btn.getAttribute('data-action'),r,delta,i,b,f,cost,from,to,amount,rate,received,ruleNum;var jump=btn.getAttribute('data-jump-view');if(jump){var jumpAnchor=btn.getAttribute('data-jump-anchor')||'';setView(jump);jumpToAnchor(jumpAnchor);return;}if(a==='open-guide'){openGuideHub();return;}if(a==='open-walkthrough'){openWalkthrough(0,false);return;}
+    var btn=e.target.closest?e.target.closest('button'):null;if(!btn)return;var a=btn.getAttribute('data-action');beginUndoAction();var r,delta,i,b,f,cost,from,to,amount,rate,received,ruleNum;var jump=btn.getAttribute('data-jump-view');if(jump){var jumpAnchor=btn.getAttribute('data-jump-anchor')||'';setView(jump);jumpToAnchor(jumpAnchor);return;}if(a==='open-guide'){openGuideHub();return;}if(a==='open-walkthrough'){openWalkthrough(0,false);return;}
     if(btn.getAttribute('data-rule-section')){selectedRuleSection=btn.getAttribute('data-rule-section');rulesDisplay='section';updateRulesContent('');return;}
     if(btn.getAttribute('data-rules-mode')){rulesMode=btn.getAttribute('data-rules-mode');rulesDisplay='contents';selectedRuleSection='';renderRules();return;}
     if(a==='open-activity'){openActivity(btn.getAttribute('data-activity'));return;}
@@ -4214,7 +4321,14 @@ function updateToolResults(){
     if(a==='manual-weirwood'){openWeirwoodManager();return;}
     if(a==='foe-missed-turn-clear'){state.statuses.foeMissTurn=false;commit(true,'Missed turn after Foe encounter completed.');toast('Missed-turn status cleared.','good');return;}
     if(a==='bounty-tier'){var bt=btn.getAttribute('data-tier');if(bt==='High'&&!highTierEligible()){toast('High tier requires every current attribute to be level 10 or above.','warn');return;}state.bounty.tier=bt;state.bounty.target='';state.bounty.location='';resetBountyAssist();commit();return;}
-    if(a==='bounty-location'){state.bounty.location=btn.getAttribute('data-value');commit();return;}
+    if(a==='bounty-location'){
+      var locationName=btn.getAttribute('data-value');if(BOUNTY_LOCATIONS.indexOf(locationName)<0||state.bounty.location===locationName)return;
+      state.bounty.location=locationName;commit(false);
+      var locationButtons=view.querySelectorAll?view.querySelectorAll('[data-action="bounty-location"]'):[];
+      Array.prototype.forEach.call(locationButtons,function(choice){var selected=choice.getAttribute('data-value')===locationName;choice.classList[selected?'add':'remove']('active');choice.setAttribute('aria-pressed',String(selected));});
+      var confirmLocation=document.getElementById('bountySelectionConfirm');if(confirmLocation)confirmLocation.disabled=!state.bounty.target||!state.bounty.location;
+      return;
+    }
     if(a==='clear-bounty-inline'){clearBounty();commit();toast('Bounty cleared.','neutral');return;}
     if(a==='bounty-selection-confirm'){if(!state.bounty.target||!state.bounty.location)return;state.bounty.stage='travel';commit(true,'Bounty recorded: '+state.bounty.target+' at '+state.bounty.location+'.');return;}
     if(a==='bounty-back-select'){state.bounty.stage='select';commit(false);render();return;}
@@ -4246,8 +4360,7 @@ function updateToolResults(){
       b.targetD20=randomDie(20);b.targetRollSet=true;b.targetRollAuto=true;b.playerRollSet=false;b.stage='roll';
       commit(false);render();var attr=chosenBountyDefenceAttr(c),required=bountyRequiredRoll();
       var panels=[{label:'Defending attribute',value:attr?ATTR_LABEL[attr]:'Highest · choose tie',choices:['Magic','Intelligence','Combat','Stealth','Cunning','Highest']},{label:'Defence value',value:String(b.targetD20),choices:numberChoices(20)}];
-      if(required!==null)panels.push({label:'Your physical d20 needs',value:required<=1?'Any result':required>20?'More than 20':required+'+',choices:numberChoices(20).map(function(n){return n+'+';})});
-      revealSelection('Target’s defence revealed',panels);return;
+      revealSelection('Defence revealed',panels);return;
     }
     if(a==='bounty-reselect-defence'){
       var b=state.bounty;if(b.tier!=='Low'||!b.targetRollSet||b.stage!=='roll'||!hasAbility('Valar Morghulis')||b.defenceReselectUsed||num(b.attemptsUsed)>0)return;
@@ -4307,6 +4420,16 @@ function updateToolResults(){
       revealSelection('Storm movement',[{label:'Direction',value:DIRECTIONS[dir-1],choices:DIRECTIONS},{label:'Distance',value:distance+' tiles',choices:numberChoices(storm.trigger===19?6:12,storm.trigger===19?1:2).map(function(v){return v+' tiles';})}]);return;
     }
     if(a==='storm-finish'){if(!state.tools.storm.result&&!state.items.ironship.completed)return;state.tools.storm={trigger:0,result:null};commit(false);completeActivity();return;}
+    if(a==='whirlpool-use-enchantment'){
+      var dragon=btn.getAttribute('data-dragon')==='1';
+      if(!hasWeirwood('whirlpool-enchantment')||(dragon?(activeActivity!=='item-egg'||completedPrereqs()!==7||state.tools.dragonStage!=='lair'):activeActivity!=='whirlpoolTool'))return;
+      var wp=dragon?state.tools.dragonWhirlpool:state.tools.whirlpool;if(wp.strength&&wp.strength<=4)return;
+      removeWeirwood('whirlpool-enchantment');
+      if(dragon){state.tools.dragonWhirlpool={strength:0,exit:0};state.tools.dragonStage='initial';state.tools.dragonInitialRollSet=false;state.tools.dragonExtraUsed=[];state.tools.dragonReviveUsed=false;}
+      else state.tools.whirlpool={strength:0,exit:0};
+      commit(true,'Whirlpool Enchantment played and discarded: whirlpool crossed unaffected.');
+      toast(dragon?'Passage clear. Enter the volcanic island on your next turn.':'Whirlpool crossed unaffected. Continue your remaining movement.','good');completeActivity();return;
+    }
     if(a==='whirlpool-reveal'||a==='whirlpool-exit'||a==='whirlpool-finish'){
       var dragon=btn.getAttribute('data-dragon')==='1',wp=dragon?state.tools.dragonWhirlpool:state.tools.whirlpool;
       if(dragon&&(completedPrereqs()!==7||state.tools.dragonStage!=='lair'))return;
@@ -4375,6 +4498,23 @@ function updateToolResults(){
     if(a==='gem-obtain'){state.items.gemstone={obtained:true,checkpointed:state.items.city.completed,completed:false,type:''};commit();toast(state.items.city.completed?'Gemstone obtained and automatically checkpointed by your Fortress.':'Gemstone obtained. Checkpointing is optional.','neutral');return;}
     if(a==='gem-checkpoint'||a==='item-checkpoint'){var ck=a==='gem-checkpoint'?'gemstone':btn.getAttribute('data-item');if(['gemstone','sword'].indexOf(ck)<0)return;var ci=state.items[ck],held=ck==='sword'?ci.dragonGlass:ci.obtained;if(!held||ci.completed||ci.checkpointed)return;if(!state.settlementFormed&&!state.items.city.completed){toast('Establish your Stronghold first.','warn');return;}ci.checkpointed=true;commit(true,(ck==='sword'?'Dragon glass':'Gemstone')+' checkpoint established.');toast((ck==='sword'?'Dragon glass':'Gemstone')+' checkpointed. You may continue carrying it.','good');return;}
     if(a==='gem-type'){i=state.items.gemstone;if(i.obtained&&!i.completed){i.type=btn.getAttribute('data-value');if(hasAbility('R’hllor')){i.completed=true;toast(i.type+' Gemstone activated immediately by R’hllor and secured.','good');}commit();}else if(i.completed)toast('Gemstone type is locked after activation.','warn');return;}if(a==='gem-complete'){i=state.items.gemstone;if(i.obtained&&i.type){i.completed=true;commit();toast(i.type+' Gemstone activated and automatically secured.','good');completeActivity();}else toast('Select a Gemstone type first.','bad');return;}
+    if(a==='gem-record-loss'){
+      var g=state.items.gemstone;if(!g.obtained&&!g.completed)return;
+      var checkpointed=!g.completed&&g.checkpointed;
+      g.lostType=checkpointed?g.type:'';g.type='';g.obtained=false;g.completed=false;g.checkpointed=checkpointed;g.lost=true;
+      commit(true,checkpointed?'Gemstone dropped; returned to its Stronghold checkpoint.':'Gemstone lost; it is no longer held.');toast(checkpointed?'Collect the Gemstone from your Stronghold checkpoint.':'Gemstone loss recorded. Any crew bill or debt remains payable.','warn');return;
+    }
+    if(a==='gem-recover'){
+      var g=state.items.gemstone;if(!g.lost||!g.checkpointed||!g.lostType)return;
+      g.type=g.lostType;g.lostType='';g.lost=false;g.obtained=true;
+      commit(true,'Gemstone collected from the Stronghold checkpoint.');toast('Gemstone collected. Continue its quest.','good');return;
+    }
+    if(a==='gem-search-again'){
+      var g=state.items.gemstone;if(!g.lost||g.checkpointed||state.tools.crewBillDue!==null)return;
+      var crewAboard=['travel','search','found','return'].indexOf(state.tools.crewStage)>=0;
+      state.items.gemstone={obtained:false,checkpointed:false,completed:false,type:''};state.tools.crewStage=crewAboard?'travel':'choose';state.tools.crewSearchRollSet=false;
+      commit(true,crewAboard?'Return to Dragon Island with the crew to search for another Gemstone.':'Ready to hire a crew for another Gemstone search.');return;
+    }
     if(a==='gem-reset'){state.items.gemstone={obtained:false,checkpointed:false,completed:false,type:''};state.tools.crewStage='choose';state.tools.crewTurns=0;state.tools.crewRolls=0;state.tools.crewSearchRollSet=false;commit();toast('Gemstone progress reset.','neutral');return;}
     if(a==='egg-obtain'){state.items.egg={obtained:true,hatched:false};state.tools.dragonStage='obtained';commit();toast('Dragon Egg obtained — it cannot be secured.','warn');return;}
     if(a==='egg-hatch'){state.items.egg={obtained:true,hatched:true};state.tools.dragonStage='complete';commit();toast('Dragon Egg hatched — victory!','good');completeActivity();return;}
@@ -4436,10 +4576,15 @@ function updateToolResults(){
     if(a==='crew-hire'){if(state.tools.crewBillDue!==null){state.tools.crewStage='bill';commit(false);render();toast('Settle the existing crew bill first.','warn');return;}state.tools.crewStage='travel';state.tools.crewTurns=0;state.tools.crewRolls=0;state.tools.crewSearchRollSet=false;state.tools.crewBillAcknowledged=false;resetCrewPayment();state.items.gemstone={obtained:false,checkpointed:false,completed:false,type:''};commit(true,'Gemstone salvage crew hired: '+state.tools.crewType+'.');return;}
     if(a==='crew-at-whirlpool'){state.tools.crewStage='search';state.tools.crewSearchRollSet=false;commit(false);render();return;}
     if(a==='crew-d20-picker'){openModal('Gemstone search d20','<p class="small muted">Tap the result on the physical d20.</p><div class="die-picker-grid">'+Array.from({length:20},function(_,i){var v=i+1;return '<button data-modal-action="crew-d20-select" data-value="'+v+'">'+v+'</button>';}).join('')+'</div>');return;}
-    if(a==='crew-search-resolve'){if(!state.tools.crewSearchRollSet)return;var tgt=state.tools.crewType==='experienced'?13:18,suc=num(state.tools.crewSearchRoll)>=tgt;state.tools.crewRolls++;state.tools.crewSearchRollSet=false;if(suc){state.tools.crewStage='found';commit(true,'Gemstone search succeeded after '+state.tools.crewRolls+' search roll(s).');toast('Gemstone found. Draw/select the physical Gemstone.','good');}else{commit(false);render();toast('Search failed. Roll again; this roll has been added to the crew bill.','neutral');}return;}
-    if(a==='gem-type-workflow'){state.items.gemstone.type=btn.getAttribute('data-value');commit(false);render();return;}
+    if(a==='crew-search-result'){
+      var outcome=btn.getAttribute('data-result');if(state.tools.crewStage!=='search'||state.tools.crewBillDue!==null||['success','failure'].indexOf(outcome)<0)return;
+      state.tools.crewRolls++;state.tools.crewSearchRollSet=false;
+      if(outcome==='success'){state.tools.crewStage='found';state.items.gemstone.type='';commit(true,'Gemstone found after '+state.tools.crewRolls+' search attempt(s).');toast('Gemstone found. Randomly select a physical Gemstone, then choose its picture.','good');}
+      else{commit(true,'Gemstone search unsuccessful; one billable day added to the crew fee.');toast('One billable day added. You may roll again.','neutral');}return;
+    }
+    if(a==='gem-type-workflow'){var gemType=btn.getAttribute('data-value');if(state.tools.crewStage!=='found'||['Magic','Intelligence','Combat','Stealth','Cunning','Protean'].indexOf(gemType)<0)return;state.items.gemstone.type=gemType;commit(false);render();return;}
     if(a==='crew-reject-gem'){state.items.gemstone.type='';state.tools.crewStage='search';state.tools.crewSearchRollSet=false;commit(false);render();toast('Gemstone returned to the whirlpool. Continue searching on your next turn.','neutral');return;}
-    if(a==='crew-keep-gem'){if(!state.items.gemstone.type)return;state.items.gemstone.obtained=true;state.items.gemstone.checkpointed=state.items.city.completed;if(hasAbility('R’hllor'))state.items.gemstone.completed=true;state.tools.crewStage='return';commit(true,(state.items.gemstone.type||'Gemstone')+' Gemstone kept.');return;}
+    if(a==='crew-keep-gem'){if(state.tools.crewStage!=='found'||!state.items.gemstone.type)return;state.items.gemstone.obtained=true;state.items.gemstone.checkpointed=state.items.city.completed;if(hasAbility('R’hllor'))state.items.gemstone.completed=true;state.tools.crewStage='return';commit(true,(state.items.gemstone.type||'Gemstone')+' Gemstone kept.');return;}
     if(a==='crew-returned'){if(state.tools.crewStage!=='return'||state.tools.crewBillDue!==null)return;var cexp=state.tools.crewType==='experienced',crate=cexp?300:100,cbill=(num(state.tools.crewTurns)+num(state.tools.crewRolls))*crate;state.tools.crewBillDue=Math.max(0,cbill);resetCrewPayment();if(totalResources()<crewBillAmount())selectAllCrewResources();state.tools.crewStage='bill';state.tools.crewBillAcknowledged=false;commit(true,'Gemstone salvage crew returned to port. Bill due: '+fmt(cbill)+' resources.');return;}
     if(a==='crew-pay-inc'||a==='crew-pay-dec'){if(state.tools.crewBillDue===null)return;var cpr=btn.getAttribute('data-resource');if(RESOURCES.indexOf(cpr)<0)return;var cps=Math.max(0,num(btn.getAttribute('data-step'))),cpay=crewPaymentFor(cpr),csel=crewPaymentTotal(),cdue=crewBillAmount(),cavail=Math.max(0,num(state.resources[cpr]));if(a==='crew-pay-inc'){state.tools.crewPayment[cpr]=cpay+Math.min(cps,Math.max(0,cavail-cpay),Math.max(0,cdue-csel));}else state.tools.crewPayment[cpr]=Math.max(0,cpay-cps);commit(false);render();return;}
     if(a==='crew-pay-max'){if(state.tools.crewBillDue===null)return;var cmr=btn.getAttribute('data-resource');if(RESOURCES.indexOf(cmr)<0)return;var cmsel=crewPaymentTotal(),cmcur=crewPaymentFor(cmr),cmavail=Math.max(0,num(state.resources[cmr])),cmroom=Math.max(0,crewBillAmount()-cmsel);state.tools.crewPayment[cmr]=cmcur+Math.min(Math.max(0,cmavail-cmcur),cmroom);commit(false);render();return;}
@@ -4518,7 +4663,7 @@ if(a==='raid-select'){var rsel=btn.getAttribute('data-raid-attr');if((state.tool
   activityBody.addEventListener('click',handleActivityClick);
 
   function handleActivityChange(e){
-    var el=e.target;
+    beginUndoAction();var el=e.target;
     var paymentResource=el.getAttribute('data-crew-payment');
     if(paymentResource&&RESOURCES.indexOf(paymentResource)>=0&&state.tools.crewBillDue!==null){var otherSelected=crewPaymentTotal()-crewPaymentFor(paymentResource);state.tools.crewPayment[paymentResource]=Math.min(Math.max(0,num(el.value)),Math.max(0,num(state.resources[paymentResource])),Math.max(0,crewBillAmount()-otherSelected));commit(false);render();return;}
     if(el.getAttribute('data-resource-input')){var key=el.getAttribute('data-resource-input'),oldVal=Math.max(0,num(state.resources[key])),newVal=Math.max(0,num(el.value));if(newVal>oldVal){applyResourceGain(key,newVal-oldVal);}else state.resources[key]=newVal;commit(false);el.value=state.resources[key];}
@@ -4552,8 +4697,9 @@ if(a==='raid-select'){var rsel=btn.getAttribute('data-raid-attr');if((state.tool
   });
 
   modalBody.addEventListener('click',function(e){
-    var btn=e.target.closest?e.target.closest('button'):null;if(!btn)return;var a=btn.getAttribute('data-modal-action');
+    var btn=e.target.closest?e.target.closest('button'):null;if(!btn)return;var a=btn.getAttribute('data-modal-action');beginUndoAction();
 
+    if(a==='history-undo'){undoLatestHistory(btn.getAttribute('data-history-id'));return;}
     if(a==='menu-back'){openAppMenu();return;}
     if(a==='menu-history'){openHistory();return;}
     if(a==='menu-backup'){openSaveBackup();return;}
