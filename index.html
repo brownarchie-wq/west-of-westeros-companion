@@ -754,17 +754,17 @@ button[data-action="settlement-reward-choice"].active{border-color:var(--accent2
 @keyframes item-reveal-in{from{opacity:0;transform:scale(.5) translateY(22px)}to{opacity:1;transform:scale(1) translateY(0)}}
 @media(prefers-reduced-motion:reduce){.item-celebration-art{animation:none}.item-celebration.flying{transition:none}}
 
-/* v0.42 artwork, quest destinations and victory */
+/* v0.43 artwork, quest destinations and victory */
 .toast{top:calc(12px + env(safe-area-inset-top));bottom:auto;transform:translate(-50%,-12px)}
 .toast.show{transform:translate(-50%,0)}
-.space-grid .component-space-photo[data-component^="inner-"],.space-grid .component-space-photo[data-component="player-piece"]{filter:drop-shadow(0 0 5px rgba(235,243,255,.48)) drop-shadow(0 0 11px rgba(220,232,250,.22))}
+.space-grid .component-space-photo:is([data-component="inner-ancient-ruins"],[data-component="inner-settlement"],[data-component="inner-whirlpool"],[data-component="inner-shipwreck"]){background:#292b30;border-radius:8px}
 .space-grid .component-space-photo:is([data-component="inner-ancient-ruins"],[data-component="inner-whirlpool"],[data-component="inner-settlement"]){padding:9px}
 .progress-item:is([data-progress-item="city"],[data-progress-item="direwolf"],[data-progress-item="knights"],[data-progress-item="ironship"]) img{transform:scale(1.18)}
-img[data-item-art="sword"]{rotate:12deg}
+img[data-item-art="sword"]{rotate:20deg}
 .sword-frame{display:flex;align-items:center;justify-content:center;overflow:hidden}
 .sword-frame img{width:100%;height:100%;object-fit:contain;display:block}
-.quest-destination{display:flex;flex-direction:column;align-items:center;gap:10px;margin:18px 0 22px;padding:16px;background:#000;border-radius:12px;text-align:center}
-.quest-destination .quest-location-photo,.quest-destination .outer-space-photo,.quest-destination .component-space-photo{width:min(100%,220px);height:145px;object-fit:contain;padding:8px;border:0}
+.quest-destination{display:flex;align-items:center;gap:12px;margin:14px 0 18px;padding:0;text-align:left}
+.quest-destination .quest-location-photo,.quest-destination .outer-space-photo,.quest-destination .component-space-photo{width:48px;height:48px;flex:0 0 48px;object-fit:contain;padding:3px;border:0;border-radius:6px}
 .quest-destination figcaption{font:inherit;font-weight:700}
 .item-celebration.victory{overflow:hidden;background:radial-gradient(ellipse at 50% 43%,rgba(112,61,18,.92),rgba(5,7,12,.98) 68%)}
 .victory .item-celebration-content{position:relative;z-index:1;max-width:580px;gap:22px}
@@ -776,10 +776,14 @@ img[data-item-art="sword"]{rotate:12deg}
 @keyframes victory-rays{to{transform:rotate(360deg)}}
 @keyframes victory-embers{to{transform:translateY(-36px);opacity:.4}}
 @media(prefers-reduced-motion:reduce){.victory .item-celebration-art,.victory:before,.victory:after{animation:none}}
+.item-launcher>.sword-frame{flex:0 0 auto}
+.progress-item[data-progress-item="gemstone"] img{transform:scale(.86)}
+.portrait-frame{overflow:hidden;position:relative}
+.portrait-frame img{display:block;width:100%;height:104%;max-width:none;object-fit:cover;transform:translateY(-3.8462%)}
 </style>
-<title>West of Westeros Companion v0.42</title>
+<title>West of Westeros Companion v0.43</title>
 </head>
-<body data-app-version="0.42">
+<body data-app-version="0.43">
 <div class="app-shell" id="appShell">
 <header class="topbar">
 <div>
@@ -1427,7 +1431,7 @@ window.WOW_DATA = {
       "requiresActivation": false
     }
   ],
-  "sourceVersion": "Rules v6 + Tables v4 + Character/Weirwood card imports · app v0.42",
+  "sourceVersion": "Rules v6 + Tables v4 + Character/Weirwood card imports · app v0.43",
   "ruleSections": [
     {
       "num": "1",
@@ -2740,7 +2744,7 @@ window.WOW_DATA = {
 
   function defaultState(){
     return {
-      version:42,
+      version:43,
       guideSeen:false,
       walkthroughSeen:false,
       tutorialsSeen:{},
@@ -2919,7 +2923,7 @@ window.WOW_DATA = {
     if(num(s.version)<20)s.tutorialsSeen={};
     if(!s.items.gemstone.obtained&&!s.items.gemstone.completed&&s.tools.crewStage!=='found')s.items.gemstone.type='';
     syncItemAcquisitionOrder(s);
-    s.version=42;
+    s.version=43;
     if(!s.items.gemstone.obtained){s.items.gemstone.completed=false;if(!(s.items.gemstone.lost&&s.items.gemstone.lostType))s.items.gemstone.checkpointed=false;if(s.tools.crewStage!=='found'||s.items.gemstone.lost)s.items.gemstone.type='';}
     if(s.items.gemstone.completed) s.items.gemstone.obtained=true;
     if(!s.items.direwolf.obtained){s.items.direwolf.completed=false;s.items.direwolf.checkpointed=false;s.items.direwolf.bonds=[];}
@@ -3067,6 +3071,10 @@ window.WOW_DATA = {
   var imagePackBusy=false,imagePackLoading=true,imagePackLoadFailed=false;
   function emptyImagePack(){return {format:'west-of-westeros-images',version:2,portraits:{},items:{},locations:{},guideImages:{},components:{},outerSpaces:{},questLocations:{},weirwoodCards:{},gemstones:{}};}
   function imagePackCount(p){return IMAGE_GROUPS.reduce(function(n,g){return n+Object.keys(p&&p[g]||{}).length;},0);}
+  function compactImagePack(p){
+    if(p.items&&p.gemstones&&p.items.gemstone&&p.items.gemstone===p.gemstones.Protean)delete p.items.gemstone;
+    return p;
+  }
   function normaliseImagePack(raw){
     if(!raw||typeof raw!=='object'||Array.isArray(raw))throw new Error('Choose an image-pack JSON file.');
     var p=emptyImagePack(),recognised=false;
@@ -3082,12 +3090,12 @@ window.WOW_DATA = {
       });
     });
     if(!recognised)throw new Error('Choose an Item, location or character image-pack JSON file.');
-    return p;
+    return compactImagePack(p);
   }
   function mergeImagePacks(existing,incoming){
     var p=emptyImagePack();
     IMAGE_GROUPS.forEach(function(g){[existing,incoming].forEach(function(source){Object.keys(source&&source[g]||{}).forEach(function(k){p[g][k]=source[g][k];});});});
-    return p;
+    return compactImagePack(p);
   }
   function loadImagePack(){
     try{var raw=localStorage.getItem(IMAGE_PACK_KEY);return raw?normaliseImagePack(JSON.parse(raw)):null;}catch(e){return null;}
@@ -3130,7 +3138,7 @@ window.WOW_DATA = {
   function packAttrIcon(){return '';}
   function packResourceIcon(){return '';}
   function packLocation(name){return imagePack&&imagePack.locations&&imagePack.locations[name]||'';}
-  function portraitHtml(id,large){var src=packPortrait(id);return src?'<img class="visual-thumb'+(large?' large':'')+'" src="'+esc(src)+'" alt="" aria-hidden="true">':'';}
+  function portraitHtml(id,large){var src=packPortrait(id);return src?'<span class="visual-thumb portrait-frame'+(large?' large':'')+'" aria-hidden="true"><img src="'+esc(src)+'" alt="" decoding="async"></span>':'';}
   function imageStorageFailure(err){
     var quota=err&&err.name==='QuotaExceededError';
     toast(quota?'There is not enough space on this device to save the image pack. Your existing images and game are unchanged.':(err&&err.message&&/^(Choose|This image|Close other)/.test(err.message)?err.message:'The image pack could not be saved. Your existing images and game are unchanged. Try reopening the companion.'),'bad');
@@ -3200,7 +3208,7 @@ window.WOW_DATA = {
     var src=componentImage(key);return src?'<img class="outer-space-photo component-space-photo" data-component="'+esc(key)+'" src="'+esc(src)+'" alt="'+esc(label||'')+'" width="1254" height="1254" decoding="async" loading="lazy">':'';
   }
   function innerSpaceChoiceArt(key,label){
-    var components={settlement:'inner-settlement',shipwreck:'inner-shipwreck',whirlpool:'inner-whirlpool',storm:'d20',ruins:'inner-ancient-ruins','resource-drop':'resource-drop','other-player':'player-piece',stronghold:'inner-stronghold-network'};
+    var components={settlement:'inner-settlement',shipwreck:'inner-shipwreck',whirlpool:'inner-whirlpool',storm:'d20',ruins:'inner-ancient-ruins','resource-drop':'resource-drop','other-player':'player-piece',stronghold:'inner-stronghold-network','stronghold-attack':'inner-stronghold-network'};
     return components[key]?componentSpacePhoto(components[key],label):'';
   }
   function locationPhotoHtml(name){var src=packLocation(name);return src?'<figure class="bounty-location-photo"><img src="'+esc(src)+'" alt="'+esc(name+' on the outer board')+'" width="1448" height="1086" decoding="async"><figcaption>'+esc(name)+'</figcaption></figure>':'';}
@@ -3531,7 +3539,7 @@ window.WOW_DATA = {
   function finishWalkthrough(){
     state.walkthroughSeen=true;state.guideSeen=true;saveState();closeModal();setView('game');
   }
-  function openAppMenu(){openModal('Menu','<div class="app-menu"><button data-modal-action="menu-history">History</button><button data-modal-action="menu-backup">Save & backup</button><button data-modal-action="manage-artwork">Image pack</button></div><p class="tiny muted">West of Westeros · v0.42</p>');}
+  function openAppMenu(){openModal('Menu','<div class="app-menu"><button data-modal-action="menu-history">History</button><button data-modal-action="menu-backup">Save & backup</button><button data-modal-action="manage-artwork">Image pack</button></div><p class="tiny muted">West of Westeros · v0.43</p>');}
   function openSaveBackup(){openModal('Save & backup','<p class="small muted">Progress is saved automatically on this device. Export a copy to keep a backup or transfer your game.</p><div class="save-actions"><button data-modal-action="backup-export">Export save</button><button data-modal-action="backup-import">Import save</button><button class="danger" data-modal-action="backup-reset">Reset game</button></div><input type="file" id="backupImportFile" accept=".json,application/json" class="hidden"><div class="modal-actions"><button class="ghost" data-modal-action="menu-back">Back to menu</button></div>');}
   function openGuideHub(){
     var keys=['openingGame','innerBoard','bounty','items','stronghold','settlement','foe','prison','shipwreck','confrontation','strongholdAttack','direwolf','gemstone','knights','dragonEgg'];
@@ -3541,7 +3549,7 @@ window.WOW_DATA = {
     openModal('I landed on a space…','<p class="small muted">Use the physical board to identify the space, then choose it below. The app will open the relevant assistant; it does not track your pawn or movement.</p><div class="space-group"><h3>Outer board</h3><div class="space-grid">'+[
       ['little-birds','Little Birds','Bounty target / location'],['raid','City Raid','Push-your-luck Gold raid'],['resource','Resource Space','Network resource payout'],['foe','Foe','White Walkers, thieves, witch or bear'],['iron-bank','Iron Bank Tax','Lose Gold or go to prison'],['brotherhood-tax','Brotherhood Without Banners','Lose Wood, Stone and Food'],['captured','Captured','Open the Prison assistant'],['market-north','Northern Market','Trade at northern rates'],['market-south','Southern Market','Trade at southern rates'],['weirwood','Weirwood','Draw and resolve the physical card'],['port','Port','Move between outer and inner board'],['roll-again','Roll Again','Take another movement roll']
     ].map(function(x){return '<button class="outer-space-choice" data-modal-action="space-route" data-space="'+x[0]+'">'+outerSpaceChoiceArt(x[0])+'<span class="outer-space-choice-copy"><strong>'+x[1]+'</strong><small>'+x[2]+'</small></span><b aria-hidden="true">→</b></button>';}).join('')+'</div></div><div class="space-group"><h3>Inner board</h3><div class="space-grid">'+[
-      ['settlement','Settlement','Establish or take over influence'],['shipwreck','Shipwreck','Draw a shipwreck card'],['whirlpool','Whirlpool','Reveal the outcome and exit'],['storm','Storm','Reveal direction and distance'],['ruins','Ancient Ruins','Movement / dragon glass / Stone Men'],['resource-drop','Resource Drop','Roll for the abandoned resources'],['other-player','Another player','Open Confrontation assistant'],['stronghold','Your Stronghold','Network and Item safekeeping']
+      ['settlement','Settlement','Establish or take over influence'],['shipwreck','Shipwreck','Draw a shipwreck card'],['whirlpool','Whirlpool','Reveal the outcome and exit'],['storm','Storm','Reveal direction and distance'],['ruins','Ancient Ruins','Movement / dragon glass / Stone Men'],['resource-drop','Resource Drop','Roll for the abandoned resources'],['other-player','Another player','Open Confrontation assistant'],['stronghold','Your Stronghold','Network and Item safekeeping'],['stronghold-attack','Stronghold Attack','Declare or continue an attack']
     ].map(function(x){return '<button class="outer-space-choice" data-modal-action="space-route" data-space="'+x[0]+'">'+innerSpaceChoiceArt(x[0],x[1])+'<span class="outer-space-choice-copy"><strong>'+x[1]+'</strong><small>'+x[2]+'</small></span><b aria-hidden="true">→</b></button>';}).join('')+'</div></div>');
   }
   function openQuestLocation(space){
@@ -3564,7 +3572,7 @@ window.WOW_DATA = {
   }
   function routeFromSpace(space){
     closeModal();
-    var map={storm:['tools','stormTool','innerBoard'],whirlpool:['tools','whirlpoolTool','innerBoard'],weirwood:['tools','weirwoodTool','weirwood'],raid:['tools','raidTool','raid'],resource:['tools','resourceSpaceTool','resourceSpace'],foe:['tools','foeTool','foe'],captured:['tools','prisonTool','prison'],'market-north':['tools','marketTool','market'],'market-south':['tools','marketTool','market'],settlement:['tools','villageTool','settlement'],shipwreck:['tools','shipwreckTool','shipwreck'],'resource-drop':['tools','resourceDropTool','resourceDrop'],'other-player':['tools','confrontTool','confrontation'],stronghold:['tools','strongholdNetworkTool','stronghold']};
+    var map={storm:['tools','stormTool','innerBoard'],whirlpool:['tools','whirlpoolTool','innerBoard'],weirwood:['tools','weirwoodTool','weirwood'],raid:['tools','raidTool','raid'],resource:['tools','resourceSpaceTool','resourceSpace'],foe:['tools','foeTool','foe'],captured:['tools','prisonTool','prison'],'market-north':['tools','marketTool','market'],'market-south':['tools','marketTool','market'],settlement:['tools','villageTool','settlement'],shipwreck:['tools','shipwreckTool','shipwreck'],'resource-drop':['tools','resourceDropTool','resourceDrop'],'other-player':['tools','confrontTool','confrontation'],stronghold:['tools','strongholdNetworkTool','stronghold'],'stronghold-attack':['tools','warTool','strongholdAttack']};
     if(space==='little-birds'){setView('faces');setTimeout(function(){maybeOpenActivityGuide('bounty');},100);return;}
     if(space==='citadel'){
       var cc=[];
