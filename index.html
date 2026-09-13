@@ -716,6 +716,7 @@ pre.rules-full{font-size:14px;line-height:1.6}.rule-body{font-size:15px;line-hei
 .space-grid .outer-space-choice-copy{flex:1;min-width:0}.space-grid .outer-space-choice-copy strong{font-size:16px}
 .space-grid .outer-space-choice>b{font-size:22px;color:var(--accent2);flex:0 0 auto}
 .space-grid .outer-space-choice>.outer-space-photo,.space-grid .outer-space-choice>.quest-location-photo,.outer-board-launcher>.outer-space-photo{width:56px;height:56px;padding:4px;border:0;border-radius:0;background:transparent}
+.space-grid .outer-space-choice>.component-space-photo{width:56px;height:56px;padding:4px;border:0;border-radius:0;background:transparent}
 .space-grid .outer-space-choice>.port-photo{width:56px;height:56px;flex:0 0 56px;border:0}
 .outer-space-choice>.outer-space-mosaic,.activity-launcher.outer-board-launcher>.outer-space-mosaic{grid-template-columns:repeat(2,26px);gap:4px;flex:0 0 56px}
 .outer-space-choice>.outer-space-mosaic .outer-space-photo,.outer-board-launcher>.outer-space-mosaic .outer-space-photo{width:26px;height:26px;padding:1px;border:0;background:transparent}
@@ -753,9 +754,9 @@ button[data-action="settlement-reward-choice"].active{border-color:var(--accent2
 @keyframes item-reveal-in{from{opacity:0;transform:scale(.5) translateY(22px)}to{opacity:1;transform:scale(1) translateY(0)}}
 @media(prefers-reduced-motion:reduce){.item-celebration-art{animation:none}.item-celebration.flying{transition:none}}
 </style>
-<title>West of Westeros Companion v0.40</title>
+<title>West of Westeros Companion v0.41</title>
 </head>
-<body data-app-version="0.40">
+<body data-app-version="0.41">
 <div class="app-shell" id="appShell">
 <header class="topbar">
 <div>
@@ -1403,7 +1404,7 @@ window.WOW_DATA = {
       "requiresActivation": false
     }
   ],
-  "sourceVersion": "Rules v6 + Tables v4 + Character/Weirwood card imports · app v0.40",
+  "sourceVersion": "Rules v6 + Tables v4 + Character/Weirwood card imports · app v0.41",
   "ruleSections": [
     {
       "num": "1",
@@ -2716,7 +2717,7 @@ window.WOW_DATA = {
 
   function defaultState(){
     return {
-      version:40,
+      version:41,
       guideSeen:false,
       walkthroughSeen:false,
       tutorialsSeen:{},
@@ -2895,7 +2896,7 @@ window.WOW_DATA = {
     if(num(s.version)<20)s.tutorialsSeen={};
     if(!s.items.gemstone.obtained&&!s.items.gemstone.completed&&s.tools.crewStage!=='found')s.items.gemstone.type='';
     syncItemAcquisitionOrder(s);
-    s.version=40;
+    s.version=41;
     if(!s.items.gemstone.obtained){s.items.gemstone.completed=false;if(!(s.items.gemstone.lost&&s.items.gemstone.lostType))s.items.gemstone.checkpointed=false;if(s.tools.crewStage!=='found'||s.items.gemstone.lost)s.items.gemstone.type='';}
     if(s.items.gemstone.completed) s.items.gemstone.obtained=true;
     if(!s.items.direwolf.obtained){s.items.direwolf.completed=false;s.items.direwolf.checkpointed=false;s.items.direwolf.bonds=[];}
@@ -3171,6 +3172,13 @@ window.WOW_DATA = {
   }
   function componentReferenceHtml(key,label,copy){
     var src=componentImage(key);return src?'<div class="component-reference" data-component="'+esc(key)+'"><img src="'+esc(src)+'" alt="" width="1254" height="1254" decoding="async"><div><strong>'+esc(label)+'</strong><p>'+esc(copy)+'</p></div></div>':'';
+  }
+  function componentSpacePhoto(key,label){
+    var src=componentImage(key);return src?'<img class="outer-space-photo component-space-photo" data-component="'+esc(key)+'" src="'+esc(src)+'" alt="'+esc(label||'')+'" width="1254" height="1254" decoding="async" loading="lazy">':'';
+  }
+  function innerSpaceChoiceArt(key,label){
+    var components={settlement:'inner-settlement',shipwreck:'inner-shipwreck',whirlpool:'inner-whirlpool',storm:'d20',ruins:'inner-ancient-ruins','resource-drop':'resource-drop','other-player':'player-piece',stronghold:'inner-stronghold-network'};
+    return components[key]?componentSpacePhoto(components[key],label):'';
   }
   function locationPhotoHtml(name){var src=packLocation(name);return src?'<figure class="bounty-location-photo"><img src="'+esc(src)+'" alt="'+esc(name+' on the outer board')+'" width="1448" height="1086" decoding="async"><figcaption>'+esc(name)+'</figcaption></figure>':'';}
   function makeId(){if(window.crypto&&typeof window.crypto.randomUUID==='function')return window.crypto.randomUUID();return Math.random().toString(36).slice(2)+Date.now().toString(36);}
@@ -3455,7 +3463,7 @@ window.WOW_DATA = {
     if(firstUse&&!tutorialSeen('paged-'+key))markTutorialSeen('paged-'+key);
     index=Math.max(0,Math.min(g.pages.length-1,num(index)));var page=g.pages[index];
     var dots=g.pages.map(function(_,i){return '<span class="walkthrough-dot '+(i===index?'active':'')+'"></span>';}).join('');
-    var guideArt=key==='innerBoard'&&index===0?portPhoto(true,'Port on the outer board'):key==='openingGame'&&index===0?componentReferenceHtml('resource-drop','Resource Drop cubes','Place these opaque red cubes on inner-board resource tiles.'):'';
+    var guideArt=key==='innerBoard'&&index===0?portPhoto(true,'Port on the outer board'):key==='innerBoard'&&index===1?componentReferenceHtml('player-piece','Your player piece','Move this piece across the physical board using the distance revealed by your movement die.'):key==='openingGame'&&index===0?componentReferenceHtml('resource-drop','Resource Drop cubes','Place these opaque red cubes on inner-board resource tiles.'):'';
     var finalButton=g.finalAction?'<button class="primary" data-modal-action="'+esc(g.finalAction)+'">'+esc(g.finalLabel)+'</button>':'<button class="primary" data-modal-close="1">Got it</button>';
     var controls='<div class="modal-actions">'+(index>0?'<button class="ghost" data-modal-action="paged-guide" data-guide-key="'+esc(key)+'" data-step="'+(index-1)+'">Back</button>':'<button class="ghost" data-modal-action="open-rule" data-query="'+esc(g.query)+'">Full rule</button>')+(index<g.pages.length-1?'<button class="primary" data-modal-action="paged-guide" data-guide-key="'+esc(key)+'" data-step="'+(index+1)+'">Next</button>':finalButton)+'</div>';
     openGuideModal(g.title+' · '+page.title,'<div class="walkthrough-shell"><div class="walkthrough-progress"><strong>'+(index+1)+' of '+g.pages.length+'</strong><div class="walkthrough-dots">'+dots+'</div></div>'+guideArt+'<div class="walkthrough-copy">'+page.html+'</div>'+controls+'</div>');
@@ -3488,12 +3496,12 @@ window.WOW_DATA = {
     index=Math.max(0,Math.min(WALKTHROUGH.length-1,num(index)));
     var step=WALKTHROUGH[index],stepHtml=index===WALKTHROUGH.length-1&&state.setupComplete?'<p>Your character is already set up. Return to the Game page to continue playing. The Guide menu also contains <strong>Your opening turns</strong> and <strong>Navigating the inner board</strong> whenever you want a reminder.</p>':step.html,dots=WALKTHROUGH.map(function(_,i){return '<span class="walkthrough-dot '+(i===index?'active':'')+'"></span>';}).join('');
     var controls='<div class="modal-actions">'+(index>0?'<button class="ghost" type="button" data-modal-action="walkthrough-back" data-step="'+(index-1)+'">Back</button>':'<button class="ghost" type="button" data-modal-action="walkthrough-skip">Skip guide</button>')+(index<WALKTHROUGH.length-1?'<button class="primary" type="button" data-modal-action="walkthrough-next" data-step="'+(index+1)+'">Next</button>':'<button class="primary" type="button" data-modal-action="walkthrough-finish">Go to Game</button>')+'</div>';
-    openGuideModal(index===WALKTHROUGH.length-1&&state.setupComplete?'Ready to continue':step.title,'<div class="walkthrough-shell"><div class="walkthrough-progress"><strong>'+(index+1)+' of '+WALKTHROUGH.length+'</strong><div class="walkthrough-dots">'+dots+'</div></div>'+guideImageHtml(step.image,step.title)+'<div class="walkthrough-copy">'+stepHtml+'</div>'+controls+'</div>');
+    openGuideModal(index===WALKTHROUGH.length-1&&state.setupComplete?'Ready to continue':step.title,'<div class="walkthrough-shell"><div class="walkthrough-progress"><strong>'+(index+1)+' of '+WALKTHROUGH.length+'</strong><div class="walkthrough-dots">'+dots+'</div></div>'+guideImageHtml(step.image,step.title)+(index===2?componentReferenceHtml('player-piece','Your player piece','Place it on the nearest Little Birds space, then move it around the physical board each turn.'):'')+'<div class="walkthrough-copy">'+stepHtml+'</div>'+controls+'</div>');
   }
   function finishWalkthrough(){
     state.walkthroughSeen=true;state.guideSeen=true;saveState();closeModal();setView('game');
   }
-  function openAppMenu(){openModal('Menu','<div class="app-menu"><button data-modal-action="menu-history">History</button><button data-modal-action="menu-backup">Save & backup</button><button data-modal-action="manage-artwork">Image pack</button></div><p class="tiny muted">West of Westeros · v0.40</p>');}
+  function openAppMenu(){openModal('Menu','<div class="app-menu"><button data-modal-action="menu-history">History</button><button data-modal-action="menu-backup">Save & backup</button><button data-modal-action="manage-artwork">Image pack</button></div><p class="tiny muted">West of Westeros · v0.41</p>');}
   function openSaveBackup(){openModal('Save & backup','<p class="small muted">Progress is saved automatically on this device. Export a copy to keep a backup or transfer your game.</p><div class="save-actions"><button data-modal-action="backup-export">Export save</button><button data-modal-action="backup-import">Import save</button><button class="danger" data-modal-action="backup-reset">Reset game</button></div><input type="file" id="backupImportFile" accept=".json,application/json" class="hidden"><div class="modal-actions"><button class="ghost" data-modal-action="menu-back">Back to menu</button></div>');}
   function openGuideHub(){
     var keys=['openingGame','innerBoard','bounty','items','stronghold','settlement','foe','prison','shipwreck','confrontation','strongholdAttack','direwolf','gemstone','knights','dragonEgg'];
@@ -3504,7 +3512,7 @@ window.WOW_DATA = {
       ['little-birds','Little Birds','Bounty target / location'],['raid','City Raid','Push-your-luck Gold raid'],['resource','Resource Space','Network resource payout'],['foe','Foe','White Walkers, thieves, witch or bear'],['iron-bank','Iron Bank Tax','Lose Gold or go to prison'],['brotherhood-tax','Brotherhood Without Banners','Lose Wood, Stone and Food'],['captured','Captured','Open the Prison assistant'],['market-north','Northern Market','Trade at northern rates'],['market-south','Southern Market','Trade at southern rates'],['weirwood','Weirwood','Draw and resolve the physical card'],['port','Port','Move between outer and inner board'],['roll-again','Roll Again','Take another movement roll']
     ].map(function(x){return '<button class="outer-space-choice" data-modal-action="space-route" data-space="'+x[0]+'">'+outerSpaceChoiceArt(x[0])+'<span class="outer-space-choice-copy"><strong>'+x[1]+'</strong><small>'+x[2]+'</small></span><b aria-hidden="true">→</b></button>';}).join('')+'</div></div><div class="space-group"><h3>Inner board</h3><div class="space-grid">'+[
       ['settlement','Settlement','Establish or take over influence'],['shipwreck','Shipwreck','Draw a shipwreck card'],['whirlpool','Whirlpool','Reveal the outcome and exit'],['storm','Storm','Reveal direction and distance'],['ruins','Ancient Ruins','Movement / dragon glass / Stone Men'],['resource-drop','Resource Drop','Roll for the abandoned resources'],['other-player','Another player','Open Confrontation assistant'],['stronghold','Your Stronghold','Network and Item safekeeping']
-    ].map(function(x){return '<button data-modal-action="space-route" data-space="'+x[0]+'"><strong>'+x[1]+'</strong><small>'+x[2]+'</small></button>';}).join('')+'</div></div><div class="space-group"><h3>Quest locations</h3><div class="space-grid">'+[
+    ].map(function(x){return '<button class="outer-space-choice" data-modal-action="space-route" data-space="'+x[0]+'">'+innerSpaceChoiceArt(x[0],x[1])+'<span class="outer-space-choice-copy"><strong>'+x[1]+'</strong><small>'+x[2]+'</small></span><b aria-hidden="true">→</b></button>';}).join('')+'</div></div><div class="space-group"><h3>Quest locations</h3><div class="space-grid">'+[
       ['citadel','Citadel Library','Secrets challenge / cure conditions'],['bran','Bran the Builder','Upgrade Stronghold to Fortress'],['always-winter','Land of Always Winter','Direwolf quest'],['priestess','Priestess from Asshai','Activate Gemstone'],['sky-cell','Sky Cell','Return escaped prisoner'],['shipyard','Euron’s Shipyard','Upgrade to Iron Ship'],['foundry','Gendry’s Foundry','Forge Valyrian Steel Sword'],['dragon-pit','Dragon Pit','Hatch the Dragon Egg']
     ].map(function(x){return '<button class="outer-space-choice" data-modal-action="space-route" data-space="'+x[0]+'">'+questLocationPhoto(x[0],false)+'<span class="outer-space-choice-copy"><strong>'+x[1]+'</strong><small>'+x[2]+'</small></span><b aria-hidden="true">→</b></button>';}).join('')+'</div></div>');
   }
@@ -4068,7 +4076,7 @@ function applyStolenItem(k){
 function strongholdAttackWorkflowHtml(nextWarCost,duelAttempts){
   var stage=state.tools.warStage||'declare',mode=state.tools.warMode||'normal';
   if(stage==='declare')return workflowDots(0,4,'Stronghold Attack progress')+bountyStageShell('Stage 1 of 4','Declare the Stronghold Attack','A normal attack requires Hired Blades. Your current Hired Blades cost is shown below.','<div class="workflow-summary"><div><span>Next Hired Blades cost</span><strong>'+fmt(nextWarCost)+' Food</strong></div><div><span>Previous attacks</span><strong>'+state.warCount+'</strong></div></div><div class="tiny muted" style="margin:8px 0 5px">Attack type</div>'+choiceButtons(['normal','alliance'],mode,'war-mode',function(v){return v==='normal'?'Solo attack':'Alliance attack';},'two-choice')+'<div class="workflow-instruction">'+(mode==='alliance'?'Both attackers must be in their own Strongholds when declaring. Both must reach the defending Stronghold before resources are taken.':'Normally declare whilst in your Stronghold, then travel to the defender.')+'</div>'+(hasAbility('Sneak Attack')?'<div class="notice compact-notice">Sneak Attack lets you declare away from your Stronghold, but its reduced resource theft still applies.</div>':'')+'<div class="workflow-nav"><button data-action="declare-war">Assemble Hired Blades & declare</button>'+(state.items.knights.completed&&!state.items.knights.used?'<button class="primary" data-action="knights-free-war">Use free Knights attack</button>':'')+'</div>');
-  if(stage==='travel')return workflowDots(1,4,'Stronghold Attack progress')+bountyStageShell('Stage 2 of 4','Travel to the defending Stronghold','Move your physical piece towards the defender. If they return before you reach an adjacent tile, the attack is called off.','<div class="notice war-declared"><strong>Stronghold Attack declared</strong><br><span class="small">'+esc(state.tools.warNotice||'Attack in progress')+'</span></div><div class="workflow-nav"><button class="primary" data-action="war-arrived">Reached adjacent tile · defender away</button><button class="danger" data-action="war-called-off">Defender returned before arrival</button></div>');
+  if(stage==='travel')return workflowDots(1,4,'Stronghold Attack progress')+bountyStageShell('Stage 2 of 4','Travel to the defending Stronghold','Move your physical piece towards the defender. If they return before you reach an adjacent tile, the attack is called off.',componentReferenceHtml('player-piece','Move your player piece','Travel normally until your piece reaches a tile adjacent to the defending Stronghold.')+'<div class="notice war-declared"><strong>Stronghold Attack declared</strong><br><span class="small">'+esc(state.tools.warNotice||'Attack in progress')+'</span></div><div class="workflow-nav"><button class="primary" data-action="war-arrived">Reached adjacent tile · defender away</button><button class="danger" data-action="war-called-off">Defender returned before arrival</button></div>');
   if(stage==='infiltrate'){
     var perTurn=mode==='alliance'?300:500;
     return workflowDots(2,4,'Stronghold Attack progress')+bountyStageShell('Stage 3 of 4','Pressure the Stronghold','Track each of your turns spent adjacent while the defender is away.','<div class="workflow-summary"><div><span>Turns at Stronghold</span><strong>'+state.siegeTurns+'/15</strong></div><div><span>Resource theft</span><strong>'+fmt(perTurn)+' of each / turn</strong></div></div><div class="workflow-instruction">On each of your turns here, take '+fmt(perTurn)+' of each resource from the defender'+(mode==='alliance'?' for your share of the alliance':'')+', then record the turn below.</div>'+(hasAbility('Sneak Attack')?'<div class="notice compact-notice">If this attack was declared away from your Stronghold using Sneak Attack, follow that ability’s reduced theft amount instead.</div>':'')+'<div class="workflow-nav"><button class="primary" data-action="war-turn" '+(state.siegeTurns>=15?'disabled':'')+'>Record next turn</button><button data-action="war-defender-returned">Defender returned</button></div>'+(state.siegeTurns>=15?'<button class="primary wide-action" data-action="war-auto-loot">15 turns reached · steal secured Item</button>':'')+'<p class="tiny muted">The defender updates resources lost on their own device.</p>');
@@ -4129,7 +4137,7 @@ function foeWorkflowHtml(){
 function confrontationWorkflowHtml(){
   var st=state.tools.confrontStage||'choose',role=state.tools.confrontRole||'initiator',maxAttempts=role==='initiator'?confrontationAttempts():1,attempt=Math.max(0,num(state.tools.confrontAttempt));
   if(state.statuses.confrontationCooldown>0&&st==='choose')return workflowIntro('confrontation')+bountyStageShell('Cooldown active','You cannot initiate another confrontation yet','Count down one of your own turns at a time. You can still use this assistant if another player confronts you.','<div class="workflow-summary"><div><span>Cooldown remaining</span><strong>'+state.statuses.confrontationCooldown+' turn'+(state.statuses.confrontationCooldown===1?'':'s')+'</strong></div></div><div class="stage-actions"><button data-action="confront-role" data-value="defender">Someone confronted me</button><button class="primary" data-action="cooldown-pass">My turn passed · −1</button></div>');
-  if(st==='choose')return workflowIntro('confrontation')+workflowDots(0,3,'Confrontation progress')+bountyStageShell('Stage 1 of 3','Start the confrontation','Choose your role. Normal range is adjacent; the Valyrian Steel Sword extends your initiating range to within 5 tiles.','<div class="workflow-summary"><div><span>Your range</span><strong>'+(state.items.sword.completed?'Within 5 tiles':'Adjacent')+'</strong></div><div><span>Initiating attempts</span><strong>'+confrontationAttempts()+'</strong></div></div><div class="choice-grid two-choice"><button class="choice-btn" data-action="confront-role" data-value="initiator">I am initiating</button><button class="choice-btn" data-action="confront-role" data-value="defender">Someone confronted me</button></div>'+(hasAbility('Rivalry')?'<div class="notice compact-notice">Rivalry is active. If you initiate, you may use the optional arm-wrestle result instead of the normal matching-d6 result.</div>':'')+'<p class="tiny muted">A confrontation cannot be initiated against a player in their Stronghold or a Settlement in their network.</p>');
+  if(st==='choose')return workflowIntro('confrontation')+workflowDots(0,3,'Confrontation progress')+bountyStageShell('Stage 1 of 3','Start the confrontation','Choose your role. Normal range is adjacent; the Valyrian Steel Sword extends your initiating range to within 5 tiles.',componentReferenceHtml('player-piece','Check the player pieces','Confirm the two pieces are within confrontation range on the physical inner board before continuing.')+'<div class="workflow-summary"><div><span>Your range</span><strong>'+(state.items.sword.completed?'Within 5 tiles':'Adjacent')+'</strong></div><div><span>Initiating attempts</span><strong>'+confrontationAttempts()+'</strong></div></div><div class="choice-grid two-choice"><button class="choice-btn" data-action="confront-role" data-value="initiator">I am initiating</button><button class="choice-btn" data-action="confront-role" data-value="defender">Someone confronted me</button></div>'+(hasAbility('Rivalry')?'<div class="notice compact-notice">Rivalry is active. If you initiate, you may use the optional arm-wrestle result instead of the normal matching-d6 result.</div>':'')+'<p class="tiny muted">A confrontation cannot be initiated against a player in their Stronghold or a Settlement in their network.</p>');
   if(st==='roll'){
     var pr=Math.max(1,Math.min(6,num(state.tools.confrontPlayerRoll)||1)),or=Math.max(1,Math.min(6,num(state.tools.confrontOtherRoll)||1)),both=state.tools.confrontPlayerRollSet&&state.tools.confrontOtherRollSet,success=both&&pr===or;
     var opposing=state.tools.confrontRollStep==='opponent';
