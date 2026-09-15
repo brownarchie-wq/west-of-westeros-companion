@@ -1,4 +1,4 @@
-# West of Westeros — rules and abilities (v0.50)
+# West of Westeros — rules and abilities (v0.51)
 
 The Rules & Playing the Game:
 
@@ -518,7 +518,7 @@ Can declare a Stronghold Attack without being in your Stronghold; however, you o
 
 ### Spoilt Brat
 
-The player who possesses Cersei Lannister must pay you 5,000 gold. If they don’t have this much, they give their remaining gold and are sent to King’s Landing prison
+Once per opponent per game, take one kept Weirwood card of your choice from that player. They remove it from their inventory and you add it to yours. This does not require either player to hold a particular Face.
 
 ### Squire
 
