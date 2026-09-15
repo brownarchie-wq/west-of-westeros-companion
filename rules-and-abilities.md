@@ -1,6 +1,4 @@
-# West of Westeros — Rules and ability reference
-
-Updated for companion v0.49. Settlement networks expand bounty selection; ordinary Resource Spaces pay 1,000 before Scholar bonuses. Direwolf approaches require 18+ before Food bonuses.
+# West of Westeros — rules and abilities (v0.50)
 
 The Rules & Playing the Game:
 
@@ -336,256 +334,256 @@ Once you have successfully stolen the egg, your final action will be to hatch it
 
 Once you have hatched your egg, you are the winner of the game, and the ruler of the West.
 
-# Character abilities
+## Special abilities
 
-## A Crown for a King
+### A Crown for a King
 
 Can sacrifice this card for a one-time payment of 5,000 gold
 
-## Back-stabber
+### Back-stabber
 
 If making a deal with another player, you can back-stab them and not uphold your end
 
-## Brotherhood
+### Brotherhood
 
 Unaffected by Brotherhood taxes
 
-## Child Sacrifice
+### Child Sacrifice
 
 Unaffected by White Walkers
 
-## Children of the Forest
+### Children of the Forest
 
 Can choose not to pick up a weirwood card
 
-## Composure
+### Composure
 
 -5 from storm travel distance
 
-## Crusade
+### Crusade
 
 Can initiate a crusade once in the game - visit as many settlements as you can in 10 rolls (i.e. all in one turn) to take resources. Roll the 6-sided die at each settlement to determine how many thousand resources you receive. You select which resource to receive. If settlement is in another player’s network, you take their resources
 
-## Desert-dweller
+### Desert-dweller
 
 Play card once during the game to receive 5,000 stone for each settlement you control that is in desert, including your stronghold
 
-## Diplomacy
+### Diplomacy
 
 Put an end to a stronghold attack that is declared on you by giving a payment of 2000 of each resource to each attacker
 
-## Direwolf Tamer
+### Direwolf Tamer
 
 Automatically approach a direwolf in The Land of Always Winter (don’t need to feed or roll, but still need to gain two bond points)
 
-## Drunkard
+### Drunkard
 
 Can offer wine to another player when they are on their boat/Iron Ship; it has the same effect as a storm of 2 dice (can only be used once for each player)
 
-## Dumb Luck
+### Dumb Luck
 
 Card must be permanently kept, but gifts player with the book, Secrets of the Hidden World
 
-## Faith Militant
+### Faith Militant
 
 Make all other players ‘repent’ by missing 3 turns. Can be used once per game
 
-## Fertile Land
+### Fertile Land
 
 Play card once during the game to receive 5,000 food for each settlement you control that is in grassland, including your Stronghold
 
-## Food Scholar
+### Food Scholar
 
 The food resource space on the outer board gives you double food
 
-## Forger
+### Forger
 
 Don’t have to return to Gendry’s foundry to forge Valyrian steel sword
 
-## Gold Scholar
+### Gold Scholar
 
 The gold resource space on the outer board gives you double gold
 
-## Greenseer
+### Greenseer
 
 Can exchange a weirwood card for another random one
 
-## Half-wight
+### Half-wight
 
 Unaffected by White Walkers
 
-## Healer
+### Healer
 
-Sacrifice 3 turns to heal greyscale or poison
+Sacrifice 1 turn to heal greyscale or poison
 
-## Hold the Door
+### Hold the Door
 
 No other players can pass by you on the outer board, nor can they land on the same space as you. They must stop at the adjacent space.
 
-## Illusionist
+### Illusionist
 
 Can hypnotise another player when they are on their boat/Iron Ship; it has the same effect as a storm of 2 dice (can only be used once for each player)
 
-## Immunity
+### Immunity
 
 Immune to greyscale
 
-## Intimidation
+### Intimidation
 
 Get two attempts when confronting another player
 
-## Joust
+### Joust
 
-Challenge one player to steal an item they are carrying (excl. Fortress, Iron Ship, & Dragon Egg) – both must roll the same even number to win the joust. Can only be used once in the game
+Challenge one player to steal an item they possess, including a secured or checkpointed item (excl. Fortress, Iron Ship, & Dragon Egg) – both must roll the same even number to win the joust. Can only be used once in the game
 
-## Little Birds
+### Little Birds
 
 When choosing a high-tier bounty, look at 1 extra target card. This gives 2 candidates normally, or 3 when you control at least 3 Settlements. All attributes must still be level 10 or above.
 
-## Maegi
+### Maegi
 
 Can pick which gemstone you want from what’s left, if you haven’t already got a gemstone
 
-## Master of Coin
+### Master of Coin
 
-Any gold you lose is halved (excluding paying for items, services, etc.)
+All Gold you pay or lose is halved, including purchases, services, trades and payments to other players. Apply other discounts first. Gold you receive is unchanged.
 
-## Mother of Dragons
+### Mother of Dragons
 
-Base attempt for defeating the mother dragon is to roll 16+
+Base attempt for defeating the mother dragon is to roll 10+
 
-## Needy Wife
+### Needy Wife
 
 If another player possesses Eddard Stark, they must pay you 5,000 gold. If they don’t have this much, they give their remaining gold and are sent to Winterfell prison
 
-## Negotiator
+### Negotiator
 
 Put an end to a stronghold attack that is declared on you by giving a payment of 2000 of each resource to each attacker
 
-## Overdraft
+### Overdraft
 
 Unaffected by Iron Bank Tax
 
-## Pillager
+### Pillager
 
 Can initiate a rampage once in the game – visit as many Settlements as you can in 10 rolls (i.e. all in one turn) to steal resources. Roll the 6-sided die at each Settlement to determine how many thousand resources you receive. You select which resource to receive. If the Settlement is in another player’s network, you take their resources.
 
-## Poisoner
+### Poisoner
 
 Can poison each player once in the game, which halves the movement of that player, until they heal themselves by visiting the citadel library. (If the movement roll is an odd number, the half is rounded up)
 
-## Psycho
+### Psycho
 
 Can initiate a rampage once in the game – visit as many Settlements as you can in 10 rolls (i.e. all in one turn) to steal resources. Roll the 6-sided die at each Settlement to determine how many thousand resources you receive. You select which resource to receive. If the Settlement is in another player’s network, you take their resources.
 
-## Reek
+### Reek
 
 Prevent a player from confronting you once (per player). The confronter can’t confront you again for five turns
 
-## Revenge
+### Revenge
 
 If another player plays a move to your detriment (i.e., gives greyscale, storm, steals item, confronting etc.) the action is reversed and affects them instead (excludes declaring a Stronghold Attack). Can be used once per player per game
 
-## Revive
+### Revive
 
 Used only once per attempt to defeat the dragon, to have another 1-in-20 roll to defeat the dragon
 
-## R’hllor
+### R’hllor
 
 The Gemstone is activated immediately when obtained and does not need to be taken to the Priestess from Asshai.
 
-## Rivalry
+### Rivalry
 
 When confronting another player, success can be determined by whether you can beat them in an arm wrestle (optional). If applicable, you can steal one item that they are carrying
 
-## Scavenger
+### Scavenger
 
 Can pick from three face-up cards at a shipwreck
 
-## Sellsword
+### Sellsword
 
 Another player can ask you to defend their Stronghold from attack. You can set your price. The attack is immediately ended
 
-## Shipwright
+### Shipwright
 
 Cost of boat repairs is halved
 
-## Smuggler
+### Smuggler
 
 Can instantly checkpoint one incomplete item to your Stronghold without having to travel there.
 
-## Sneak Attack
+### Sneak Attack
 
 Can declare a Stronghold Attack without being in your Stronghold; however, you only steal 200 resources per go from the player you are attacking.
 
-## Spoilt Brat
+### Spoilt Brat
 
 The player who possesses Cersei Lannister must pay you 5,000 gold. If they don’t have this much, they give their remaining gold and are sent to King’s Landing prison
 
-## Squire
+### Squire
 
 Can instantly checkpoint one incomplete item to your Stronghold without having to travel there.
 
-## Stone Scholar
+### Stone Scholar
 
 Stone resource space on the outer board gives you double stone
 
-## Sun Chaser
+### Sun Chaser
 
 Can circumnavigate the map on your boat. If the opposite tile is land, continue moving half the remaining spaces from your roll (rounded up)
 
-## Switching Hands
+### Switching Hands
 
 Can swap one of your faces for one of another player’s - you can pick which of yours to give, but you take one at random (played once per player per game). Remember you can’t exceed 7 low tier and 4 high tier characters so must discard as necessary
 
-## Swordsman
+### Swordsman
 
 Get two attempts when confronting another player
 
-## The Iron Price
+### The Iron Price
 
 Discount of 5,000 gold and wood to upgrade boat to Iron Ship
 
-## The Moon Door
+### The Moon Door
 
 Can sacrifice this card to “kill” another player, returning them to their Stronghold. You lose the attributes of this card and an additional 3 points from each attribute. The “killed” player drops any items they are carrying
 
-## Torgo Nudho
+### Torgo Nudho
 
 Get one additional attempt to steal an item during a Stronghold Attack
 
-## Torturer
+### Torturer
 
-All other players are tortured to hand over resources. They cannot move and must roll a double (2xD6) to escape (or until 5 turns have elapsed). For each turn spent trying to escape, they must give 250 of each resource to the torturer. Can be used once per game
+All other players are tortured to hand over resources. They cannot move and must roll a double (2xD6) to escape (or until 5 turns have elapsed). For each turn spent trying to escape, they must give 300 of each resource to the torturer. Can be used once per game
 
-## Translator
+### Translator
 
 Can assist in establishing influence in a Settlement by communicating with the locals. You receive half the normal resource reward without needing to make an influence attempt. However, you cannot get an escaped prisoner.
 
-## Valar Morghulis
+### Valar Morghulis
 
 Can re-roll to see which attribute is used
 
-## Warg
+### Warg
 
 Can take control of all other player’s characters for 2 consecutive turns. Can be used once per game
 
-## Watchers on the Wall
+### Watchers on the Wall
 
 Can travel from any port directly to Castle Black and vice versa
 
-## Wildling
+### Wildling
 
 Movement through snow terrain is doubled
 
-## Winter is Coming
+### Winter is Coming
 
-Play card once during the game to receive 3,000 wood for each Settlement in your network that is in snow, including your Stronghold
+Play card once during the game to receive 5,000 wood for each Settlement in your network that is in snow, including your Stronghold
 
-## Woman Warrior
+### Woman Warrior
 
 Get two attempts when confronting another player
 
-## Wood Scholar
+### Wood Scholar
 
 Wood resource space on the outer board gives you double wood
