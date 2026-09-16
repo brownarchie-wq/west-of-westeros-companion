@@ -1,4 +1,4 @@
-# West of Westeros — rules and abilities (v0.51)
+# West of Westeros — rules and abilities (v0.52)
 
 The Rules & Playing the Game:
 
@@ -292,7 +292,7 @@ There are 6 different types of gemstones: five of them embody each of the five a
 • Cunning:           Green
 • Protean:           Clear
 
-To obtain a gemstone, you must hire a salvage crew who will retrieve it for you. You can hire a crew from any of the ports around the outer board. Once you have assembled your crew, you must sail them to the whirlpools around Dragon Island, where they will retrieve your gemstone.
+To obtain a gemstone, normally hire a salvage crew who will retrieve it for you. With the Maegi special ability, you may instead search personally at a Dragon Island whirlpool: roll 13 or higher on your physical d20, with no crew fees. Randomly select a physical Gemstone and take it to the Priestess from Asshai to activate it. Maegi does not cancel fees owed to a crew already hired. You can hire a crew from any of the ports around the outer board. Once you have assembled your crew, you must sail them to the whirlpools around Dragon Island, where they will retrieve your gemstone.
 
 You pay your crew for the amount of time they spend aboard your ship, so the longer you take, the more expensive the venture. Whilst sailing with a crew, keep a tally of the number of turns you spend with them on board. This includes the turns spent moving over land, or when shipwrecked, and also the turns spent returning them to one of the ports on the outer board once you have got your gemstone. You can use this tally to determine what you owe them at the end of your voyage. You pay your crew with resources of your choosing, so long as the total matches the price they charge. If you cannot afford the full amount when the crew returns to port, you must pay as much as you can. Any unpaid amount becomes a debt to the crew. Until this debt has been cleared, any resources you subsequently gain are automatically paid to the crew, reducing the debt by the same amount. You may continue the Gemstone quest while this debt remains outstanding.
 
@@ -442,7 +442,7 @@ When choosing a high-tier bounty, look at 1 extra target card. This gives 2 cand
 
 ### Maegi
 
-Can pick which gemstone you want from what’s left, if you haven’t already got a gemstone
+You may search for a Gemstone personally without hiring a salvage crew. At a Dragon Island whirlpool, a physical d20 result of 13+ succeeds. There are no crew fees for this solo expedition. Randomly select a physical Gemstone and take it to the Priestess from Asshai to activate it.
 
 ### Master of Coin
 
@@ -454,7 +454,7 @@ Base attempt for defeating the mother dragon is to roll 10+
 
 ### Needy Wife
 
-If another player possesses Eddard Stark, they must pay you 5,000 gold. If they don’t have this much, they give their remaining gold and are sent to Winterfell prison
+Once per game, between turns, send an opponent on the inner board back to their own Stronghold or Fortress. They must have an established base. They keep their possessions and continue from there on their next turn.
 
 ### Negotiator
 
